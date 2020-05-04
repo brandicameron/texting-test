@@ -225,3 +225,52 @@ h2 {
 				transform: scale(1);
 			}
 		}
+
+@media screen and (max-width: 450px) {
+	
+	p {
+		font-size: 1.4rem;
+		line-height: 140%;
+		letter-spacing: -.05rem;
+		width: 330px;
+		text-align: left;
+		margin: 0 auto;
+	}
+	
+	br {
+		display: none;
+	}
+
+	h2 {
+		font-family: var(--font-heading);
+		font-size: 4rem;
+		font-weight: normal;
+	}
+
+	.no {
+		text-align: center;
+		margin-top: -45px;
+	}
+
+	.o {
+		position: relative;
+		font-size: 2rem;
+		top: -23px;
+		text-decoration: underline;
+	}
+
+	.big-number {
+		position: relative;
+		font-size: 8rem;
+		top: 25px;
+	}
+	
+	.lg-divider {
+	padding-top: 40px;
+	margin-bottom: 40px;
+}
+	
+	.img-button {
+		margin: 20px 7px;
+	}
+}
