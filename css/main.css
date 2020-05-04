@@ -42,6 +42,7 @@ p {
 	left: 1%;
 	top: 2%;
 	width: 15vw;
+	max-width: 200px;
 	min-width: 130px;
 }
 
@@ -50,6 +51,7 @@ p {
 	right: 1%;
 	top: 2%;
 	width: 15vw;
+	max-width: 200px;
 	min-width: 130px;
 }
 
@@ -59,6 +61,7 @@ p {
 	bottom: 2%;
 	transform: rotate(180deg);
 	width: 15vw;
+	max-width: 200px;
 	min-width: 130px;
 }
 
@@ -68,48 +71,10 @@ p {
 	bottom: 2%;
 	transform: rotate(180deg);
 	width: 15vw;
+	max-width: 200px;
 	min-width: 130px;
 }
 
-.line-top {
-	position: fixed;
-	top: 2.1%;
-	width: 73vw;
-	height: 3px;
-	background-color: #323333;
-	left: 50%;
-	transform: translateX(-50%);
-}
-
-.line-right {
-	position: fixed;
-	right: 1.5%;
-	width: 3px;
-	height: 72vh;
-	background-color: #323333;
-	top: 50%;
-	transform: translateY(-50%);
-}
-
-.line-bottom {
-	position: fixed;
-	bottom: 2.1%;
-	width: 71vw;
-	height: 3px;
-	background-color: #323333;
-	left: 50%;
-	transform: translateX(-50%);
-}
-
-.line-left {
-	position: fixed;
-	left: 1.5%;
-	width: 3px;
-	height: 72vh;
-	background-color: #323333;
-	top: 50%;
-	transform: translateY(-50%);
-}
 
 /* ---- QUESTION ---- */
 
@@ -235,28 +200,12 @@ h2 {
 		}
 
 @media screen and (max-width: 450px) {
-	
-	.line-top {
-	display: none;
-}
 
-.line-right {
-	display: none;
-}
-
-.line-bottom {
-	display: none;
-}
-
-.line-left {
-	display: none;
-}
 	
 	.question {
 		margin-top: -40px;
 	}
 
-	
 	p {
 		font-size: 1.4rem;
 		line-height: 140%;
@@ -296,7 +245,7 @@ h2 {
 	
 	.lg-divider {
 	padding-top: 40px;
-	margin-bottom: 40px;
+	margin-bottom: 30px;
 }
 	
 	.img-button {
