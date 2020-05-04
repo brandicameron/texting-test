@@ -17,7 +17,7 @@ body {
 p {
 	font-size: 1.6rem;
 	line-height: 140%;
-	letter-spacing: -.02rem;
+	letter-spacing: -.03rem;
 	width: 400px;
 }
 
@@ -112,7 +112,7 @@ h2 {
 
 .lg-divider {
 	padding-top: 20px;
-	margin-bottom: 80px;
+	margin-bottom: 60px;
 }
 
 .question-container {
@@ -124,6 +124,32 @@ h2 {
 	display: flex;
 	justify-content: center;
 	margin: 10px;
+}
+
+.multiple-choice-container {
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+.buttons-multiple-choice {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 10px;
+}
+
+.mult-choice-questions > p {
+	font-size: 1.5rem;
+	line-height: 110%;
+	text-align: left;
+	margin: 25px 5px;
+	width: 300px;
+	padding-bottom: 2px;
+}
+
+.mult-choice-questions {
+	margin-top: 7px;
 }
 
 .img-button {
@@ -146,6 +172,19 @@ h2 {
 	cursor: pointer;
 }
 
+.img-button-square {
+	background-image: url(../img/button-square.svg);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 50px;
+	height: 50px;
+	border: none;
+	margin: 10px;
+	outline: none;
+	cursor: pointer;
+}
+
 .incorrect {
 	cursor: not-allowed;
 }
@@ -164,6 +203,20 @@ h2 {
 	text-shadow: 3px 3px 20px rgb(0, 0, 0, .2);
 }
 
+.number-container-3 {
+	margin-top: -30px;
+}
+
+.incorrect-multi:hover::before {
+	position: absolute;
+	content: "☠️";
+	font-size: 2rem;
+	left: 20px;
+	margin-top: -16px;
+	cursor: not-allowed;
+	text-shadow: 3px 3px 20px rgb(0, 0, 0, .2);
+}
+
 .correct-clicked::after {
 	content: '\f00c';
 	font-family: FontAwesome;
@@ -179,6 +232,23 @@ h2 {
 	left: 100px;
 	opacity: .95;
 	animation: confirm 100ms ease-out;
+}
+
+.correct-clicked-multi::after {
+	content: '\f00c';
+	font-family: FontAwesome;
+	color: #2ECC40;
+	position: absolute;
+	font-size: 4rem;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 65px;
+	left: 3px;
+	opacity: .95;
+	animation: confirm 150ms ease-out;
 }
 
 @keyframes confirm {
@@ -251,4 +321,16 @@ h2 {
 	.img-button {
 		margin: 30px 7px;
 	}
+	
+	.number-container-3 {
+	margin-top: -110px;
+}
+	
+	.mult-choice-questions > p {
+	font-size: 1.5rem;
+	line-height: 110%;
+	text-align: left;
+	margin: 25px 0px;
+	width: 250px;
+}
 }
