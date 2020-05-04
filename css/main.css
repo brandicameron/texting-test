@@ -41,12 +41,16 @@ p {
 	position: fixed;
 	left: 1%;
 	top: 2%;
+	width: 15vw;
+	min-width: 130px;
 }
 
 .corner2 {
 	position: fixed;
 	right: 1%;
 	top: 2%;
+	width: 15vw;
+	min-width: 130px;
 }
 
 .corner3 {
@@ -54,6 +58,8 @@ p {
 	left: 1%;
 	bottom: 2%;
 	transform: rotate(180deg);
+	width: 15vw;
+	min-width: 130px;
 }
 
 .corner4 {
@@ -61,6 +67,8 @@ p {
 	right: 1%;
 	bottom: 2%;
 	transform: rotate(180deg);
+	width: 15vw;
+	min-width: 130px;
 }
 
 .line-top {
@@ -228,6 +236,53 @@ h2 {
 
 @media screen and (max-width: 450px) {
 	
+	.line-top {
+	position: fixed;
+	top: 2.1%;
+	width: 73vw;
+	height: 2px;
+	background-color: #323333;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.line-right {
+	position: fixed;
+	right: 1.8%;
+	width: 2px;
+	height: 72vh;
+	min-height: 630px;
+	background-color: #323333;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.line-bottom {
+	position: fixed;
+	bottom: 2.1%;
+	width: 71vw;
+	height: 2px;
+	background-color: #323333;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.line-left {
+	position: fixed;
+	left: 1.8%;
+	width: 2px;
+	height: 72vh;
+	min-height: 630px;
+	background-color: #323333;
+	top: 50%;
+	transform: translateY(-50%);
+}
+	
+	.question {
+		margin-top: -30px;
+	}
+
+	
 	p {
 		font-size: 1.4rem;
 		line-height: 140%;
@@ -261,7 +316,7 @@ h2 {
 
 	.big-number {
 		position: relative;
-		font-size: 8rem;
+		font-size: 7rem;
 		top: 25px;
 	}
 	
@@ -271,6 +326,6 @@ h2 {
 }
 	
 	.img-button {
-		margin: 20px 7px;
+		margin: 30px 7px;
 	}
 }
