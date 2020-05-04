@@ -237,49 +237,23 @@ h2 {
 @media screen and (max-width: 450px) {
 	
 	.line-top {
-	position: fixed;
-	top: 2.1%;
-	width: 73vw;
-	height: 2px;
-	background-color: #323333;
-	left: 50%;
-	transform: translateX(-50%);
+	display: none;
 }
 
 .line-right {
-	position: fixed;
-	right: 1.8%;
-	width: 2px;
-	height: 72vh;
-	min-height: 630px;
-	background-color: #323333;
-	top: 50%;
-	transform: translateY(-50%);
+	display: none;
 }
 
 .line-bottom {
-	position: fixed;
-	bottom: 2.1%;
-	width: 71vw;
-	height: 2px;
-	background-color: #323333;
-	left: 50%;
-	transform: translateX(-50%);
+	display: none;
 }
 
 .line-left {
-	position: fixed;
-	left: 1.8%;
-	width: 2px;
-	height: 72vh;
-	min-height: 630px;
-	background-color: #323333;
-	top: 50%;
-	transform: translateY(-50%);
+	display: none;
 }
 	
 	.question {
-		margin-top: -30px;
+		margin-top: -40px;
 	}
 
 	
