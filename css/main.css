@@ -86,6 +86,9 @@ p {
 	align-items: center;
 }
 
+.number-container {
+}
+
 h2 {
 	font-family: var(--font-heading);	
 	font-size: 5rem;
