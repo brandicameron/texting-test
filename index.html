@@ -12,13 +12,25 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Karla:700&display=swap" rel="stylesheet">
-	<script src="https://use.fontawesome.com/3e3f9f9617.js"></script>
 
 	<!-- Add Favicons/Icons Here -->
 
 </head>
 
 <body>
+	
+	<section class="user-info-section" id="userInfo">
+	<header>
+	<h1>Texting Etiquette Test</h1>
+	<p class="header-sm">Did a pre-teen in your family just get a new cell phone?</p>
+	<p class="header-sm">Make them take a test before giving them your number!</p>
+	<p class="header-sm note">(don't worry, we'll make sure they pass)</p>
+	</header>
+		<input type="text" id="userName" class="user-input-info" name="user-name" placeholder="ex. Uncle Luke">
+		<input type="tel" id="userPhone" class="user-input-info" name="user-phone" placeholder="The Prize Phone Number">
+		<p id="username-warning" class="username-warning"></p>
+		<input type="button" value="Begin Test" id="submitButton" onClick="captureUserName();">
+	</section>
 
 	<div class="frame">
 		<img src="./img/corner.svg" alt="" class="corner1">
@@ -31,7 +43,7 @@
 		<h2>Question</h2>
 		<h2 class="no">N<span class="o">0</span><span class="big-number">1</span></h2>
 		<img src="./img/divider.svg" alt="" class="lg-divider">
-		<p>It is before noon on a weekend.<br> Is it okay to text Aunt Brandi?</p>
+		<p>It is before noon on a weekend.<br> Is it okay to text <span class="user-name">Aunt Brandi</span>?</p>
 		<div class="buttons-container">
 			<button type="button" class="img-button incorrect"><span>yes</span></button>
 			<button type="button" class="img-button correct"><span class="correct-answer">no</span></button>
@@ -42,7 +54,7 @@
 		<h2>Question</h2>
 		<h2 class="no">N<span class="o">0</span><span class="big-number">2</span></h2>
 		<img src="./img/divider.svg" alt="" class="lg-divider">
-		<p>Is it EVER a good idea to include Aunt Brandi in a group text?</p>
+		<p>Is it EVER a good idea to include <span class="user-name">Aunt Brandi</span> in a group text?</p>
 		<div class="buttons-container">
 			<button type="button" class="img-button incorrect"><span>yes</span></button>
 			<button type="button" class="img-button correct"><span class="correct-answer">no</span></button>
@@ -53,7 +65,7 @@
 		<h2>Question</h2>
 		<h2 class="no">N<span class="o">0</span><span class="big-number">3</span></h2>
 		<img src="./img/divider.svg" alt="" class="lg-divider">
-		<p>Aunt Brandi sends you a funny meme. How do you respond?</p>
+		<p><span class="user-name">Aunt Brandi</span> sends you a funny meme. How do you respond?</p>
 		<div class="multiple-choice-container">
 			<div class="buttons-container buttons-multiple-choice">
 				<button type="button" class="img-button-square incorrect-multi"><span></span></button>
@@ -61,7 +73,7 @@
 				<button type="button" class="img-button-square correct-button-multi"><span class="correct-answer-multi"></span></button>
 			</div>
 			<div class="mult-choice-questions">
-				<p>Call Aunt Brandi.</p>
+				<p>Call <span class="user-name">Aunt Brandi</span>.</p>
 				<p class="reply">Reply with every funny meme you've ever seen.</p>
 				<p>Simply type "LOL" or send a laughing emoji.</p>
 			</div>
