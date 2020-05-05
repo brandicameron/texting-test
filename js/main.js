@@ -7,10 +7,11 @@ function captureUserName() {
 		findSpans[i].innerHTML = applyUserName;
 	};
 	document.getElementById("userInfo").classList.add('raise-up');
+	document.getElementById("body").classList.remove('no-overflow');
 };
 
 
-//Make submit button with with enter key press also
+//Make submit button work with enter key press also
 let userInputInfo = document.querySelectorAll(".user-input-info");
 
 userInputInfo.forEach(function (input, index) {
@@ -64,7 +65,7 @@ function loop() {
 loop();
 
 
-// Helper function from: http://stackoverflow.com/a/7557433/274826
+// Helper function from: http://stackoverflow.com/a/7557433/274826 for scroll animations
 function isElementInViewport(el) {
 	var rect = el.getBoundingClientRect();
 	return (
