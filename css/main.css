@@ -11,9 +11,13 @@
 }
 
 body {
-	background-image: url(../img/paper.jpg);
 	font-family: var(--font-regular);
 	color: var(--text-color);
+	height: 100vh;
+}
+
+.paper {
+	background-image: url(../img/paper.jpg);
 }
 
 .no-overflow {
@@ -67,7 +71,6 @@ body {
 
 .user-info-section {
 	position: fixed;
-	background-image: url(../img/paper.jpg);
 	width: 100vw;
 	height: 100vh;
 	z-index: 10;
@@ -137,10 +140,13 @@ body {
 	border: 2px dotted #333;
 	background: rgb(255, 255, 255, .7);
 	padding: 20px 30px;
-	outline: none;
 	font-size: 1.4rem;
 	margin: 20px 10px;
 	letter-spacing: -.04rem;
+}
+
+#userName:focus, #userPhone:focus {
+	outline: none;
 }
 
 #submitButton {
@@ -149,7 +155,6 @@ body {
 	padding: 15px 50px;
 	text-transform: uppercase;
 	margin: 20px auto;
-	outline: none;
 	border: none;
 	border-radius: 3px;
 	cursor: pointer;
@@ -160,7 +165,7 @@ body {
 #submitButton:hover, #submitButton:focus {
 	background-color: #1da72d;
 	box-shadow: inset 0 0 7px rgb(0, 0, 0, .4);
-/*	background-color: #474747;*/
+	outline: none;
 }
 
 ::placeholder {
@@ -180,15 +185,23 @@ p {
 
 /* ---- QUESTION ---- */
 
+.snap-parent {
+	height: 100vh;
+	scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
 .question {
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	margin: 0 auto;
 	height: 100vh;
+	width: 95vw;
 	align-items: center;
-	opacity: 0;
-	top: 0;
+/*	opacity: 0;*/
+	scroll-snap-align: start;
 }
 
 h2 {
@@ -232,12 +245,15 @@ h2 {
 	background-color: rgb(255, 255, 250, .5);
 	padding: 5px 80px 15px 80px;
 	padding-bottom: 14px;
-	outline: none;
 	margin: 30px 10px;
 	letter-spacing: -.04rem;
 	font-family: var(--font-heading);
 	font-size: 2.5rem;
 	cursor: pointer;
+}
+
+.ans-buttons:focus {
+	outline: none;
 }
 
 .incorrect {
@@ -305,9 +321,12 @@ h2 {
 	background-color: rgb(255, 255, 250, .5);
 	padding: 40px 25px;
 	padding-bottom: 10px;
-	outline: none;
 	margin: 15px 10px;
 	cursor: pointer;
+}
+
+.ans-buttons-square:focus {
+	outline: none;
 }
 
 
@@ -355,6 +374,7 @@ h2 {
 	}
 }
 
+/*
 .slide-up.fancy {
 	animation: slide-up .30s ease-out forwards;
 }
@@ -370,6 +390,7 @@ h2 {
 		opacity: 1;
 	}
 }
+*/
 
 .delay-100.fancy {
 	animation-delay: 100ms;
@@ -389,6 +410,10 @@ h2 {
 
 .delay-500.fancy {
 	animation-delay: 500ms;
+}
+
+.delay-900.fancy {
+	animation-delay: 900ms;
 }
 
 
