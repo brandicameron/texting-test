@@ -26,19 +26,17 @@ userInputInfo.forEach(function (input, index) {
 
 //Adds green checkmark when correct answer is selected
 let correctBtn = document.querySelectorAll('.correct');
-let correctBtnMulti = document.querySelectorAll('.correct-button-multi');
-let correctAnswerCheck = document.querySelectorAll('.correct-answer');
-let correctAnswerCheckMulti = document.querySelectorAll('.correct-answer-multi');
+let correctMulti = document.querySelectorAll('.correct-answer-multi');
 
 correctBtn.forEach(function (btn, index) {
 	btn.addEventListener('click', function () {
-		correctAnswerCheck[index].classList.add('correct-clicked');
+		correctBtn[index].classList.add('correct-clicked');
 	});
 });
 
-correctBtnMulti.forEach(function (btn, index) {
+correctMulti.forEach(function (btn, index) {
 	btn.addEventListener('click', function () {
-		correctAnswerCheckMulti[index].classList.add('correct-clicked-multi');
+		correctMulti[index].classList.add('correct-clicked-multi');
 	});
 });
 
