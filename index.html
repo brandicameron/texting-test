@@ -20,15 +20,19 @@
 <body id="body" class="no-overflow">
 	
 	<section class="user-info-section" id="userInfo">
+	<img src="./img/logo.svg" alt="" class="logo">
 	<header>
-	<img src="./img/logo-full.svg" alt="" class="logo">
 	<p class="header-sm">Did a pre-teen in your family just get a new cell phone? Make them take a texting etiquette test before you give them your number!</p>
 	<p class="note">(don't worry, we'll make sure they pass)</p>
 	</header>
+	<div class="form-elements">
+	<div class="input-buttons-container">
 		<input type="text" id="userName" class="user-input-info" name="user-name" placeholder="Your Name (ex. Uncle Luke)">
 		<input type="tel" id="userPhone" class="user-input-info" name="user-phone" placeholder="The Prize Phone Number">
 		<p id="username-warning" class="username-warning"></p>
+		</div>
 		<input type="button" value="Begin Test" id="submitButton" onClick="captureUserName();">
+		</div>
 	</section>
 
 	<div class="frame">
