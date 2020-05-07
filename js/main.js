@@ -44,6 +44,7 @@ correctMulti.forEach(function (btn, index) {
 
 
 //Scroll animations
+
 //let scroll = window.requestAnimationFrame ||
 //	function (callback) {
 //		window.setTimeout(callback, 1000 / 60)
@@ -75,4 +76,5 @@ correctMulti.forEach(function (btn, index) {
 //			rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
 //	);
 //}
+
 // Helper function from: http://stackoverflow.com/a/7557433/274826 for scroll animations

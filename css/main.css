@@ -23,7 +23,7 @@ body {
 .no-overflow {
 	position: fixed;
 	overflow: hidden;
-	
+
 }
 
 /* ---- FRAME ---- */
@@ -117,6 +117,7 @@ body {
 	99% {
 		transform: translateY(-100vh);
 	}
+
 	100% {
 		transform: translateY(-100vh);
 		display: none;
@@ -138,7 +139,8 @@ body {
 	flex-direction: column;
 }
 
-#userName, #userPhone {
+#userName,
+#userPhone {
 	border: 2px dotted #333;
 	background: rgb(255, 255, 255, .7);
 	padding: 20px 30px;
@@ -147,7 +149,8 @@ body {
 	letter-spacing: -.04rem;
 }
 
-#userName:focus, #userPhone:focus {
+#userName:focus,
+#userPhone:focus {
 	outline: none;
 }
 
@@ -164,7 +167,8 @@ body {
 	width: 250px;
 }
 
-#submitButton:hover, #submitButton:focus {
+#submitButton:hover,
+#submitButton:focus {
 	background-color: #1da72d;
 	box-shadow: inset 0 0 7px rgb(0, 0, 0, .4);
 	outline: none;
@@ -187,12 +191,14 @@ p {
 
 .get-phone {
 	padding-bottom: 50px;
+	margin-top: -60px;
 }
 
 .instructions {
 	text-align: center;
 	padding: 0 100px;
 	line-height: 125%;
+	max-width: 1500px;
 }
 
 
@@ -202,7 +208,7 @@ p {
 .snap-parent {
 	height: 100vh;
 	scroll-snap-type: y mandatory;
-  overflow-y: scroll;
+	overflow-y: scroll;
 }
 
 .question {
@@ -369,7 +375,7 @@ h2 {
 	0% {
 		transform: scale(0);
 	}
-	
+
 	25% {
 		transform: scale(0);
 	}
@@ -403,7 +409,6 @@ h2 {
 		opacity: 1;
 	}
 }
-*/
 
 .delay-100.fancy {
 	animation-delay: 100ms;
@@ -428,6 +433,7 @@ h2 {
 .delay-900.fancy {
 	animation-delay: 900ms;
 }
+*/
 
 
 
@@ -436,41 +442,42 @@ h2 {
 
 
 @media screen and (max-width: 450px) {
-	
+
 	.user-info-section {
 		justify-content: center;
 	}
-	
+
 	.logo {
 		min-width: 220px;
 		margin-top: -130px;
-}
-	
+	}
+
 	.intro {
 		letter-spacing: -.04rem;
 		line-height: 120%;
 		padding: 0 10px;
 		font-size: 1.25rem;
 	}
-	
-	#userName, #userPhone {
-	padding: 12px 20px;
-	font-size: 1.4rem;
-	margin: 10px 10px;
-}
-	
+
+	#userName,
+	#userPhone {
+		padding: 12px 20px;
+		font-size: 1.4rem;
+		margin: 10px 10px;
+	}
+
 	#submitButton {
-	margin: 15px auto;
-	width: 180px;
-}
+		margin: 15px auto;
+		width: 180px;
+	}
 
 	.instructions {
-	text-align: center;
-	padding: 0 10px;
-	line-height: 125%;
-	font-size: 3rem;
-}
-	
+		text-align: center;
+		padding: 0 10px;
+		line-height: 125%;
+		font-size: 3rem;
+	}
+
 
 	.question {
 		margin-top: -40px;
@@ -495,7 +502,7 @@ h2 {
 		font-weight: normal;
 		margin-top: -25px;
 	}
-	
+
 	.word-question {
 		margin-top: -100px;
 	}
@@ -524,21 +531,21 @@ h2 {
 	}
 
 	.ans-buttons {
-	padding: 5px 40px 15px 40px;
-	padding-bottom: 14px;
-	margin: 30px 10px;
-	font-size: 2.5rem;
-}
-	
+		padding: 5px 40px 15px 40px;
+		padding-bottom: 14px;
+		margin: 30px 10px;
+		font-size: 2.5rem;
+	}
+
 	.correct-clicked::after {
-	left: 10%;
-}
+		left: 10%;
+	}
 
 	.ans-buttons-square {
-	padding: 30px 20px;
-	padding-bottom: 10px;
-	margin: 15px 10px;
-}
+		padding: 30px 20px;
+		padding-bottom: 10px;
+		margin: 15px 10px;
+	}
 
 	.mult-choice-questions > p {
 		font-size: 1.3rem;
@@ -547,10 +554,10 @@ h2 {
 		width: 250px;
 		margin: 30px 0;
 	}
-	
+
 	.incorrect-multi:focus::before,
-.incorrect-multi:hover::before {
-	left: 12px;
-	margin-top: -29px;
-}
+	.incorrect-multi:hover::before {
+		left: 12px;
+		margin-top: -29px;
+	}
 }
