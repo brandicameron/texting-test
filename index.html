@@ -8,111 +8,60 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Brandi Cameron | hello@brandicameron.com">
 	<meta name="theme-color" content="#ffffff">
-	<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600&family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/main.css">
-	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Karla:700&display=swap" rel="stylesheet">
-
-	<!-- Add Favicons/Icons Here -->
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#746afe">
+	<meta name="msapplication-TileColor" content="#603cba">
+	<meta name="theme-color" content="#ffffff">
 
 </head>
 
-<body id="body" class="no-overflow paper">
+<!--	******************* INTRO  *******************  -->
 
-	<div class="frame">
-		<img src="./img/corner.svg" alt="" class="corner1">
-		<img src="./img/corner2.svg" alt="" class="corner2">
-		<img src="./img/corner2.svg" alt="" class="corner3">
-		<img src="./img/corner.svg" alt="" class="corner4">
-	</div>
-
-	<section class="paper user-info-section" id="userInfo">
-	<img src="./img/logo.svg" alt="" class="logo">
-	<header>
-	<p class="intro">Did a pre-teen in your family just get their first cell phone? Make them take a texting etiquette test before you give them your number!</p>
-	<p class="note">(don't worry, we'll make sure they pass)</p>
-	</header>
-	<div class="form-elements">
-	<div class="input-buttons-container">
-		<input type="text" id="userName" class="user-input-info" name="user-name" placeholder="Your Name (ex. Uncle Luke)">
-		<input type="tel" id="userPhone" class="user-input-info" name="user-phone" placeholder="The Prize Phone Number">
-		<p id="username-warning" class="username-warning"></p>
-		</div>
-		<input type="button" value="Begin Test" id="submitButton" onClick="captureUserName();">
+<body>
+<!-- .lift-intro -->
+	<section class="sections section1"> 
+		<div class="screen1 flex-col-cen">
+			<div class="description flex-col-cen">
+				<div class="logo"></div>
+				<p>Did a pre-teen in your life just get their first cell phone?
+					Make them pass this test before giving them your number.</p>
+			</div>
+			<div class="user-input-section flex-col-cen">
+				<div class="user-input">
+					<input type="text" placeholder="Your Name (ex. Uncle Luke)">
+					<input type="text" placeholder="The Prize Phone Number">
+				</div>
+				<button class="begin">Begin Test</button>
+			</div>
 		</div>
 	</section>
 	
-	<div class="snap-parent animate slide-up delay-400">
 	
-	<div class="question">
-			<p class="get-phone">Did you finally get a cell phone??</p>
-		<h2 class="instructions">Answer all questions correctly to get <span class="user-name">Sample Name</span>&#39;s phone number... </h2>
-	</div>
+<!--	******************* QUESTION 1  *******************  -->
 
-	<div class="question animate slide-up delay-400">
-		<h2 class="word-question">Question</h2>
-		<h2 class="no">N<span class="o">0</span><span class="big-number">1</span></h2>
-		<img src="./img/divider.svg" alt="" class="lg-divider">
-		<p>It is before noon on a weekend, is it okay to text <span class="user-name">Sample Name</span>?</p>
-		<div class="buttons-container">
-			<button type="button" class="ans-buttons incorrect"><span>yes</span></button>
-			<button type="button" class="ans-buttons correct"><span>no</span></button>
-		</div>
-	</div>
 
-	<div class="question animate slide-up delay-400">
-		<h2 class="word-question">Question</h2>
-		<h2 class="no">N<span class="o">0</span><span class="big-number">2</span></h2>
-		<img src="./img/divider.svg" alt="" class="lg-divider">
-		<p>Is it ever okay to include <span class="user-name">Sample Name</span> in a group text?</p>
-		<div class="buttons-container">
-			<button type="button" class="ans-buttons incorrect"><span>yes</span></button>
-			<button type="button" class="ans-buttons correct"><span>no</span></button>
-		</div>
-	</div>
-
-	<div class="question animate slide-up delay-400">
-		<h2 class="word-question">Question</h2>
-		<h2 class="no">N<span class="o">0</span><span class="big-number">3</span></h2>
-		<img src="./img/divider.svg" alt="" class="lg-divider">
-		<p><span class="user-name">Sample Name</span> sends you a funny meme. How do you respond?</p>
-		<div class="multiple-choice-container">
-			<div class="buttons-container buttons-multiple-choice">
-				<button type="button" class="ans-buttons-square multi incorrect-multi"></button>
-				<button type="button" class="ans-buttons-square multi correct-answer-multi"></button>
-			</div>
-			<div class="mult-choice-questions">
-				<p class="reply">Reply with every funny meme you've ever seen.</p>
-				<p>Simply type "LOL" or send a laughing emoji.</p>
+	<section class="sections section2">
+		<div class="screen2 flex-col-cen">
+			<a href="index.html"><img src="./img/mini-logo.svg" alt="" class="mini-logo"></a>
+			<h2>N<span class="o">o</span><span class="lg-num">1</span></h2>
+			<div class="divider"></div>
+			<p>It is before noon on a weekend, <br class="p-break">is it okay to text Aunt Brandi?</p>
+			<div class="answers">
+				<button type="button" class="ans-button-left incorrect"><span>yes</span></button>
+				<button type="button" class="ans-button-right correct"><span>no</span></button>
 			</div>
 		</div>
-	</div>
-	
-	<div class="question animate slide-up delay-400">
-		<h2 class="word-question">Question</h2>
-		<h2 class="no">N<span class="o">0</span><span class="big-number">4</span></h2>
-		<img src="./img/divider.svg" alt="" class="lg-divider">
-		<p>You just got a picture/video of a family member doing something REALLY embarrasing. Do you text it to <span class="user-name">Sample Name</span> immediately?</p>
-		<div class="buttons-container">
-			<button type="button" class="ans-buttons correct"><span>yes</span></button>
-			<button type="button" class="ans-buttons incorrect"><span>no</span></button>
-		</div>
-	</div>
-	
-	<div class="question animate slide-up delay-400">
-		<h2 class="word-question">Question</h2>
-		<h2 class="no">N<span class="o">0</span><span class="big-number">5</span></h2>
-		<img src="./img/divider.svg" alt="" class="lg-divider">
-		<p>You and your friends just made the funniest 20 minute video EVER. Do you send it to <span class="user-name">Sample Name</span>?</p>
-		<div class="buttons-container">
-			<button type="button" class="ans-buttons incorrect"><span>yes</span></button>
-			<button type="button" class="ans-buttons correct"><span>no</span></button>
-		</div>
-	</div>
-
-</div>
+	</section>
 
 
+
+	<a href="https://brandicameron.com/" target="_blank" class="cred">brandicameron.com</a>
 	<script src="js/main.js"></script>
 </body>
 

@@ -1,0 +1,19 @@
+<svg id="Mini_Logo" data-name="Mini Logo" xmlns="http://www.w3.org/2000/svg" width="79.781" height="76.719" viewBox="0 0 79.781 76.719">
+  <defs>
+    <style>
+      .cls-1 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        font-size: 857.917px;
+        fill: #171717;
+        text-anchor: middle;
+        font-family: Poppins;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <path id="bubble_outline" data-name="bubble outline" class="cls-1" d="M116.255,956.065H101.17L65.026,980.73V956.065H55.75a9.8,9.8,0,0,1-9.64-9.889V913.9a9.8,9.8,0,0,1,9.64-9.889h60.5a9.8,9.8,0,0,1,9.64,9.889v32.273A9.8,9.8,0,0,1,116.255,956.065Zm1.774-42.162a1.968,1.968,0,0,0-1.774-2.034H55.746a1.968,1.968,0,0,0-1.774,2.034v32.273a1.968,1.968,0,0,0,1.774,2.034H72.888v7.855L73,966l23.171-16,2.175-1.787h17.909a1.968,1.968,0,0,0,1.774-2.034V913.9Z" transform="translate(-46.125 -904)"/>
+  <text id="TET" class="cls-2" transform="translate(39.304 35.909) scale(0.034 0.034)">TET</text>
+</svg>
