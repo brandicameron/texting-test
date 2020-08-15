@@ -56,7 +56,11 @@ input {
 input::placeholder {
 	font-size: 1rem;
 	color: #b1b1b1;
-	vertical-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 75px;
+/*	vertical-align: center;*/
 }
 
 :focus {
@@ -142,10 +146,12 @@ a:hover {
 }
 
 .mini-logo {
-	position: absolute;
-	top: 50px;
-	left: 50px;
-}
+		position: absolute;
+		width: 75px;
+		z-index: 9;
+		top: 15px;
+		left: 15px;
+	}
 
 /* The "No" in front of each question number */
 
@@ -232,7 +238,7 @@ a:hover {
 	background-repeat: repeat;
 	background-size: 6px;
 	padding: 5px;
-	margin: 15px auto 100px auto;
+	margin: 15px auto 50px auto;
 }
 
 .answers {
@@ -300,7 +306,7 @@ a:hover {
 		height: 95vh;
 		width: 90vw;
 		padding: 18vh 0;
-		justify-content: space-b;
+		justify-content: space-around;
 	}
 
 	.screen-content {
