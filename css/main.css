@@ -293,8 +293,8 @@ a:hover {
 		padding: 50px 5px;
 	}
 	
-	.user-input-section {
-		padding-top: 5px;
+	.user-input {
+		margin-top: -70px;
 	}
 
 	.mini-logo {
@@ -311,21 +311,11 @@ a:hover {
 		width: 90vw;
 		padding: 18vh 0;
 		justify-content: space-around;
-	}
-
-	.screen-content {
-		margin-top: -75px;
-	}
-}
-
-@media screen and (max-width: 500px) {
-	.screen1,
-	.screen2 {
 		transform: scale(.95);
 	}
-	
+
 	.screen-content {
-		margin-top: -30px;
+		margin-top: -25px;
 		transform: scale(.90);
 	}
 }
