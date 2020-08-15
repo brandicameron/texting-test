@@ -76,13 +76,17 @@ input::placeholder {
 	color: #ffffff;
 	font-family: var(--font-heading);
 	font-weight: 700;
-	filter: drop-shadow(7px 7px 0 rgb(255 255 255 /80%));
+	filter: drop-shadow(7px 7px 0 rgb(255 255 255 /30%));
 	margin-top: 15px;
 }
 
 .answers {
 	display: flex;
 	justify-content: center;
+}
+
+button {
+	cursor: pointer;
 }
 
 .ans-button-left,
@@ -266,12 +270,13 @@ a:hover {
 }
 
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
 
 	.logo {
 		background-image: url(../img/logo-m.svg);
 		width: 275px;
 		height: 105px;
+		margin: 0 auto 15px auto;
 	}
 
 	.description {
@@ -313,5 +318,17 @@ a:hover {
 
 	.screen-content {
 		margin-top: -75px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.screen1,
+	.screen2 {
+		transform: scale(.95);
+	}
+	
+	.screen-content {
+		margin-top: -30px;
+		transform: scale(.90);
 	}
 }
