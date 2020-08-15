@@ -272,13 +272,9 @@ a:hover {
 		background-image: url(../img/logo-m.svg);
 		width: 275px;
 		height: 105px;
-/*		margin: 0 auto 15px auto;*/
+		margin-bottom: -20px;
 	}
-
-	.description {
-		padding-bottom: 20px;
-	}
-
+	
 	input {
 		width: 275px;
 	}
