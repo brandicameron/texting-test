@@ -1,4 +1,7 @@
-//Applying user's name to questions
+//Applying user's name to questions and lift intro section when "Begin Test" is clicked
+
+const beginTestBtn = document.getElementById('begin-test');
+
 function captureUserName() {
 	let applyUserName = document.getElementById("userName").value;
 	let findSpans = document.getElementsByClassName("user-name");
@@ -6,19 +9,21 @@ function captureUserName() {
 	for (i = 0; i < loopSpans; i++) {
 		findSpans[i].innerHTML = applyUserName;
 	};
-	document.getElementById("userInfo").classList.add('raise-up');
+	document.getElementById("section1").classList.add('lift-intro');
 	document.getElementById("body").classList.remove('no-overflow');
 };
 
+beginTestBtn.addEventListener('click', captureUserName);
+
 
 //Make submit button work with enter key press also
-let userInputInfo = document.querySelectorAll(".user-input-info");
+let userInputInfo = document.querySelectorAll(".user-input");
 
 userInputInfo.forEach(function (input, index) {
 	input.addEventListener("keyup", function (event) {
 		event.preventDefault();
 		if (event.keyCode === 13) {
-			document.getElementById("submitButton").click();
+			beginTestBtn.click();
 		};
 	});
 });
@@ -39,42 +44,3 @@ correctMulti.forEach(function (btn, index) {
 		correctMulti[index].classList.add('correct-clicked-multi');
 	});
 });
-
-
-
-
-//Scroll animations
-
-//let scroll = window.requestAnimationFrame ||
-//	function (callback) {
-//		window.setTimeout(callback, 1000 / 60)
-//	};
-//
-//let animationTarget = document.querySelectorAll('.animate');
-//
-//function loop() {
-//	animationTarget.forEach(function (element) {
-//		if (isElementInViewport(element)) {
-//			element.classList.add('fancy');
-//		} else {
-//			element.classList.remove('fancy');
-//		}
-//	});
-//	scroll(loop);
-//}
-//
-//loop();
-//
-//function isElementInViewport(el) {
-//	var rect = el.getBoundingClientRect();
-//	return (
-//		(rect.top <= 0 &&
-//			rect.bottom >= 0) ||
-//		(rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
-//			rect.top <= (window.innerHeight || document.documentElement.clientHeight)) ||
-//		(rect.top >= 0 &&
-//			rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
-//	);
-//}
-
-// Helper function from: http://stackoverflow.com/a/7557433/274826 for scroll animations
