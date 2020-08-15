@@ -19,10 +19,10 @@ body {
 }
 
 .cred {
+	position: absolute;
 	color: #000;
-	position: fixed;
-	bottom: 55px;
-	right: 60px;
+	bottom: 25px;
+	text-align: center;
 	opacity: .1;
 	font-size: 1rem;
 }
@@ -249,21 +249,19 @@ a:hover {
 
 
 @media screen and (max-width: 800px) {
-	.screen1 {
+	.screen1,
+	.screen2 {
 		width: 90vw;
 		height: 93vh;
 		padding: 15vh 5vw;
 	}
+	
+	.user-input-section {
+		padding-top: 50px;
+	}
 
 	input {
 		margin: 10px;
-	}
-
-	.cred {
-		width: 100vw;
-		display: flex;
-		justify-content: center;
-		right: 0;
 	}
 }
 
@@ -291,6 +289,10 @@ a:hover {
 	p {
 		width: 290px;
 		font-size: 1.4rem;
+	}
+	
+	.user-input-section {
+		padding-top: 5px;
 	}
 
 	.mini-logo {
