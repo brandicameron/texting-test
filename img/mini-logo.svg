@@ -1,19 +1,18 @@
-<svg id="Mini_Logo" data-name="Mini Logo" xmlns="http://www.w3.org/2000/svg" width="79.781" height="76.719" viewBox="0 0 79.781 76.719">
-  <defs>
-    <style>
-      .cls-1 {
-        fill-rule: evenodd;
-      }
-
-      .cls-2 {
-        font-size: 857.917px;
-        fill: #171717;
-        text-anchor: middle;
-        font-family: Poppins;
-        font-weight: 700;
-      }
-    </style>
-  </defs>
-  <path id="bubble_outline" data-name="bubble outline" class="cls-1" d="M116.255,956.065H101.17L65.026,980.73V956.065H55.75a9.8,9.8,0,0,1-9.64-9.889V913.9a9.8,9.8,0,0,1,9.64-9.889h60.5a9.8,9.8,0,0,1,9.64,9.889v32.273A9.8,9.8,0,0,1,116.255,956.065Zm1.774-42.162a1.968,1.968,0,0,0-1.774-2.034H55.746a1.968,1.968,0,0,0-1.774,2.034v32.273a1.968,1.968,0,0,0,1.774,2.034H72.888v7.855L73,966l23.171-16,2.175-1.787h17.909a1.968,1.968,0,0,0,1.774-2.034V913.9Z" transform="translate(-46.125 -904)"/>
-  <text id="TET" class="cls-2" transform="translate(39.304 35.909) scale(0.034 0.034)">TET</text>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.1.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Mini_Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 79.8 76.7" style="enable-background:new 0 0 79.8 76.7;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;}
+	.st1{enable-background:new    ;}
+	.st2{fill:#171717;}
+</style>
+<path id="bubble_outline" class="st0" d="M70.1,52.1H55L18.9,76.7V52.1H9.6C4.2,52-0.1,47.6,0,42.2V9.9c0-5.4,4.3-9.8,9.6-9.9h60.5
+	c5.4,0.1,9.7,4.5,9.6,9.9v32.3C79.8,47.6,75.5,52,70.1,52.1z M71.9,9.9c0-1-0.7-1.9-1.8-2H9.6c-1,0.1-1.8,1-1.8,2v32.3
+	c0,1,0.7,1.9,1.8,2h17.1v7.9l0.1,9.9L50,46l2.2-1.8h17.9c1-0.1,1.8-1,1.8-2L71.9,9.9L71.9,9.9z"/>
+<g class="st1">
+	<path class="st2" d="M31.1,15.3v4h-5.6v16.7h-5V19.3h-5.5v-4H31.1z"/>
+	<path class="st2" d="M38.2,19.3v4.3h7v3.8h-7v4.6H46v4H33.2V15.3H46v4H38.2z"/>
+	<path class="st2" d="M63.7,15.3v4h-5.6v16.7h-5V19.3h-5.5v-4H63.7z"/>
+</g>
 </svg>

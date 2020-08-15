@@ -78,6 +78,7 @@ input::placeholder {
 
 .answers {
 	display: flex;
+	justify-content: center;
 }
 
 .ans-button-left,
@@ -89,7 +90,7 @@ input::placeholder {
 	height: 100px;
 	background-size: cover;
 	border: none;
-	margin: 35px 15px;
+	margin: 35px 10px;
 	font-family: var(--font-heading);
 	font-size: 2rem;
 	font-weight: 700;
@@ -117,14 +118,17 @@ a:hover {
 	width: 100vw;
 	height: 100vh;
 	background-color: #ffffff;
+	/*
 	background-image: url("../img/polkadot.svg");
 	background-repeat: repeat;
+*/
 	background-size: 14px;
 	text-align: center;
 }
 
 .screen1,
 .screen2 {
+	position: relative;
 	width: 95vw;
 	height: 93vh;
 	display: flex;
@@ -180,8 +184,9 @@ a:hover {
 /*  ******************* INTRO SECTION / SCREEN 1 *******************  */
 
 .section1 {
-/*	position: fixed;*/
+	/*	position: fixed;*/
 	position: relative;
+	background-color: #fcf66d;
 	box-shadow: 5px 5px 15px rgb(0 0 0 /40%);
 	z-index: 10;
 }
@@ -210,8 +215,11 @@ a:hover {
 /*  ******************* SCREEN 2 *******************  */
 
 .section2 {
+	/*
 	background-image: url("../img/stripes.svg");
 	background-size: 10px;
+*/
+	background-color: #6bfdfd;
 }
 
 .screen2 {
@@ -224,7 +232,7 @@ a:hover {
 	background-repeat: repeat;
 	background-size: 6px;
 	padding: 5px;
-	margin: 15px 0 100px 0;
+	margin: 15px auto 100px auto;
 }
 
 .answers {
@@ -255,24 +263,19 @@ a:hover {
 
 
 @media screen and (max-width: 400px) {
-	.screen1 {
-		justify-content: space-around;
-		padding: 15vh 5vw;
-	}
-
-	.description,
-	.user-input-section {
-		transform: scale(.95);
-	}
 
 	.logo {
 		background-image: url(../img/logo-m.svg);
-		width: 300px;
+		width: 275px;
 		height: 105px;
 	}
 
 	.description {
 		padding-bottom: 20px;
+	}
+
+	input {
+		width: 275px;
 	}
 
 	.p-break {
@@ -281,17 +284,26 @@ a:hover {
 
 	p {
 		width: 290px;
+		font-size: 1.4rem;
+	}
+
+	.mini-logo {
+		position: absolute;
+		width: 55px;
+		z-index: 9;
+		top: 10px;
+		left: 10px;
 	}
 
 	.screen1,
 	.screen2 {
-		height: 85vh;
+		height: 95vh;
 		width: 90vw;
+		padding: 18vh 0;
+		justify-content: space-b;
 	}
-	
-	.mini-logo {
-		transform: scale(.8);
-		top: 67px;
-		left: 25px;
+
+	.screen-content {
+		margin-top: -75px;
 	}
 }
