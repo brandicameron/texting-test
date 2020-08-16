@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Brandi Cameron | hello@brandicameron.com">
 	<meta name="theme-color" content="#ffffff">
-	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600&family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@523&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -20,48 +20,94 @@
 	<meta name="theme-color" content="#ffffff">
 </head>
 
-<!--	******************* INTRO  *******************  -->
+<body id="body" class="overflow">
 
-<body>
-	<!-- .lift-intro -->
-	<section id="section1" class="sections section1">
-		<div class="screen1 flex-col-cen">
-		<div class="screen-content">
 
-			<div class="description flex-col-cen">
-				<div class="logo"></div>
-				<p>Did a pre-teen in your life just get their first cell phone? <br> Quiz them before giving them your number.</p>
+	<!--	******************* INTRO  *******************  -->
+
+	<section id="intro-section" class="intro-section yellow">
+		<div class="section-content purple border">
+			<picture>
+				<source media="(max-width: 500px)" srcset="./img/logo-m.svg">
+				<img src="./img/logo.svg" alt="Texting Etiquette Test Logo" class="logo">
+			</picture>
+			<h1 class="intro-text">
+				Did a pre-teen in your life just get their first cell phone? Make them pass this test before giving them your number!
+			</h1>
+			<div class="user-input-buttons">
+				<input id="userName" class="user-input" type="text" placeholder="Your Name (ex. Uncle Luke)" autofocus>
+				<input id="userNumber" class="user-input" type="tel" placeholder="The Prize Phone Number">
 			</div>
-			<div class="user-input-section flex-col-cen">
-				<div class="user-input">
-					<input id="userName" type="text" placeholder="Your Name (ex. Uncle Luke)" autofocus required>
-					<input type="tel" placeholder="The Prize Phone Number" required>
-				</div>
-				<button id="begin-test" class="begin-test" type="button">Begin Test!</button>
-			</div>
-			</div>
+			<button type="button" class="begin-test button" id="begin-test-intro">Begin Test</button>
 		</div>
 	</section>
 
+	<!--	******************* PLAYER INSTRUCTIONS  *******************  -->
+
+	<section id="player-instructions" class="turquoise">
+		<div class="section-content yellow border">
+			<h2>👋 Hi there.</h2>
+			<p class="congrats">Congratulations on your new phone!</p>
+			<p>
+				Answer ALL questions correctly and you will be granted <span class="user-name"></span>'s cell number.
+			</p>
+			<a class="button begin-test" href="#question-1">Begin Test</a>
+		</div>
+	</section>
 
 	<!--	******************* QUESTION 1  *******************  -->
 
-
-	<section class="sections section2">
-		<div class="screen2 flex-col-cen">
-			<a href="index.html"><img src="./img/mini-logo.svg" alt="" class="mini-logo"></a>
+	<section id="question-1" class="green">
+		<div class="section-content turquoise border">
 			<div class="screen-content">
-				<h2>N<span class="o">o</span><span class="lg-num">1</span></h2>
+				<h2>N<span class="o">o</span><span class="fs-xlg">1</span></h2>
 				<div class="divider"></div>
 				<p>It is before noon on a weekend, <br class="p-break">is it okay to text <span class="user-name"></span>?</p>
-				<div class="answers">
-					<button type="button" class="ans-button-left incorrect"><span>yes</span></button>
-					<button type="button" class="ans-button-right correct"><span>no</span></button>
+				<div class="ans-bubbles-container">
+			
+					<input type="checkbox" id="wrong-button" name="wrong-button" />
+					<label for="wrong-button">yes</label>
+					
+					<input type="checkbox" id="correct-button" name="correct-button" />
+					<label for="correct-button">
+					<a href="#question-2">
+					no
+						</a>
+					</label>
+					
 				</div>
 			</div>
-<a href="https://brandicameron.com/" target="_blank" class="cred">brandicameron.com</a>
 		</div>
 	</section>
+
+	<!--	******************* QUESTION 2  *******************  -->
+
+	<section id="question-2" class="purple">
+		<div class="section-content green border">
+		</div>
+	</section>
+
+	<!--	******************* QUESTION 3  *******************  -->
+
+	<section id="question-3" class="yellow">
+		<div class="section-content purple border">
+		</div>
+	</section>
+
+	<!--	******************* QUESTION 4  *******************  -->
+
+	<section id="question-4" class="turquoise">
+		<div class="section-content yellow border">
+		</div>
+	</section>
+
+	<!--	******************* QUESTION 5  *******************  -->
+
+	<section id="question-5" class="green">
+		<div class="section-content turquoise border">
+		</div>
+	</section>
+
 	<script src="js/main.js"></script>
 </body>
 
