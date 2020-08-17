@@ -29,20 +29,20 @@
 		<div class="content">
 			<h1 class="logo">Texting<br>Test <span class="logo-emoji">😈</span></h1>
 			<div class="intro-text">
-				<p class="white-text margin-bottom-sm">Did a pre-teen in your life just get their first phone?</p>
+				<p class="white-text">Did a pre-teen in your life just get their first phone?</p>
 			<p>Have them answer a few very important questions before giving them your number...</p>
 			</div>
 			<form action="submit" class="user-input">
 				<div>
 					<label for="name"></label>
-					<input type="text" name="name" id="name" placeholder="Your Name (ex. Uncle Luke)" required>
+					<input id="userName" type="text" name="name" id="name" placeholder="Your Name (ex. Uncle Luke)" autofocus>
 				</div>
 				<div>
 					<label for="number"></label>
-					<input type="tel" name="number" id="number" placeholder="The Prize Phone Number" required>
+					<input id="userNumber" type="tel" name="number" id="number" placeholder="The Prize Phone Number">
 				</div>
-				<div>
-					<input type="submit" value="Begin Test" id="submit" class="submit">
+				<div class="intro-button">
+					<button type="button" class="begin-test button" id="begin-test-button">Begin Test</button>
 				</div>
 			</form>
 			<p class="sm-text">(Don’t worry, we’ll make sure they pass)</p>
@@ -52,21 +52,94 @@
 	
 	<!--	******************* PLAYER INSTRUCTIONS  *******************  -->
 	
-	<section class="instructions-section">
-		<div class="content">
-			<h1 class="hi">👋 Hi <br>there.</h1>
+	<section id="player-instructions" class="instructions-section">
+		<div class="content margin-top">
+			<h1 class="hi"><span id="hi" class="fake">👋 </span> Hi <br>there.</h1>
 			<p>Congratulations on getting a new phone!</p>
 			<p>Answer ALL questions correctly and you will be granted <span class="user-name"></span>'s number. 😜</p>
-			<input type="button" value="Begin Test" class="submit begin-test">
+			<a href="#question-1">
+			<button type="button" class="begin-test button" id="begin-test-button">Begin Test</button></a>
 		</div>
 	</section>
 
 	
 	<!--	******************* QUESTION 1  *******************  -->
+	
+	<section id="question-1" class="question1">
+		<div class="number-header">
+			<h1>N<span class="o">o</span></h1>
+			<div class="lg-number">1</div>
+		</div>
+		<div class="content question-content">
+			<p>It is before noon on a weekend.
+				Is it okay to text <span class="user-name"></span>?</p>
+				<div class="answer-choices">
+					<div class="yes incorrect">yes</div>
+					<div class="no correct" onclick="delayedJump('#question2')">no</div>
+				</div>
+				<div class="progress-bar">
+			<div class="circle circle-filled"></div>
+			<div class="circle"></div>
+			<div class="circle"></div>
+			<div class="circle"></div>
+			<div class="circle"></div>
+		</div>
+		</div>
+	</section>
 
 	<!--	******************* QUESTION 2  *******************  -->
+	
+	<section id="question2" class="question2">
+		<div class="number-header">
+			<h1>N<span class="o">o</span></h1>
+			<div class="lg-number">2</div>
+		</div>
+		<div class="content question-content">
+			<p>Is it ever okay to include <span class="user-name"></span> in a group text?</p>
+				<div class="answer-choices">
+					<div class="yes incorrect">yes</div>
+					<div class="no correct" onclick="delayedJump('#question3')">no</div>
+				</div>
+				<div class="progress-bar">
+			<div class="circle circle-filled"></div>
+			<div class="circle circle-filled"></div>
+			<div class="circle"></div>
+			<div class="circle"></div>
+			<div class="circle"></div>
+		</div>
+		</div>
+	</section>
 
 	<!--	******************* QUESTION 3  *******************  -->
+	
+	<section id="question3" class="question3">
+		<div class="number-header">
+			<h1>N<span class="o">o</span></h1>
+			<div class="lg-number">3</div>
+		</div>
+		<div class="content question-content">
+			<p><span class="user-name"></span> sends you a funny meme. How do you respond?</p>
+				<div class="answer-choices multi-choice">
+					
+					<div class="option">
+						<div class="yes incorrect"></div>
+					<p>Reply with every funny meme you've ever seen.</p>
+					</div>
+					
+					<div class="option">
+					<div class="yes correct" onclick="delayedJump('#question4')"></div>
+					<p class="padding-top-20">Simply type "LOL" or send a laughing emoji.</p>
+					</div>
+				</div>
+				<div class="progress-bar">
+			<div class="circle circle-filled"></div>
+			<div class="circle circle-filled"></div>
+			<div class="circle circle-filled"></div>
+			<div class="circle"></div>
+			<div class="circle"></div>
+		</div>
+		</div>
+	</section>
 
 	<!--	******************* QUESTION 4  *******************  -->
 

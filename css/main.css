@@ -2,7 +2,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	/*	  outline: 2px solid red;*/
+/*	outline: 2px solid red;*/
 }
 
 :root {
@@ -13,6 +13,9 @@
 	--yellow: #fcf66d;
 	--green: #6bfd74;
 	--turquoise: #6bfdfd;
+	--pinkish: #fc7474;
+	--peach: #fed971;
+	--purply: #db6bfe;
 }
 
 html {
@@ -26,7 +29,7 @@ body {
 	height: 100vh;
 	width: 100vw;
 	font-size: 1.4rem;
-/*	overflow: hidden;*/
+	overflow: hidden;
 }
 
 
@@ -46,27 +49,36 @@ h1 {
 }
 
 p {
-	font-size: 1.35rem;
-	line-height: 1.65rem;
+	font-family: var(--font-regular);
+	font-size: 1.5rem;
+	line-height: 1.75rem;
 	padding: 12px 0 0 0;
-	letter-spacing: -.05rem;
+	letter-spacing: -.02rem;
+	font-weight: 700;
 }
 
 .white-text {
 	color: #fff;
-	font-weight: 700;
+	font-weight: 900;
 }
 
 .sm-text {
 	font-size: .8rem;
-	margin-top: -5px;
+	margin-top: -15px;
 }
 
-.margin-bottom-sm {
-	margin-bottom: 10px;
+/* used on multi-choice questions */
+.padding-top-20 {
+	padding-top: 25px;
+}
+
+/* used on player instructions page */
+.margin-top {
+	margin-top: 80px;
 }
 
 section {
+	position: relative;
 	width: 100vw;
 	height: 100vh;
 	display: flex;
@@ -83,37 +95,228 @@ section {
 }
 
 
+/* Question Number Headings */
+
+.number-header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--green);
+	height: 175px;
+	width: 100vw;
+}
+
+.lg-number {
+	font-family: var(--font-heading);
+	font-weight: 500;
+	font-size: 10rem;
+}
+
+.o {
+	position: relative;
+	font-size: 2.7rem;
+	top: -10px;
+}
+
+.o::before {
+	position: absolute;
+	content: " ";
+	background: black;
+	height: 8px;
+	width: 22px;
+	top: 47px;
+	left: 3px;
+}
+
+.question-content {
+	display: flex;
+	height: 65vh;
+	justify-content: center;
+	align-items: center;
+}
+
+.answer-choices {
+	display: flex;
+	font-family: var(--font-heading);
+	font-weight: 700;
+	font-size: 2.5rem;
+	letter-spacing: -.1rem;
+	justify-content: space-around;
+	width: 235px;
+	margin: 30px 0;
+}
+
+.multi-choice {
+	display: flex;
+	flex-direction: column;
+	width: 87vw;
+}
+
+.option {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.option > p {
+	width: 55vw;
+	height: 100px;
+	font-size: 1.3rem;
+	letter-spacing: -.03rem;
+	line-height: 115%;
+}
+
+.yes {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	padding-top: 12px;
+	background-image: url(../img/yes.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	width: 110px;
+	height: 81px;
+	cursor: pointer;
+}
+
+.no {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	padding-top: 12px;
+	padding-right: 9px;
+	background-image: url(../img/no.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	width: 110px;
+	height: 81px;
+	cursor: pointer;
+}
+
+.incorrect:hover::after {
+	position: absolute;
+	content: "☠️";
+	font-size: 3.5rem;
+	cursor: not-allowed;
+	transform: scale(.2);
+	animation: grow 100ms linear forwards;
+}
+
+@keyframes grow {
+	to {
+		transform: scale(1);
+	}
+}
+
+.correct-clicked::after {
+	position: absolute;
+	content: url(../img/checkmark.svg);
+	height: 100px;
+	width: 100px;
+	opacity: .90;
+	top: -12px;
+	animation: confirm 100ms ease-out forwards;
+}
+
+@keyframes confirm {
+	0% {
+		transform: scale(0);
+	}
+
+	25% {
+		transform: scale(0);
+	}
+
+	50% {
+		transform: scale(0.55)
+	}
+
+	75% {
+		transform: scale(0.7);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+
+.progress-bar {
+	position: absolute;
+	bottom: 80px;
+	width: 95px;
+	display: flex;
+	justify-content: space-around;
+	margin: 0 auto;
+}
+
+.circle {
+	background: #fff;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+}
+
+
+
 /*  ******************* INTRO SECTION  *******************  */
 
 
 .intro-section {
+	position: fixed;
 	background-color: var(--purple);
+	z-index: 10;
 }
 
 .logo {
 	position: relative;
 	background-image: url(../img/logo-bubble.svg);
 	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	width: 230px;
-	height: 125px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding-bottom: 5px;
-	margin-bottom: 15px;
+	background-position: left;
+	background-size: 210px;
+	width: 210px;
+	height: 130px;
+	display: grid;
+	place-items: center;
+	font-size: 2.7rem;
+	margin-bottom: 5px;
+	margin-top: 20px;
 }
 
 .logo-emoji {
 	position: absolute;
 	font-size: 2rem;
-	left: 133px;
-	top: 63px;
+	left: 123px;
+	top: 68px;
 }
 
 .intro-text {
-	padding: 0 0 25px 0;
+	padding: 0 0 15px 0;
+	margin-top: -5px;
+}
+
+#hi {
+	display: inline-block;
+	transform: rotate(10deg);
+}
+
+.wave {
+	display: inline-block;
+	animation: wave 100ms linear 20 alternate;
+}
+
+@keyframes wave {
+	to {
+		transform: rotate(20deg);
+		transform-origin: center;
+	}
+}
+
+.intro-button {
+	position: relative;
+	top: -15px;
 }
 
 input {
@@ -127,21 +330,52 @@ input {
 	background: #d8d6ff;
 }
 
-.submit {
+input:focus {
+	outline: none;
+	box-shadow: 0 0 10px rgb(14 255 29 / 80%), 0 0 90px rgb(14 255 29 / 50%);
+}
+
+.button {
+/*	position: relative;*/
 	background-color: #000000;
-	opacity: 1;
 	color: #ffffff;
+	border-radius: 22px;
 	width: 155px;
 	height: 60px;
 	padding: 0;
 	font-family: var(--font-heading);
 	font-weight: 700;
+	-webkit-filter: drop-shadow(7px 7px 0 rgb(255 255 255 /30%));
+	filter: drop-shadow(7px 7px 0 rgb(255 255 255 /30%));
+/*	top: -20px;*/
+	cursor: pointer;
+	transition: .05s ease;
+}
+
+.button:hover {
+	transform: scale(.99);
+}
+
+.button:focus {
+	outline: none;
+	transform: scale(.98);
+	filter: drop-shadow(0 0 10px rgb(14 255 29 / 80%));
 }
 
 ::placeholder {
 	color: #9694b1;
 	font-size: .9rem;
 	background: transparent;
+}
+
+.lift-intro {
+	animation: lift-intro 1.2s ease-in-out forwards .3s;
+}
+
+@keyframes lift-intro {
+	to {
+		transform: translateY(-110vh);
+	}
 }
 
 
@@ -154,6 +388,38 @@ input {
 .begin-test {
 	margin-top: 30px;
 }
+
+
+/*  ******************* QUESTION 1  *******************  */
+
+.question1 {
+	background-color: var(--turquoise);
+}
+
+.circle-filled {
+	background: var(--purple);
+}
+
+
+/*  ******************* QUESTION 2  *******************  */
+
+
+.question2 {
+	background-color: var(--pinkish);
+}
+
+/*  ******************* QUESTION 3  *******************  */
+
+
+.question3 {
+	background-color: var(--peach);
+}
+
+/*  ******************* QUESTION 4  *******************  */
+
+
+/*  ******************* QUESTION 5  *******************  */
+
 
 
 /*  ******************* DESKTOP  *******************  */

@@ -11,7 +11,8 @@ function captureUserInfo() {
 		findSpans[i].textContent = applyUserName;
 	};
 	//lifts intro screen after user info is submitted
-	document.getElementById("intro-section").classList.add('lift-intro');
+	document.getElementById('intro-section').classList.add('lift-intro');
+	document.getElementById('hi').classList.add('wave');
 	//if player is in the middle of answering questions and refreshes to go back to the beginning, this will reset to the instruction page after the intro page
 	window.location.href = '#player-instructions';
 };
@@ -23,22 +24,28 @@ beginTestBtn.addEventListener('click', captureUserInfo);
 
 //Trying the delayed jump to anchor - WORKS!!
 
-const correct = document.getElementById('correct-button');
+//const correct = document.getElementById('correct-button');
+//
+//
+//function delayedJump() {
+//	setTimeout(function(){
+//		window.location.href = '#question-2';
+//	}, 1000);
+//}
+//
+//correct.addEventListener('click', delayedJump);
 
 
-function delayedJump() {
+
+
+
+
+//this delay gives time for the checkmark animation to be seen before moving to the next question
+function delayedJump(link) {
 	setTimeout(function(){
-		window.location.href = '#question-2';
+		window.location.href = link;
 	}, 1000);
 }
-
-correct.addEventListener('click', delayedJump);
-
-
-
-
-
-
 
 
 
