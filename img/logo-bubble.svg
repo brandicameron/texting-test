@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="202" height="116" viewBox="0 0 202 116">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #000;
+        stroke-linejoin: round;
+        stroke-width: 6px;
+        fill-rule: evenodd;
+        filter: url(#filter);
+      }
+    </style>
+    <filter id="filter" x="31" y="126" width="202" height="116" filterUnits="userSpaceOnUse">
+      <feOffset result="offset" dx="8.81" dy="10.88" in="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood result="flood" flood-opacity="0.17"/>
+      <feComposite result="composite" operator="in" in2="blur"/>
+      <feBlend result="blend" in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="translate(-31 -126)" style="fill: #fff; filter: url(#filter)">
+    <path id="logo-bubble" class="cls-1" d="M197.653,131.453H70.211a25.937,25.937,0,0,0-25.953,25.921v60.1S44.8,224.121,36,230.436c-0.5.356,13.9-.129,17.7-4.713a9.309,9.309,0,0,1,1.18-1.178c5.12,4.325,8.412,5.274,15.336,5.891H197.653a25.937,25.937,0,0,0,25.953-25.92V157.374A25.937,25.937,0,0,0,197.653,131.453Z" style="stroke: inherit; filter: none; fill: inherit"/>
+  </g>
+  <use transform="translate(-31 -126)" xlink:href="#logo-bubble" style="stroke: #000; filter: none; fill: none"/>
+</svg>
