@@ -44,7 +44,7 @@ beginTestBtn.addEventListener('click', captureUserInfo);
 function delayedJump(link) {
 	setTimeout(function(){
 		window.location.href = link;
-	}, 1000);
+	}, 700);
 }
 
 
