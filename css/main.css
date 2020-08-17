@@ -376,11 +376,7 @@ input:focus {
 	.begin-test {
 		margin-top: 20px;
 	}
-	
-	.p-break {
-		display: none;
-	}
-	
+
 	.number {
 		margin-top: 70px;
 	}
@@ -388,6 +384,10 @@ input:focus {
 	.ans-bubbles-container {
 		padding-top: 30px;
 		transform: scale(1.5);
+	}
+	
+	p {
+		padding: 15px 0;
 	}
 
 	/*
