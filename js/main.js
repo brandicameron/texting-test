@@ -1,21 +1,46 @@
 //Applying user's name to questions and lift intro section when "Begin Test" is clicked
 
-const beginTestBtn = document.getElementById('begin-test-intro');
+const beginTestBtn = document.getElementById('begin-test-button');
 
 function captureUserInfo() {
-	let applyUserName = document.getElementById("userName").value;
-	let findSpans = document.getElementsByClassName("user-name");
+	let applyUserName = document.getElementById('userName').value;
+	let applyUserNumber = document.getElementById('userNumber').value;
+	let findSpans = document.getElementsByClassName('user-name');
 	let loopSpans = findSpans.length;
 	for (i = 0; i < loopSpans; i++) {
 		findSpans[i].textContent = applyUserName;
 	};
+	//lifts intro screen after user info is submitted
 	document.getElementById("intro-section").classList.add('lift-intro');
 	//if player is in the middle of answering questions and refreshes to go back to the beginning, this will reset to the instruction page after the intro page
 	window.location.href = '#player-instructions';
-//	document.getElementById("body").classList.remove('overflow');
 };
 
 beginTestBtn.addEventListener('click', captureUserInfo);
+
+
+
+
+//Trying the delayed jump to anchor - WORKS!!
+
+const correct = document.getElementById('correct-button');
+
+
+function delayedJump() {
+	setTimeout(function(){
+		window.location.href = '#question-2';
+	}, 1000);
+}
+
+correct.addEventListener('click', delayedJump);
+
+
+
+
+
+
+
+
 
 
 //Make submit button work with enter key press also
