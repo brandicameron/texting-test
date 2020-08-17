@@ -373,6 +373,10 @@ input:focus {
 		margin-top: 50px;
 	}
 	
+	.begin-test {
+		margin-top: 20px;
+	}
+	
 	.p-break {
 		display: none;
 	}
