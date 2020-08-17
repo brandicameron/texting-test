@@ -61,8 +61,16 @@ section {
 	height: 90vh;
 }
 
-.section-content > * {
+.screen-content > * {
 	margin: 15px auto;
+}
+
+.screen-content {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 h1,
@@ -210,7 +218,7 @@ input[name="wrong-button"]:hover + label:after {
 
 .progress {
 	position: absolute;
-	top: 0;
+	top: 20px;
 	left: 20px;
 }
 
@@ -336,11 +344,6 @@ input:focus {
 /*  ******************* MOBILE AND TABLET  *******************  */
 
 @media screen and (max-width: 500px) {
-	
-	.logo {
-		width: 300px;
-		margin-top: -20px;
-	}
 
 	.section-content {
 		width: 100vw;
@@ -348,8 +351,42 @@ input:focus {
 		border: none;
 		border-radius: 0;
 		margin: 0 auto;
-		padding: 0 15px;
+		padding: 50px 0;
+		justify-content: flex-start;
+
 	}
+
+	.screen-content {
+		transform: scale(.9);
+	}
+
+	.screen-content > * {
+		margin: 5px auto;
+	}
+
+	.logo {
+		width: 320px;
+		margin-top: -50px;
+	}
+	
+	.player-button {
+		margin-top: 50px;
+	}
+	
+	.p-break {
+		display: none;
+	}
+	
+	.number {
+		margin-top: 70px;
+	}
+	
+	.ans-bubbles-container {
+		padding-top: 30px;
+		transform: scale(1.5);
+	}
+
+	/*
 
 	.section-content > * {
 		margin: 15px;
@@ -361,6 +398,8 @@ input:focus {
 
 	.intro-text {
 		padding: 0 0;
+		font-size: 1.35rem;
+		letter-spacing: -.02rem;
 	}
 
 	.user-input {
@@ -375,7 +414,7 @@ input:focus {
 
 	h1,
 	p {
-		width: 300px;
+		width: 320px;
 	}
 
 	.p-break {
@@ -386,4 +425,9 @@ input:focus {
 		padding-top: 30px;
 		transform: scale(1.5);
 	}
+	
+	.screen-content {
+		margin-top: 70px;
+	}
+*/
 }
