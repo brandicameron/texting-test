@@ -28,15 +28,13 @@
 	<section id="intro-section" class="intro-section">
 		<div class="content">
 			<h1 class="logo">Texting<br>Test <span class="logo-emoji">😈</span></h1>
-			<div class="intro-text">
-				<p class="white-text margin-bottom-p">Did a pre-teen in your life just get their first phone?</p>
+				<p class="white-text">Did a pre-teen in your life just get their first phone?</p>
 				<p>Have them answer a few very important questions before giving them your number...</p>
-			</div>
 			<div class="user-input">
 				<label for="name"></label>
-				<input id="userName" type="text" name="name" id="name" placeholder="Your Name (ex. Uncle Luke)" autofocus>
+				<input id="userName" type="text" name="name" id="name" placeholder="Enter Your Name (ex. Uncle Luke)" autofocus autocomplete>
 				<label for="number"></label>
-				<input id="userNumber" type="tel" name="number" id="number" placeholder="The Prize Phone Number">
+				<input id="userNumber" type="tel" name="number" id="number" placeholder="The Prize Phone Number" autocomplete>
 				<button type="button" class="button" id="begin-test-button">Begin Test</button>
 			</div>
 			<p class="sm-text">(Don’t worry, we’ll make sure they pass)</p>
@@ -46,10 +44,10 @@
 
 	<!--	******************* PLAYER INSTRUCTIONS  *******************  -->
 
-	<section id="player-instructions" class="instructions-section">
-		<div class="content padding-top-25">
+	<section id="player-instructions" class="yellow">
+		<div class="content">
 			<h1 class="hi "><span id="hi" class="fake">👋 </span> Hi <br>there.</h1>
-			<p class="margin-bottom-p">Congratulations on getting a new phone!</p>
+			<p>Congratulations on getting a new phone!</p>
 			<p>Answer ALL questions correctly and you will be granted <span class="user-name"></span>'s number. 😜</p>
 			<a href="#question-1">
 				<button type="button" class="player-begin-button button" id="begin-test-button">Begin Test</button></a>
@@ -59,7 +57,7 @@
 
 	<!--	******************* QUESTION 1  *******************  -->
 
-	<section id="question-1" class="question1">
+	<section id="question-1" class="turquoise">
 		<div class="number-header">
 			<h1>N<span class="o">o</span></h1>
 			<div class="lg-number">1</div>
@@ -69,7 +67,7 @@
 				<p>It is before noon on a weekend. Is it okay to text <span class="user-name"></span>?</p>
 				<div class="answer-choices">
 					<div class="yes incorrect">yes</div>
-					<div class="no correct" onclick="delayedJump('#question2')">no</div>
+					<div class="no correct" onclick="delayedJump('#question2')">no &nbsp;</div>
 				</div>
 			</div>
 			<div class="progress-bar">
@@ -84,7 +82,7 @@
 
 	<!--	******************* QUESTION 2  *******************  -->
 
-	<section id="question2" class="question2">
+	<section id="question2" class="pinkish">
 		<div class="number-header">
 			<h1>N<span class="o">o</span></h1>
 			<div class="lg-number">2</div>
@@ -93,7 +91,7 @@
 			<p>Is it ever okay to include <span class="user-name"></span> in a group text?</p>
 			<div class="answer-choices">
 				<div class="yes incorrect">yes</div>
-				<div class="no correct" onclick="delayedJump('#question3')">no</div>
+				<div class="no correct" onclick="delayedJump('#question3')">no &nbsp;</div>
 			</div>
 			<div class="progress-bar">
 				<div class="circle circle-filled"></div>
@@ -107,8 +105,8 @@
 
 	<!--	******************* QUESTION 3  *******************  -->
 
-	<!--
-	<section id="question3" class="question3">
+	
+	<section id="question3" class="peach">
 		<div class="number-header">
 			<h1>N<span class="o">o</span></h1>
 			<div class="lg-number">3</div>
@@ -136,7 +134,7 @@
 		</div>
 		</div>
 	</section>
--->
+
 
 	<!--	******************* QUESTION 4  *******************  -->
 
