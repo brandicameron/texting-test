@@ -459,3 +459,41 @@ input:focus {
 		padding-top: 50px;
 	}
 }
+
+
+@media screen and (max-width: 370px) {
+
+	html {
+		font-size: 1.3rem;
+	}
+
+	.content {
+		transform: scale(.7);
+		width: 320px;
+	}
+
+	.logo {
+		margin: -25px 0 -10px 0;
+		background-size: 270px;
+		width: 280px;
+	}
+	
+	.logo-emoji {
+	position: absolute;
+	font-size: inherit;
+	transform: scale(.6);
+	left: 150px;
+	top: 80px;
+}
+
+
+}
+
+
+
+
+
+
+
+
+
