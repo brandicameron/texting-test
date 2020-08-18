@@ -28,7 +28,7 @@ body {
 	font-family: var(--font-regular);
 	color: var(--text-color);
 	font-size: .9rem;
-/*	overflow: hidden;*/
+	overflow: hidden;
 }
 
 
@@ -287,7 +287,7 @@ section {
 
 
 .intro-section {
-/*	position: fixed;*/
+	position: fixed;
 	background-color: var(--purple);
 	z-index: 10;
 }
