@@ -1,5 +1,7 @@
 //Applying user's name to questions and lift intro section when "Begin Test" is clicked
 
+
+const body = document.getElementById('body');
 const beginTestBtn = document.getElementById('begin-test-button');
 
 function captureUserInfo() {
@@ -20,36 +22,6 @@ function captureUserInfo() {
 beginTestBtn.addEventListener('click', captureUserInfo);
 
 
-
-
-//Trying the delayed jump to anchor - WORKS!!
-
-//const correct = document.getElementById('correct-button');
-//
-//
-//function delayedJump() {
-//	setTimeout(function(){
-//		window.location.href = '#question-2';
-//	}, 1000);
-//}
-//
-//correct.addEventListener('click', delayedJump);
-
-
-
-
-
-
-//this delay gives time for the checkmark animation to be seen before moving to the next question
-function delayedJump(link) {
-	setTimeout(function(){
-		window.location.href = link;
-	}, 700);
-}
-
-
-
-
 //Make submit button work with enter key press also
 let userInputInfo = document.querySelectorAll(".user-input");
 
@@ -61,6 +33,24 @@ userInputInfo.forEach(function (input, index) {
 		};
 	});
 });
+
+
+
+//this delay gives time for the checkmark animation to be seen before moving to the next question
+function delayedJump(link) {
+	body.classList.remove('overflow');
+	setTimeout(function(){
+		window.location.href = link;
+	}, 700);
+	body.classList.add('overflow');
+}
+
+
+//function delayedJump(link) {
+//	setTimeout(function(){
+//		window.location.href = link;
+//	}, 700);
+//}
 
 
 //Adds green checkmark when correct answer is selected
