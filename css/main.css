@@ -28,7 +28,7 @@ body {
 	color: var(--text-color);
 	height: 100vh;
 	width: 100vw;
-	font-size: 1.4rem;
+	font-size: 1.3rem;
 	overflow: hidden;
 }
 
@@ -49,12 +49,7 @@ h1 {
 }
 
 p {
-	font-family: var(--font-regular);
-	font-size: 1.5rem;
-	line-height: 1.75rem;
-	padding: 12px 0 0 0;
-	letter-spacing: -.02rem;
-	font-weight: 700;
+	font-size: 1.15rem;
 }
 
 .white-text {
@@ -64,29 +59,25 @@ p {
 
 .sm-text {
 	font-size: .8rem;
-	margin-top: -15px;
+	padding: 15px 0 0 0;
 }
 
-/* used on multi-choice questions */
-.padding-top-20 {
+.padding-top-25 {
 	padding-top: 25px;
 }
 
-/* used on player instructions page */
-.margin-top {
-	margin-top: 80px;
+.margin-bottom-p {
+	margin-bottom: 15px;
 }
 
 section {
 	position: relative;
 	width: 100vw;
 	height: 100vh;
-	display: flex;
-	flex-direction: column;
 }
 
 .content {
-	width: 80vw;
+	width: 85vw;
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -131,8 +122,23 @@ section {
 .question-content {
 	display: flex;
 	height: 65vh;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
+}
+
+.progress-bar {
+	position: relative;
+	width: 95px;
+	display: flex;
+	justify-content: space-around;
+	margin: 0 auto;
+}
+
+.circle {
+	background: #fff;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
 }
 
 .answer-choices {
@@ -143,10 +149,9 @@ section {
 	letter-spacing: -.1rem;
 	justify-content: space-around;
 	width: 235px;
-	margin: 30px 0;
+	margin: 30px auto;
 }
 
-/*
 .multi-choice {
 	display: flex;
 	flex-direction: column;
@@ -166,7 +171,6 @@ section {
 	letter-spacing: -.03rem;
 	line-height: 115%;
 }
-*/
 
 .yes {
 	position: relative;
@@ -197,7 +201,8 @@ section {
 	cursor: pointer;
 }
 
-.incorrect:hover::after {
+.incorrect:hover::after,
+.incorrect:focus::after{
 	position: absolute;
 	content: "☠️";
 	font-size: 3.5rem;
@@ -245,29 +250,12 @@ section {
 }
 
 
-.progress-bar {
-	position: absolute;
-	bottom: 80px;
-	width: 95px;
-	display: flex;
-	justify-content: space-around;
-	margin: 0 auto;
-}
-
-.circle {
-	background: #fff;
-	width: 12px;
-	height: 12px;
-	border-radius: 50%;
-}
-
-
 
 /*  ******************* INTRO SECTION  *******************  */
 
 
 .intro-section {
-	position: fixed;
+/*	position: fixed;*/
 	background-color: var(--purple);
 	z-index: 10;
 }
@@ -283,8 +271,7 @@ section {
 	display: grid;
 	place-items: center;
 	font-size: 2.7rem;
-	margin-bottom: 5px;
-	margin-top: 20px;
+	margin: 25px 0 5px 0;
 }
 
 .logo-emoji {
@@ -296,36 +283,13 @@ section {
 
 .intro-text {
 	padding: 0 0 15px 0;
-	margin-top: -5px;
-}
-
-#hi {
-	display: inline-block;
-	transform: rotate(10deg);
-}
-
-.wave {
-	display: inline-block;
-	animation: wave 100ms linear 20 alternate;
-}
-
-@keyframes wave {
-	to {
-		transform: rotate(20deg);
-		transform-origin: center;
-	}
-}
-
-.intro-button {
-	position: relative;
-	top: -15px;
 }
 
 input {
 	border: 7px solid black;
-	height: 65px;
-	width: 250px;
-	border-radius: 22px;
+	height: 55px;
+	width: 100%;
+	border-radius: 18px;
 	padding: 0 0 5px 10px;
 	font-family: var(--font-heading);
 	margin: 5px 0;
@@ -338,18 +302,15 @@ input:focus {
 }
 
 .button {
-/*	position: relative;*/
 	background-color: #000000;
 	color: #ffffff;
-	border-radius: 22px;
-	width: 155px;
-	height: 60px;
-	padding: 0;
+	border-radius: 18px;
+	width: 150px;
+	height: 55px;
 	font-family: var(--font-heading);
 	font-weight: 700;
-	-webkit-filter: drop-shadow(7px 7px 0 rgb(255 255 255 /30%));
-	filter: drop-shadow(7px 7px 0 rgb(255 255 255 /30%));
-/*	top: -20px;*/
+	-webkit-filter: drop-shadow(7px 7px 0 rgb(0 0 0 /20%));
+	filter: drop-shadow(7px 7px 0 rgb(0 0 0 /20%));
 	cursor: pointer;
 	transition: .05s ease;
 }
@@ -387,11 +348,26 @@ input:focus {
 	background-color: var(--yellow);
 }
 
-.begin-test {
-	margin-top: 50px;
+#hi {
+	display: inline-block;
+	transform: rotate(10deg);
 }
 
+.wave {
+	display: inline-block;
+	animation: wave 100ms linear 20 alternate;
+}
 
+@keyframes wave {
+	to {
+		transform: rotate(20deg);
+		transform-origin: center;
+	}
+}
+
+.player-begin-button {
+	margin-top: 35px;
+}
 /*  ******************* QUESTION 1  *******************  */
 
 .question1 {
@@ -426,69 +402,21 @@ input:focus {
 
 /*  ******************* DESKTOP  *******************  */
 
-@media screen and (min-width: 500px) {
-	
-	.logo {
-		text-align: left;
-		transform: scale(1.5);
-	}
-	
-	h1 {
-		font-size: 5.5rem;
-	}
 
-	section {
-	position: relative;
-	width: 100vw;
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-}
-
-.content {
-	width: 100vw;
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	margin: -50px auto 0 auto;
-}
+@media screen and (min-width: 950px) {
 	
-	.intro-text {
-		margin: 50px 0;
-		max-width: 600px;
-	}
+/*
+	.user-input {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		width: 700px;
+	}	
 	
 	p {
 		padding: 15px 0;
+		width: 90vw;
 	}
-	
-	.multi-choice {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
 }
-
-.option {
-	display: flex;
-	align-items: flex-start;
-	justify-content: flex-start;
-	width: 600px;
-	padding: 5px 0;
-}
-
-.option > p {
-	width: auto;
-	height: auto;
-	font-size: 1.4rem;
-	letter-spacing: -.03rem;
-	line-height: 115%;
-	padding-left: 10px;
-	text-align: left;
-}
-
-	
+*/
 }
