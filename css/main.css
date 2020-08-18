@@ -131,7 +131,7 @@ section {
 
 .question-content {
 	display: flex;
-	height: 80vh;
+	height: 70vh;
 	justify-content: center;
 	align-items: center;
 }
@@ -282,7 +282,7 @@ section {
 	}
 }
 
-.correct-clicked::after {
+.correct-clicked::before {
 	position: absolute;
 	margin-right: -50%;
 	transform: translate(-50%, -50%);
@@ -368,6 +368,7 @@ input:focus {
 }
 
 .button {
+	border: none;
 	background-color: #000000;
 	color: #ffffff;
 	border-radius: 18px;
@@ -443,7 +444,7 @@ input:focus {
 	}
 	
 	.logo {
-		margin-top: -35px;;
+		margin-top: -50px;
 	}
 	
 	::placeholder {
