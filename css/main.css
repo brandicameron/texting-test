@@ -66,6 +66,10 @@ body {
 	background: var(--purply);
 }
 
+.bold {
+	font-weight: 900;
+}
+
 
 a {
 	text-decoration: none;
