@@ -1,10 +1,10 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en">
 
 <head>
 	<meta charset="utf-8">
 	<title>Text Etiquette Test</title>
-	<meta name="description" content="">
+	<meta name="description" content="Did a pre-teen in your life just get their first phone? Have them answer a few very important questions before giving them your number...">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Brandi Cameron | hello@brandicameron.com">
 	<meta name="theme-color" content="#ffffff">
@@ -31,8 +31,8 @@
 				<p class="white-text">Did a pre-teen in your life just get their first phone?</p>
 				<p>Have them answer a few very important questions before giving them your number...</p>
 			<div class="user-input">
-				<input id="userName" type="text" name="name" placeholder="Enter Your Name (ex. Uncle Luke)" autofocus autocomplete="name">
-				<input id="userNumber" type="tel" name="number" placeholder="The Prize Phone Number" autocomplete="tel">
+				<input id="userName" type="text" name="name" placeholder="Enter Your Name (ex. Uncle Luke)" autofocus autocomplete="name" aria-label="Enter Your Name">
+				<input id="userNumber" type="tel" name="number" placeholder="The Prize Phone Number" autocomplete="tel" aria-label="Enter the Prize Phone Number">
 				<button type="button" class="button" id="begin-test-button">Begin Test</button>
 			</div>
 			<p class="sm-text">(Don’t worry, we’ll make sure they pass)</p>
@@ -47,7 +47,7 @@
 			<h1 class="hi "><span id="hi" class="fake">👋 </span> Hi <br>there.</h1>
 			<p>Congratulations on getting a new phone!</p>
 			<p>Answer ALL questions correctly and you will be granted <span class="user-name"></span>'s number. 😜</p>
-			<a href="#question-1" class="player-begin-button button">Begin Test</a>
+			<a href="#question-1" role="button" class="player-begin-button button">Begin Test</a>
 		</div>
 	</section>
 
@@ -112,13 +112,13 @@
 			<p><span class="user-name"></span> sends you a funny meme. How do you respond?</p>
 				<div class="answer-choices multi-choice">
 					<div class="option">
-						<button type="button" class="yes incorrect answer-button"></button>
-					<p>Reply with every funny meme you've ever seen.</p>
+						<button type="button" class="yes incorrect answer-button" aria-label="Reply with every funny meme you've ever seen."></button>
+					<p aria-hidden="true">Reply with every funny meme you've ever seen.</p>
 					</div>
 					
 					<div class="option">
-					<button type="button" class="no correct answer-button" onclick="delayedJump('#question4')"></button>
-					<p class="padding-top-20">Simply type "LOL" or send a laughing emoji.</p>
+					<button type="button" class="no correct answer-button" onclick="delayedJump('#question4')" aria-label="Simply type LOL or send a laughing emoji."></button>
+					<p class="padding-top-20" aria-hidden="true">Simply type "LOL" or send a laughing emoji.</p>
 					</div>
 				</div>
 				<div class="progress-bar">
