@@ -44,6 +44,13 @@ body {
 .purply {background: var(--purply);}
 
 
+a:focus {
+	outline: none;
+	transform: scale(.98);
+	filter: drop-shadow(0 0 10px rgb(14 255 29 / 80%));
+}
+
+
 p {
 	padding: 2% 0;
 	line-height: 150%;
@@ -167,6 +174,17 @@ section {
 	margin: 30px auto;
 }
 
+.answer-button {
+	border: none;
+	all: unset;
+}
+
+.answer-button:focus {
+	outline: none;
+	transform: scale(.98);
+	filter: drop-shadow(0 0 10px rgb(14 255 29 / 80%));
+}
+
 .yes {
 	position: relative;
 	display: flex;
@@ -201,9 +219,9 @@ section {
 	filter: drop-shadow(5px 7px 0 rgb(0 0 0 /15%));
 }
 
-.incorrect:focus::before,
 .incorrect:hover::before,
-.incorrect:active::before {
+.incorrect:active::before,
+.incorrect:focus::before {
 	position: absolute;
 	content: "☠️";
 	width: 100%;
@@ -348,14 +366,14 @@ input:focus {
 	transition: .05s ease;
 }
 
-.button:hover {
-	transform: scale(.99);
-}
-
 .button:focus {
 	outline: none;
 	transform: scale(.98);
 	filter: drop-shadow(0 0 10px rgb(14 255 29 / 80%));
+}
+
+.button:hover {
+	transform: scale(.99);
 }
 
 ::placeholder {
@@ -404,6 +422,8 @@ input:focus {
 /*  ******************* TABLET / MOBILE  *******************  */
 
 
-@media screen and (max-width: 950px) {
-	
+@media screen and (max-width: 400px) {
+	.content {
+		transform: scale(.9);
+	}
 }
