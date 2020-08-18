@@ -2,7 +2,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-/*	outline: 2px solid red;*/
+	/*	outline: 2px solid red;*/
 }
 
 :root {
@@ -38,13 +38,33 @@ body {
 /*  ******************* UNIVERSAL/GENERAL STYLES  *******************  */
 
 
-.purple {background: var(--purple);}
-.yellow {background: var(--yellow);}
-.green {background: var(--green);}
-.turquoise {background: var(--turquoise);}
-.pinkish {background: var(--pinkish);}
-.peach {background: var(--peach);}
-.purply {background: var(--purply);}
+.purple {
+	background: var(--purple);
+}
+
+.yellow {
+	background: var(--yellow);
+}
+
+.green {
+	background: var(--green);
+}
+
+.turquoise {
+	background: var(--turquoise);
+}
+
+.pinkish {
+	background: var(--pinkish);
+}
+
+.peach {
+	background: var(--peach);
+}
+
+.purply {
+	background: var(--purply);
+}
 
 
 a {
@@ -81,7 +101,6 @@ button {
 .white-text {
 	color: #fff;
 	font-weight: 900;
-	
 }
 
 .xsm-text {
@@ -357,6 +376,7 @@ section {
 		transform: translate(0, 100px);
 		opacity: 1;
 	}
+
 	100% {
 		transform: translate(0, 0);
 		opacity: 1;
@@ -482,7 +502,7 @@ input:focus {
 @keyframes slide-left {
 	to {
 		transform: translateX(-110vw);
-/*		display: none;*/
+		/*		display: none;*/
 	}
 }
 
@@ -494,23 +514,31 @@ input:focus {
 	.content {
 		transform: scale(.85);
 	}
-	
+
 	.logo {
 		margin-top: -60px;
 	}
-	
+
 	::placeholder {
-	font-size: .65rem;
-}
-	
+		font-size: .65rem;
+	}
+
 	.sm-text {
-	font-size: .65rem;
-	padding: 15px 0 0 0;
-}
-	
+		font-size: .65rem;
+		padding: 15px 0 0 0;
+	}
+
+	.white-text {
+		margin-top: -15px;
+	}
+
+	.xsm-text {
+		margin: -18px 0 -18px 0;
+	}
+
 	.hi {
-	margin-top: -30px;
-}
+		margin-top: -30px;
+	}
 
 	.question-content {
 		height: 60vh;
@@ -536,23 +564,14 @@ input:focus {
 		background-size: 270px;
 		width: 280px;
 	}
-	
+
 	.logo-emoji {
-	position: absolute;
-	font-size: inherit;
-	transform: scale(.6);
-	left: 150px;
-	top: 80px;
-}
+		position: absolute;
+		font-size: inherit;
+		transform: scale(.6);
+		left: 150px;
+		top: 80px;
+	}
 
 
 }
-
-
-
-
-
-
-
-
-
