@@ -269,14 +269,14 @@ section {
 
 .correct-clicked::after {
 	position: absolute;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
 	content: url(../img/checkmark.svg);
 	height: 100px;
 	width: 100px;
 	opacity: .90;
-	top: -12px;
 	animation: confirm 100ms ease-out forwards;
 }
-
 @keyframes confirm {
 	0% {
 		transform: scale(0);
