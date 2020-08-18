@@ -46,6 +46,7 @@ body {
 .peach {background: var(--peach);}
 .purply {background: var(--purply);}
 
+
 a {
 	text-decoration: none;
 	display: flex;
@@ -80,6 +81,18 @@ button {
 .white-text {
 	color: #fff;
 	font-weight: 900;
+	
+}
+
+.xsm-text {
+	font-family: var(--font-regular);
+	font-size: .45rem;
+	letter-spacing: .01rem;
+	margin: -22px 0 -22px 0;
+	text-align: center;
+	font-weight: 3000;
+	opacity: .5;
+	text-transform: uppercase;
 }
 
 .sm-text {
@@ -318,6 +331,7 @@ section {
 .intro-section {
 	position: fixed;
 	background-color: var(--purple);
+	box-shadow: 3px 3px 40px rgba(0, 0, 0, .4);
 	z-index: 10;
 }
 
@@ -333,6 +347,20 @@ section {
 	place-items: center;
 	margin: 0 0 25px 0;
 	padding-bottom: 5px;
+	transform: translate(-100px, 200px);
+	opacity: 0;
+	animation: text 200ms ease-out 400ms forwards;
+}
+
+@keyframes text {
+	20% {
+		transform: translate(0, 100px);
+		opacity: 1;
+	}
+	100% {
+		transform: translate(0, 0);
+		opacity: 1;
+	}
 }
 
 .logo-emoji {
@@ -343,9 +371,20 @@ section {
 	top: 98px;
 }
 
+.intro {
+	opacity: 0;
+	animation: fade-in 250ms linear 1s forwards;
+}
+
+@keyframes fade-in {
+	to {
+		opacity: 1;
+	}
+}
+
 input {
-	border: 7px solid black;
-	height: 65px;
+	border: 6px solid black;
+	height: 70px;
 	width: 100%;
 	border-radius: 18px;
 	display: flex;
@@ -354,6 +393,7 @@ input {
 	align-items: center;
 	padding: 0 0 0 10px;
 	font-family: var(--font-heading);
+	color: #fff;
 	margin: 15px 0;
 	background: transparent;
 }
@@ -390,13 +430,13 @@ input:focus {
 
 ::placeholder {
 	color: #ffffff;
-	opacity: .6;
-	font-size: .7rem;
+	opacity: .75;
+	font-size: .8rem;
 	background: transparent;
 }
 
 .lift-intro {
-	animation: lift-intro 1.2s ease-in-out forwards .3s;
+	animation: lift-intro .8s ease-in-out forwards .3s;
 }
 
 @keyframes lift-intro {
@@ -408,6 +448,11 @@ input:focus {
 
 /*  ******************* INSTRUCTIONS SECTION  *******************  */
 
+.player-instructions {
+	position: fixed;
+	z-index: 9;
+	box-shadow: 3px 3px 40px rgba(0, 0, 0, .4);
+}
 
 #hi {
 	display: inline-block;
@@ -416,7 +461,7 @@ input:focus {
 
 .wave {
 	display: inline-block;
-	animation: wave 100ms linear 20 alternate;
+	animation: wave 100ms linear 15 alternate;
 }
 
 @keyframes wave {
@@ -428,6 +473,17 @@ input:focus {
 
 .player-begin-button {
 	margin-top: 35px;
+}
+
+.slide-left {
+	animation: slide-left .6s ease-in-out forwards .3s;
+}
+
+@keyframes slide-left {
+	to {
+		transform: translateX(-110vw);
+/*		display: none;*/
+	}
 }
 
 

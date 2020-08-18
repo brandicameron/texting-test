@@ -1,7 +1,5 @@
 //Applying user's name to questions and lift intro section when "Begin Test" is clicked
 
-
-const body = document.getElementById('body');
 const beginTestBtn = document.getElementById('begin-test-button');
 
 function captureUserInfo() {
@@ -35,22 +33,20 @@ userInputInfo.forEach(function (input, index) {
 });
 
 
+//slides over instructions when "Begin Test" is clicked
+let playerBegin = document.getElementById('player-begin');
+
+playerBegin.addEventListener('click', function() {
+	document.getElementById('player-instructions').classList.add('slide-left');
+});
+
 
 //this delay gives time for the checkmark animation to be seen before moving to the next question
 function delayedJump(link) {
-	body.classList.remove('overflow');
 	setTimeout(function(){
 		window.location.href = link;
 	}, 700);
-	body.classList.add('overflow');
 }
-
-
-//function delayedJump(link) {
-//	setTimeout(function(){
-//		window.location.href = link;
-//	}, 700);
-//}
 
 
 //Adds green checkmark when correct answer is selected
