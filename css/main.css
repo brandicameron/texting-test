@@ -374,7 +374,7 @@ section {
 	transform: translate(9vw, 30vh);
 	z-index: 11;
 	opacity: 1;
-	animation: text 200ms ease-out 1.8s forwards;
+	animation: text 200ms ease-out 1.5s forwards;
 }
 
 @keyframes text {
@@ -400,7 +400,7 @@ section {
 .intro {
 	opacity: 0;
 	transform: translateY(10px);
-	animation: fade-in 250ms linear 2.3s forwards;
+	animation: fade-in 250ms linear 2.1s forwards;
 }
 
 @keyframes fade-in {
@@ -584,6 +584,10 @@ input:focus {
 
 	.xsm-text {
 		margin: -10px 0 10px 0;
+	}
+	
+	.intro > p {
+		line-height: 135%;
 	}
 
 	input {
