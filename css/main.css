@@ -10,7 +10,6 @@
 	--font-heading: 'Poppins', sans-serif;
 	--text-color: #000;
 	--purple: #8070fc;
-	/*	--purple: #7e75f6;*/
 	--dark-purple: #5d53e8;
 	--yellow: #fcf66d;
 	--green: #6bfd74;
@@ -32,9 +31,6 @@ body {
 	font-family: var(--font-regular);
 	color: var(--text-color);
 	font-size: .9rem;
-}
-
-.overflow {
 	overflow: hidden;
 }
 
@@ -81,9 +77,7 @@ a {
 }
 
 a:focus {
-	/*	outline: none;*/
 	transform: scale(.98);
-	/*	filter: drop-shadow(0 0 10px rgb(14 255 29 / 80%));*/
 	-webkit-box-shadow: var(--green-glow);
 	box-shadow: var(--green-glow);
 }
@@ -552,7 +546,6 @@ input:focus {
 @keyframes slide-left {
 	to {
 		transform: translateX(-110vw);
-		/*		display: none;*/
 	}
 }
 
@@ -569,7 +562,8 @@ input:focus {
 
 	.logo {
 		margin-top: -50px;
-		margin-bottom: 8px;;
+		margin-bottom: 8px;
+		;
 		transform: translate(0, 30vh);
 	}
 
@@ -585,7 +579,7 @@ input:focus {
 	.xsm-text {
 		margin: -10px 0 10px 0;
 	}
-	
+
 	.intro > p {
 		line-height: 135%;
 	}
@@ -603,15 +597,15 @@ input:focus {
 		justify-content: flex-start;
 		padding-top: 50px;
 	}
-	
+
 	.progress-bar {
-	position: absolute;
-	width: 95px;
-	display: flex;
-	justify-content: space-around;
-	margin: 0 auto;
-	bottom: 0;
-}
+		position: absolute;
+		width: 95px;
+		display: flex;
+		justify-content: space-around;
+		margin: 0 auto;
+		bottom: 0;
+	}
 }
 
 
@@ -639,6 +633,4 @@ input:focus {
 		left: 150px;
 		top: 80px;
 	}
-
-
 }

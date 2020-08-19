@@ -36,7 +36,7 @@ userInputInfo.forEach(function (input, index) {
 //slides over instructions when "Begin Test" is clicked
 let playerBegin = document.getElementById('player-begin');
 
-playerBegin.addEventListener('click', function() {
+playerBegin.addEventListener('click', function () {
 	document.getElementById('player-instructions').classList.add('slide-left');
 });
 
@@ -46,7 +46,7 @@ playerBegin.addEventListener('click', function() {
 
 //this delay gives time for the checkmark animation to be seen before moving to the next question
 function delayedJump(link) {
-	setTimeout(function(){
+	setTimeout(function () {
 		window.location.href = link;
 	}, 700);
 }
