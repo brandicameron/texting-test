@@ -9,13 +9,17 @@
 	--font-regular: 'Manrope', sans-serif;
 	--font-heading: 'Poppins', sans-serif;
 	--text-color: #000;
-	--purple: #746afe;
+	--purple: #8070fc;
+	/*	--purple: #7e75f6;*/
+	--dark-purple: #5d53e8;
 	--yellow: #fcf66d;
 	--green: #6bfd74;
 	--turquoise: #6bfdfd;
 	--pinkish: #fc7474;
 	--peach: #fed971;
 	--purply: #db6bfe;
+	--light-grey: #cacaca;
+	--green-glow: 0 0 5px rgb(14 255 29 / 70%), 0 0 30px rgb(14 255 29 / 40%);
 }
 
 html {
@@ -66,22 +70,22 @@ body {
 	background: var(--purply);
 }
 
-.bold {
-	font-weight: 900;
-}
-
 
 a {
 	text-decoration: none;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	color: #ffffff;
+	border-radius: 8px;
 }
 
 a:focus {
-	outline: none;
+	/*	outline: none;*/
 	transform: scale(.98);
-	filter: drop-shadow(0 0 10px rgb(14 255 29 / 80%));
+	/*	filter: drop-shadow(0 0 10px rgb(14 255 29 / 80%));*/
+	-webkit-box-shadow: var(--green-glow);
+	box-shadow: var(--green-glow);
 }
 
 p {
@@ -102,25 +106,23 @@ button {
 	font-size: .9rem;
 }
 
-.white-text {
-	color: #fff;
-	font-weight: 900;
-}
-
 .xsm-text {
 	font-family: var(--font-regular);
 	font-size: .45rem;
 	letter-spacing: .01rem;
-	margin: -22px 0 -22px 0;
-	text-align: center;
-	font-weight: 3000;
-	opacity: .5;
+	text-align: left;
 	text-transform: uppercase;
+	margin: -5px 0 5px 5px;
+	opacity: .4;
 }
 
 .sm-text {
-	font-size: .7rem;
-	padding: 15px 0 0 0;
+	font-size: .65rem;
+	padding: 18px 0 0 0;
+}
+
+.bold {
+	font-weight: 900;
 }
 
 section {
@@ -131,7 +133,7 @@ section {
 
 .content {
 	width: 80vw;
-	max-width: 550px;
+	max-width: 575px;
 	height: 92vh;
 	display: flex;
 	flex-direction: column;
@@ -353,7 +355,6 @@ section {
 
 .intro-section {
 	position: fixed;
-	background-color: var(--purple);
 	box-shadow: 3px 3px 40px rgba(0, 0, 0, .4);
 	z-index: 10;
 }
@@ -368,11 +369,12 @@ section {
 	height: 190px;
 	display: grid;
 	place-items: center;
-	margin: 0 0 25px 0;
+	margin: 0 0 20px 0;
 	padding-bottom: 5px;
-	transform: translate(-100px, 200px);
-	opacity: 0;
-	animation: text 200ms ease-out 400ms forwards;
+	transform: translate(9vw, 30vh);
+	z-index: 11;
+	opacity: 1;
+	animation: text 200ms ease-out 1.8s forwards;
 }
 
 @keyframes text {
@@ -397,11 +399,13 @@ section {
 
 .intro {
 	opacity: 0;
-	animation: fade-in 250ms linear 1s forwards;
+	transform: translateY(10px);
+	animation: fade-in 250ms linear 2.3s forwards;
 }
 
 @keyframes fade-in {
 	to {
+		transform: translateY(0);
 		opacity: 1;
 	}
 }
@@ -418,13 +422,14 @@ input {
 	padding: 0 0 0 10px;
 	font-family: var(--font-heading);
 	color: #fff;
-	margin: 15px 0;
-	background: transparent;
+	color: var(--dark-purple);
+	margin: 10px 10px 0px 0;
+	background: #ffffff;
 }
 
 input:focus {
 	outline: none;
-	box-shadow: 0 0 10px rgb(14 255 29 / 80%), 0 0 90px rgb(14 255 29 / 50%);
+	box-shadow: var(--green-glow);
 }
 
 .button {
@@ -439,13 +444,15 @@ input:focus {
 	-webkit-filter: drop-shadow(7px 7px 0 rgb(0 0 0 /20%));
 	filter: drop-shadow(7px 7px 0 rgb(0 0 0 /20%));
 	cursor: pointer;
+	-webkit-transition: .05s ease;
+	-o-transition: .05s ease;
 	transition: .05s ease;
 }
 
 .button:focus {
 	outline: none;
 	transform: scale(.98);
-	filter: drop-shadow(0 0 10px rgb(14 255 29 / 80%));
+	box-shadow: var(--green-glow);
 }
 
 .button:hover {
@@ -453,10 +460,9 @@ input:focus {
 }
 
 ::placeholder {
-	color: #ffffff;
-	opacity: .75;
-	font-size: .8rem;
-	background: transparent;
+	color: var(--light-grey);
+	font-size: .75rem;
+	line-height: 180%;
 }
 
 .lift-intro {
@@ -485,12 +491,52 @@ input:focus {
 
 .wave {
 	display: inline-block;
-	animation: wave 100ms linear 15 alternate;
+	animation: wave 4s linear infinite 1.1s;
 }
 
 @keyframes wave {
-	to {
+	1% {
 		transform: rotate(20deg);
+		transform-origin: center;
+	}
+
+	2% {
+		transform: rotate(10deg);
+		transform-origin: center;
+	}
+
+	4% {
+		transform: rotate(20deg);
+		transform-origin: center;
+	}
+
+	6% {
+		transform: rotate(10deg);
+		transform-origin: center;
+	}
+
+	8% {
+		transform: rotate(20deg);
+		transform-origin: center;
+	}
+
+	10% {
+		transform: rotate(10deg);
+		transform-origin: center;
+	}
+
+	11% {
+		transform: rotate(20deg);
+		transform-origin: center;
+	}
+
+	12% {
+		transform: rotate(10deg);
+		transform-origin: center;
+	}
+
+	100% {
+		transform: rotate(10deg);
 		transform-origin: center;
 	}
 }
@@ -517,10 +563,14 @@ input:focus {
 @media screen and (max-width: 400px) {
 	.content {
 		transform: scale(.85);
+		width: 90vw;
+		max-width: 575px;
 	}
 
 	.logo {
-		margin-top: -60px;
+		margin-top: -50px;
+		margin-bottom: 8px;;
+		transform: translate(0, 30vh);
 	}
 
 	::placeholder {
@@ -532,12 +582,12 @@ input:focus {
 		padding: 15px 0 0 0;
 	}
 
-	.white-text {
-		margin-top: -20px;
+	.xsm-text {
+		margin: -10px 0 10px 0;
 	}
 
-	.xsm-text {
-		margin: -18px 0 -18px 0;
+	input {
+		margin: 8px 0;
 	}
 
 	.hi {
@@ -549,6 +599,15 @@ input:focus {
 		justify-content: flex-start;
 		padding-top: 50px;
 	}
+	
+	.progress-bar {
+	position: absolute;
+	width: 95px;
+	display: flex;
+	justify-content: space-around;
+	margin: 0 auto;
+	bottom: 0;
+}
 }
 
 

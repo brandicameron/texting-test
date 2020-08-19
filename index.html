@@ -25,18 +25,18 @@
 
 	<!--	******************* INTRO  *******************  -->
 
-	<section id="intro-section" class="intro-section">
+	<section id="intro-section" class="intro-section purple">
 		<div class="content">
 			<h1 class="logo">Texting<br>Test <span class="logo-emoji">😈</span></h1>
 				<div class="intro">
-				<p class="white-text">Did a pre-teen in your life just get their first phone?</p>
-				<p>Have them answer a few very important questions before giving them your number...</p>
+				<p class="bold">Did a pre-teen in your life just get their first phone?</p>
+				<p>Have them answer a few texting questions (customized with your name) before giving them your number...</p>
 			<div class="user-input">
-				<input id="userName" type="text" name="name" placeholder="Enter Your Name (ex. Uncle Luke)" autofocus autocomplete="name" aria-label="Enter Your Name">
-				<p class="xsm-text">(your info is not stored or saved in any way)</p>
+				<input id="userName" type="text" name="name" placeholder="Your Name (ex. Uncle Luke)" autofocus autocomplete="name" aria-label="Enter Your Name">
 				<input id="userNumber" type="tel" name="number" placeholder="The Prize Phone Number" autocomplete="tel" aria-label="Enter the Prize Phone Number">
-				<button type="button" class="button" id="begin-test-button">Begin Test</button>
 			</div>
+				<p class="xsm-text bold">* your information is not saved in any way</p>
+				<button type="button" class="button" id="begin-test-button">Begin Test</button>
 			<p class="sm-text">(Don’t worry, they'll pass)</p>
 			</div>
 		</div>
@@ -47,7 +47,7 @@
 
 	<section id="player-instructions" class="yellow player-instructions">
 		<div class="content">
-			<h1 class="hi "><span id="hi" class="fake">👋 </span> Hi <br>there.</h1>
+			<h1 class="hi "><span id="hi" class="">👋 </span> Hi <br>there.</h1>
 			<p>Congratulations on getting a new phone!</p>
 			<p>Answer ALL questions correctly and you will be granted <span class="user-name"></span>'s number. 😜</p>
 			<a href="#question-1" role="button" id="player-begin" class="player-begin-button button">Begin Test</a>
@@ -171,7 +171,7 @@
 				<p>You and your friends just made the funniest 20 minute video EVER. Do you send it to <span class="user-name"></span>?</p>
 			<div class="answer-choices">
 					<button type="button" class="yes incorrect answer-button">yes</button>
-					<button type="button" class="no correct answer-button" onclick="delayedJump('#player-instructions')">no &nbsp;</button>
+					<button type="button" class="no correct answer-button" onclick="delayedJump('#question2')">no &nbsp;</button>
 				</div>
 			</div>
 			<div class="progress-bar">
@@ -186,6 +186,8 @@
 
 
 	<script src="js/main.js"></script>
+	
+
 </body>
 
 </html>

@@ -42,6 +42,9 @@ playerBegin.addEventListener('click', function() {
 
 
 //this delay gives time for the checkmark animation to be seen before moving to the next question
+
+
+//this delay gives time for the checkmark animation to be seen before moving to the next question
 function delayedJump(link) {
 	setTimeout(function(){
 		window.location.href = link;
@@ -49,9 +52,9 @@ function delayedJump(link) {
 }
 
 
+
 //Adds green checkmark when correct answer is selected
 let correctBtn = document.querySelectorAll('.correct');
-let correctMulti = document.querySelectorAll('.correct-answer-multi');
 
 correctBtn.forEach(function (btn, index) {
 	btn.addEventListener('click', function () {
@@ -59,8 +62,5 @@ correctBtn.forEach(function (btn, index) {
 	});
 });
 
-correctMulti.forEach(function (btn, index) {
-	btn.addEventListener('click', function () {
-		correctMulti[index].classList.add('correct-clicked-multi');
-	});
-});
+
+//Smooth Scrolling
