@@ -29,12 +29,12 @@
 			<h1 class="logo">Texting<br>Test <span class="logo-emoji">😈</span></h1>
 				<div class="intro">
 				<p class="bold">Did a pre-teen in your life just get their first phone?</p>
-				<p>Have them answer a few texting questions (customized with your name) before giving them your number...</p>
+				<p>Have them answer a few texting etiquette questions (customized with your name) before being awarded your number...</p>
 			<div class="user-input">
 				<input id="userName" type="text" name="name" placeholder="Your Name (ex. Uncle Luke)" autofocus autocomplete="name" aria-label="Enter Your Name">
 				<input id="userNumber" type="tel" name="number" placeholder="The Prize Phone Number" autocomplete="tel" aria-label="Enter the Prize Phone Number">
 			</div>
-				<p class="xsm-text bold">* your information is not saved in any way</p>
+				<p class="xsm-text bold">* Your information is not saved in any way.</p>
 				<button type="button" class="button" id="begin-test-button">Begin Test</button>
 			<p class="sm-text">(Don’t worry, they'll pass)</p>
 			</div>
@@ -58,8 +58,7 @@
 
 	<section id="question-1" class="turquoise">
 		<div class="number-header">
-			<h1>N<span class="o">o</span></h1>
-			<div class="lg-number">1</div>
+			<h1 class="question-number">N<span class="o">o</span><span class="lg-number">1</span></h1>
 		</div>
 		<div class="content question-content">
 			<div class="q-n-a">
@@ -83,14 +82,13 @@
 
 	<section id="question2" class="pinkish">
 		<div class="number-header">
-			<h1>N<span class="o">o</span></h1>
-			<div class="lg-number">2</div>
+			<h1 class="question-number">N<span class="o">o</span><span class="lg-number">2</span></h1>
 		</div>
 		<div class="content question-content">
 			<p>Is it ever okay to include <span class="user-name"></span> in a group text?</p>
 			<div class="answer-choices">
 				<button type="button" class="yes incorrect answer-button">yes</button>
-					<button type="button" class="no correct answer-button" onclick="delayedJump('#question3')">no &nbsp;</button>
+					<button type="button" class="no correct answer-button hands" onclick="delayedJump('#question3')">no &nbsp;</button>
 			</div>
 			<div class="progress-bar">
 				<div class="circle circle-filled"></div>
@@ -107,8 +105,7 @@
 	
 	<section id="question3" class="peach">
 		<div class="number-header">
-			<h1>N<span class="o">o</span></h1>
-			<div class="lg-number">3</div>
+			<h1 class="question-number">N<span class="o">o</span><span class="lg-number">3</span></h1>
 		</div>
 		<div class="content question-content">
 			<p><span class="user-name"></span> sends you a funny meme. How do you respond?</p>
@@ -138,13 +135,12 @@
 
 <section id="question4" class="purply">
 		<div class="number-header">
-			<h1>N<span class="o">o</span></h1>
-			<div class="lg-number">4</div>
+			<h1 class="question-number">N<span class="o">o</span><span class="lg-number">4</span></h1>
 		</div>
 		<div class="content question-content">
 			<p>You just got a picture of a family member doing something <span class="bold">REALLY</span> embarrasing. Do you text it to <span class="user-name"></span> immediately?</p>
 			<div class="answer-choices">
-				<button type="button" class="yes correct answer-button" onclick="delayedJump('#question5')">yes</button>
+				<button type="button" class="yes correct answer-button hands" onclick="delayedJump('#question5')">yes</button>
 					<button type="button" class="no incorrect answer-button">no &nbsp;</button>
 			</div>
 			<div class="progress-bar">
@@ -162,12 +158,11 @@
 	
 	<section id="question5" class="turquoise">
 		<div class="number-header">
-			<h1>N<span class="o">o</span></h1>
-			<div class="lg-number">5</div>
+			<h1 class="question-number">N<span class="o">o</span><span class="lg-number">5</span></h1>
 		</div>
 		<div class="content question-content">
 			<div class="q-n-a">
-				<p>You and your friends just made the funniest 20 minute video EVER. Do you send it to <span class="user-name"></span>?</p>
+				<p>You just made a 9 minute video of your friend playing Xbox. Do you send it to <span class="user-name"></span>?</p>
 			<div class="answer-choices">
 					<button type="button" class="yes incorrect answer-button">yes</button>
 					<button type="button" class="no correct answer-button" onclick="delayedJump('#question2')">no &nbsp;</button>

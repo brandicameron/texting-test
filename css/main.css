@@ -9,8 +9,8 @@
 	--font-regular: 'Manrope', sans-serif;
 	--font-heading: 'Poppins', sans-serif;
 	--text-color: #000;
-	--purple: #8070fc;
-	--dark-purple: #5d53e8;
+	--purple: linear-gradient(130deg, rgb(143, 102, 255), rgb(156, 56, 255));
+	--dark-purple: #8f66ff;
 	--yellow: #fcf66d;
 	--green: #6bfd74;
 	--turquoise: #6bfdfd;
@@ -23,7 +23,7 @@
 
 html {
 	scroll-behavior: smooth;
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 }
 
 body {
@@ -91,7 +91,7 @@ h1 {
 	font-family: var(--font-heading);
 	font-weight: 700;
 	line-height: 95%;
-	font-size: 2.7rem;
+	font-size: 2.8rem;
 	letter-spacing: -.1rem;
 }
 
@@ -102,17 +102,16 @@ button {
 
 .xsm-text {
 	font-family: var(--font-regular);
-	font-size: .45rem;
+	font-size: .52rem;
 	letter-spacing: .01rem;
 	text-align: left;
-	text-transform: uppercase;
-	margin: -5px 0 5px 5px;
+	margin: -15px 0 10px 5px;
 	opacity: .4;
 }
 
 .sm-text {
 	font-size: .65rem;
-	padding: 18px 0 0 0;
+	padding: 12px 0 0 0;
 }
 
 .bold {
@@ -147,6 +146,10 @@ section {
 	width: 100vw;
 }
 
+.question-number {
+	display: flex;
+}
+
 .lg-number {
 	font-family: var(--font-heading);
 	font-weight: 500;
@@ -165,7 +168,7 @@ section {
 	background: black;
 	height: 8px;
 	width: 90%;
-	top: 70px;
+	top: 55px;
 	left: 3px;
 }
 
@@ -289,6 +292,10 @@ section {
 .option {
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	max-width: 520px;
+	width: 100%;
+	margin: 0 auto;
 }
 
 .option > p {
@@ -296,11 +303,12 @@ section {
 	height: 110px;
 	font-size: .9rem;
 	letter-spacing: -.03rem;
-	line-height: 115%;
+	line-height: 110%;
 	padding-left: 15px;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
+	text-align: left;
 }
 
 @keyframes grow {
@@ -342,6 +350,21 @@ section {
 	}
 }
 
+.hands::before {
+	position: absolute;
+	content: "👇";
+  font-size: 30px;
+  transform: rotate(50deg);
+  right: 0px;
+  top: -20px;
+  animation: up-down .6s linear infinite;
+}
+
+@keyframes up-down {
+  50% {
+		transform-origin: right;		
+  }
+}
 
 
 /*  ******************* INTRO SECTION  *******************  */
@@ -365,21 +388,20 @@ section {
 	place-items: center;
 	margin: 0 0 20px 0;
 	padding-bottom: 5px;
-	transform: translate(9vw, 30vh);
+	transform: translate(9vw, 30vh) scale(.8);
 	z-index: 11;
-	opacity: 1;
+	-webkit-filter: drop-shadow(10px 10px 0 rgb(0 0 0 /20%));
+	filter: drop-shadow(10px 10px 0 rgb(0 0 0 /20%));
 	animation: text 200ms ease-out 1.5s forwards;
 }
 
 @keyframes text {
 	20% {
 		transform: translate(0, 100px);
-		opacity: 1;
 	}
 
 	100% {
-		transform: translate(0, 0);
-		opacity: 1;
+		transform: translate(0, 0) scale(1);
 	}
 }
 
@@ -405,19 +427,22 @@ section {
 }
 
 input {
-	border: 6px solid black;
-	height: 70px;
+	height: 60px;
 	width: 100%;
 	border-radius: 18px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 0 0 0 10px;
+	padding: 0 0 0 12px;
 	font-family: var(--font-heading);
-	color: #fff;
 	color: var(--dark-purple);
-	margin: 10px 10px 0px 0;
+	margin: 12px 0;
+	outline: none;
+	border: none;
+	border: 7px solid #000000;
+	-webkit-filter: drop-shadow(7px 7px 0 rgb(0 0 0 /20%));
+	filter: drop-shadow(7px 7px 0 rgb(0 0 0 /20%));
 	background: #ffffff;
 }
 
@@ -432,11 +457,11 @@ input:focus {
 	color: #ffffff;
 	border-radius: 18px;
 	width: 150px;
-	height: 63px;
+	height: 60px;
 	font-family: var(--font-heading);
 	font-weight: 700;
-	-webkit-filter: drop-shadow(7px 7px 0 rgb(0 0 0 /20%));
-	filter: drop-shadow(7px 7px 0 rgb(0 0 0 /20%));
+	-webkit-filter: drop-shadow(6px 6px 0 rgb(0 0 0 /20%));
+	filter: drop-shadow(6px 6px 0 rgb(0 0 0 /20%));
 	cursor: pointer;
 	-webkit-transition: .05s ease;
 	-o-transition: .05s ease;
@@ -485,7 +510,9 @@ input:focus {
 
 .wave {
 	display: inline-block;
-	animation: wave 4s linear infinite 1.1s;
+/*	animation: wave 4s linear infinite 1.1s;*/
+	animation: wave 4s linear 1.1s;
+	animation-iteration-count: 2;
 }
 
 @keyframes wave {
@@ -555,16 +582,13 @@ input:focus {
 
 @media screen and (max-width: 400px) {
 	.content {
-		transform: scale(.85);
-		width: 90vw;
-		max-width: 575px;
+		transform: scale(.9);
+		width: 80vw;
 	}
 
 	.logo {
-		margin-top: -50px;
+		margin-top: -100px;
 		margin-bottom: 8px;
-		;
-		transform: translate(0, 30vh);
 	}
 
 	::placeholder {
@@ -579,7 +603,7 @@ input:focus {
 	.xsm-text {
 		margin: -10px 0 10px 0;
 	}
-
+	
 	.intro > p {
 		line-height: 135%;
 	}

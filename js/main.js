@@ -1,5 +1,4 @@
 //Applying user's name to questions and lift intro section when "Begin Test" is clicked
-
 const beginTestBtn = document.getElementById('begin-test-button');
 
 function captureUserInfo() {
@@ -8,8 +7,15 @@ function captureUserInfo() {
 	let findSpans = document.getElementsByClassName('user-name');
 	let loopSpans = findSpans.length;
 	for (i = 0; i < loopSpans; i++) {
-		findSpans[i].textContent = applyUserName;
+		if (applyUserName === "") {
+			findSpans[i].textContent = 'Uncle Luke';
+		} else {
+			findSpans[i].textContent = applyUserName;
+		}		
 	};
+	
+	
+	
 	//lifts intro screen after user info is submitted
 	document.getElementById('intro-section').classList.add('lift-intro');
 	document.getElementById('hi').classList.add('wave');
@@ -18,6 +24,7 @@ function captureUserInfo() {
 };
 
 beginTestBtn.addEventListener('click', captureUserInfo);
+
 
 
 //Make submit button work with enter key press also
@@ -33,6 +40,7 @@ userInputInfo.forEach(function (input, index) {
 });
 
 
+
 //slides over instructions when "Begin Test" is clicked
 let playerBegin = document.getElementById('player-begin');
 
@@ -41,7 +49,6 @@ playerBegin.addEventListener('click', function () {
 });
 
 
-//this delay gives time for the checkmark animation to be seen before moving to the next question
 
 
 //this delay gives time for the checkmark animation to be seen before moving to the next question
@@ -59,6 +66,7 @@ let correctBtn = document.querySelectorAll('.correct');
 correctBtn.forEach(function (btn, index) {
 	btn.addEventListener('click', function () {
 		correctBtn[index].classList.add('correct-clicked');
+		correctBtn[index].classList.remove('hands');
 	});
 });
 
