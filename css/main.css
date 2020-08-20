@@ -413,7 +413,7 @@ section {
 }
 
 .intro-text {
-	margin-bottom: 25px;
+	margin-bottom: 20px;
 }
 
 .intro {
@@ -590,7 +590,7 @@ input:focus {
 	}
 
 	.logo {
-		margin: -100px 0 8px 0;
+		margin: -70px 0 8px 0;
 		transform: translate(-1vw, 30vh) scale(.8);
 	}
 
