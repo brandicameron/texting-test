@@ -2,7 +2,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	/*	outline: 2px solid red;*/
+/*	outline: 2px solid red;*/
 }
 
 :root {
@@ -31,7 +31,7 @@ body {
 	font-family: var(--font-regular);
 	color: var(--text-color);
 	font-size: .9rem;
-	overflow: hidden;
+	overflow: hidden;*/
 }
 
 
@@ -66,6 +66,10 @@ body {
 	background: var(--purply);
 }
 
+.hide {
+	display: none;
+}
+
 
 a {
 	text-decoration: none;
@@ -97,7 +101,9 @@ h1 {
 
 input,
 button {
+	position: relative;
 	font-size: .9rem;
+	z-index: 10;
 }
 
 .xsm-text {
@@ -212,6 +218,7 @@ section {
 	justify-content: center;
 	width: 100%;
 	margin: 30px auto;
+	z-index: 8;
 }
 
 .answer-button {
@@ -362,9 +369,50 @@ section {
 
 @keyframes up-down {
   50% {
-		transform-origin: right;		
+		transform-origin: right;	
   }
 }
+
+.thumbs {
+	position: absolute;
+  font-size: 50px;
+  left: 345px;
+  top: 10px;
+  animation: thumbs-up 4.5s linear infinite;
+	animation-delay: .2s;
+	z-index: 1;
+}
+
+
+@keyframes thumbs-up {
+	0% {
+		transform: translateX(0)
+  }
+  95% {
+		transform: translateX(50px)
+  }
+	100% {
+		transform: translateX(0x)
+  }
+}
+
+.shake {
+	animation: shake 3s linear 1.1s infinite;
+}
+
+@keyframes shake {
+	1%, 4% {
+		transform: rotate(-7deg);
+	}
+	2%, 5% {
+		transform: rotate(7deg);
+	}
+	3%, 6% {
+		transform: rotate(0);
+	}
+}
+
+
 
 
 /*  ******************* INTRO SECTION  *******************  */
@@ -633,6 +681,16 @@ input:focus {
 		margin: 0 auto;
 		bottom: 0;
 	}
+	
+	.thumbs {
+	position: absolute;
+  font-size: 50px;
+  left: 205px;
+  top: 10px;
+  animation: thumbs-up 4.5s linear infinite;
+	animation-delay: .2s;
+	z-index: 1;
+}
 }
 
 
