@@ -51,15 +51,6 @@ playerBegin.addEventListener('click', function () {
 
 
 
-//this delay gives time for the checkmark animation to be seen before moving to the next question
-function delayedJump(link) {
-	setTimeout(function () {
-		window.location.href = link;
-	}, 700);
-}
-
-
-
 //Adds green checkmark when correct answer is selected
 let correctBtn = document.querySelectorAll('.correct');
 
@@ -71,4 +62,18 @@ correctBtn.forEach(function (btn, index) {
 });
 
 
+
+//this delay gives time for the checkmark animation to be seen before moving to the next question
+function delayedJump(link) {
+	setTimeout(function () {
+		window.location.href = link;
+	}, 700);
+}
+
+
+
+
+
 //Smooth Scrolling
+
+
