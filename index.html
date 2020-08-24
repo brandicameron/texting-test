@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Text Etiquette Test</title>
-	<meta name="description" content="Did a pre-teen in your life just get their first phone? Have them answer a few very important questions before giving them your number...">
+	<meta name="description" content="Did a pre-teen in your life just get their first phone? Don't take any chances — have them answer a few texting etiquette questions before being awarded your number...">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Brandi Cameron | hello@brandicameron.com">
 	<meta name="theme-color" content="#ffffff">
@@ -25,28 +25,27 @@
 </head>
 
 <body>
-	
+
 	<!--	******************* INTRO  *******************  -->
 
 	<section id="intro-section" class="intro-section purple">
 		<div class="content">
 			<h1 class="logo">Texting<br>Test <span class="logo-emoji">😈</span></h1>
-				<div class="intro">
+			<div class="intro">
 				<div class="intro-text">
-				<p class="bold">Did a pre-teen in your life just get their first phone?</p>
-				<p>Have them answer a few texting etiquette questions (customized with your name) before being awarded your number...</p>
+					<p class="bold">Did a pre-teen in your life just get their first phone?</p>
+					<p>Have them answer a few texting etiquette questions (customized with your name) before being awarded your number...</p>
 				</div>
-			<div class="user-input">
-				<input id="userName" type="text" name="name" placeholder="Your Name (ex. Uncle Luke)" autofocus autocomplete="name" aria-label="Enter Your Name">
-				<input id="userNumber" type="tel" name="number" class="value" placeholder="The Prize Phone Number" autocomplete="tel" aria-label="Enter the Prize Phone Number">
-			</div>
+				<div class="user-input">
+					<input id="userName" type="text" name="name" placeholder="Your Name (ex. Uncle Luke)" autofocus autocomplete="name" aria-label="Enter Your Name">
+					<input id="userNumber" type="tel" name="number" class="value" placeholder="The Prize Phone Number" autocomplete="tel" aria-label="Enter the Prize Phone Number">
+				</div>
 				<p class="xsm-text bold">* Your information is not saved in any way.</p>
 				<button type="button" class="button" id="begin-test-button">Begin Test</button>
-			<p class="sm-text">(this is a no fail test 👍)</p>
+				<p class="sm-text">(this is a no fail test 👍)</p>
 			</div>
 		</div>
 	</section>
-	
 
 	<!--	******************* PLAYER INSTRUCTIONS  *******************  -->
 
@@ -59,7 +58,6 @@
 		</div>
 	</section>
 
-
 	<!--	******************* QUESTION 1  *******************  -->
 
 	<section id="question-1" class="turquoise">
@@ -69,7 +67,7 @@
 		<div class="content question-content">
 			<div class="q-n-a">
 				<p>It is before 10am on a weekend. Is it okay to text <span class="user-name"></span>?</p>
-			<div class="answer-choices">
+				<div class="answer-choices">
 					<button type="button" class="yes incorrect answer-button">yes</button>
 					<button type="button" class="no correct answer-button hands" onclick="delayedJump('#question2')">no &nbsp;</button>
 				</div>
@@ -94,7 +92,7 @@
 			<p>Is it ever okay to include <span class="user-name"></span> in a group text?</p>
 			<div class="answer-choices">
 				<button type="button" class="yes incorrect answer-button">yes</button>
-					<button type="button" class="no correct answer-button shake" onclick="delayedJump('#question3')">no &nbsp;</button>
+				<button type="button" class="no correct answer-button shake" onclick="delayedJump('#question3')">no &nbsp;</button>
 			</div>
 			<div class="progress-bar">
 				<div class="circle circle-filled"></div>
@@ -108,40 +106,38 @@
 
 	<!--	******************* QUESTION 3  *******************  -->
 
-	
 	<section id="question3" class="peach">
 		<div class="number-header">
 			<h1 class="question-number">N<span class="o">o</span><span class="lg-number">3</span></h1>
 		</div>
 		<div class="content question-content">
 			<p><span class="user-name"></span> sends you a funny meme. How do you respond?</p>
-				<div class="answer-choices multi-choice">
-					<div class="option">
-						<button type="button" class="yes incorrect answer-button" aria-label="Reply with every funny meme you've ever seen."></button>
+			<div class="answer-choices multi-choice">
+				<div class="option">
+					<button type="button" class="yes incorrect answer-button" aria-label="Reply with every funny meme you've ever seen."></button>
 					<p aria-hidden="true">Reply with every funny meme you've ever seen.</p>
-					</div>
-					
-					<div class="option">
+				</div>
+
+				<div class="option">
 
 					<button type="button" class="no correct answer-button" onclick="delayedJump('#question4')" aria-label="Simply type LOL or send a laughing emoji."></button>
 					<p class="padding-top-20" aria-hidden="true">Simply type "LOL" or send a laughing emoji.</p>
 					<div class="high-five">🙌</div>
-					</div>
 				</div>
-				<div class="progress-bar">
-			<div class="circle circle-filled"></div>
-			<div class="circle circle-filled"></div>
-			<div class="circle circle-filled"></div>
-			<div class="circle"></div>
-			<div class="circle"></div>
-		</div>
+			</div>
+			<div class="progress-bar">
+				<div class="circle circle-filled"></div>
+				<div class="circle circle-filled"></div>
+				<div class="circle circle-filled"></div>
+				<div class="circle"></div>
+				<div class="circle"></div>
+			</div>
 		</div>
 	</section>
 
-
 	<!--	******************* QUESTION 4  *******************  -->
 
-<section id="question4" class="purply">
+	<section id="question4" class="purply">
 		<div class="number-header">
 			<h1 class="question-number">N<span class="o">o</span><span class="lg-number">4</span></h1>
 		</div>
@@ -149,7 +145,7 @@
 			<p>You just got a picture of a family member doing something <span class="bold">REALLY</span> embarrasing. Do you text it to <span class="user-name"></span> immediately?</p>
 			<div class="answer-choices">
 				<button type="button" class="yes correct answer-button hands" onclick="delayedJump('#question5')">yes</button>
-					<button type="button" class="no incorrect answer-button">no &nbsp;</button>
+				<button type="button" class="no incorrect answer-button">no &nbsp;</button>
 			</div>
 			<div class="progress-bar">
 				<div class="circle circle-filled"></div>
@@ -161,9 +157,8 @@
 		</div>
 	</section>
 
-
 	<!--	******************* QUESTION 5  *******************  -->
-	
+
 	<section id="question5" class="turquoise">
 		<div class="number-header">
 			<h1 class="question-number">N<span class="o">o</span><span class="lg-number">5</span></h1>
@@ -171,12 +166,12 @@
 		<div class="content question-content">
 			<div class="q-n-a">
 				<p>You just made a 9 minute video of your friend playing Xbox. Do you send it to <span class="user-name"></span>?</p>
-			<div class="answer-choices">
+				<div class="answer-choices">
 					<button type="button" class="yes incorrect answer-button">yes</button>
 					<button type="submit" id="winner" class="no correct answer-button" onclick="delayedJump('#congrats')">no &nbsp;</button>
 					<div class="thumbs">👍</div>
 				</div>
-				
+
 			</div>
 			<div class="progress-bar">
 				<div class="circle circle-filled"></div>
@@ -187,19 +182,16 @@
 			</div>
 		</div>
 	</section>
-	
-	
-		<!--	******************* CONGRATS  *******************  -->
-		
-		
-			<section id="congrats" class="green">
+
+	<!--	******************* CONGRATS  *******************  -->
+
+	<section id="congrats" class="green">
 		<div class="content question-content">
 			<h1 id="prize" class="prize"></h1>
 		</div>
 	</section>
-		
-	<script src="js/main.js"></script>
 
+	<script src="js/main.js"></script>
 </body>
 
 </html>

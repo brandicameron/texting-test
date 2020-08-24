@@ -12,14 +12,13 @@ function captureUserInfo() {
 		} else {
 			findSpans[i].textContent = applyUserName;
 		}	
-		
 		let displayNumber = document.getElementById('prize');
 		displayNumber.textContent = applyUserNumber;
 	};
 	
 	//lifts intro screen after user info is submitted
 	document.getElementById('intro-section').classList.add('lift-intro');
-//	document.getElementById('hi').classList.add('wave');
+
 	//if player is in the middle of answering questions and refreshes to go back to the beginning, this will reset to the instruction page after the intro page
 	window.location.href = '#player-instructions';
 };
@@ -51,7 +50,6 @@ playerBegin.addEventListener('click', function () {
 
 
 
-
 //Adds green checkmark when correct answer is selected
 let correctBtn = document.querySelectorAll('.correct');
 
@@ -70,7 +68,6 @@ function delayedJump(link) {
 		window.location.href = link;
 	}, 700);
 }
-
 
 
 //Celebrations
