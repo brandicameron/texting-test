@@ -687,6 +687,10 @@ input:focus {
 		width: 80vw;
 		justify-content: flex-start;
 	}
+	
+	p {
+		line-height: 140%;
+	}
 
 	.logo {
 		margin: -15px 0 15px 0;
@@ -699,7 +703,7 @@ input:focus {
 
 	.sm-text {
 		font-size: .65rem;
-		padding: 15px 0 0 0;
+		padding: 10px 0 0 0;
 	}
 
 	.xsm-text {
