@@ -605,9 +605,8 @@ input:focus {
 
 .wave {
 	display: inline-block;
-	/*	animation: wave 4s linear infinite 1.1s;*/
-	animation: wave 4s linear 1.1s;
-	animation-iteration-count: 2;
+	animation: wave 3.3s linear infinite 1.1s;
+/*	animation-iteration-count: 2;*/
 }
 
 @keyframes wave {
@@ -675,7 +674,18 @@ input:focus {
 /*  ******************* CONGRATS  *******************  */
 
 #congrats {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
+.prize {
+	width: 100vw;
+	text-align: center;
+	font-size: 13vw;
+	letter-spacing: -.2rem;
 }
 
 /*  ******************* TABLET / MOBILE  *******************  */

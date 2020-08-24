@@ -1,4 +1,4 @@
-//Applying user's name to questions and lift intro section when "Begin Test" is clicked
+//Applying user's information to questions and prize page, and lifting intro section when "Begin Test" is clicked
 const beginTestBtn = document.getElementById('begin-test-button');
 
 function captureUserInfo() {
@@ -11,14 +11,15 @@ function captureUserInfo() {
 			findSpans[i].textContent = 'Uncle Luke';
 		} else {
 			findSpans[i].textContent = applyUserName;
-		}		
+		}	
+		
+		let displayNumber = document.getElementById('prize');
+		displayNumber.textContent = applyUserNumber;
 	};
-	
-	
 	
 	//lifts intro screen after user info is submitted
 	document.getElementById('intro-section').classList.add('lift-intro');
-	document.getElementById('hi').classList.add('wave');
+//	document.getElementById('hi').classList.add('wave');
 	//if player is in the middle of answering questions and refreshes to go back to the beginning, this will reset to the instruction page after the intro page
 	window.location.href = '#player-instructions';
 };
