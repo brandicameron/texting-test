@@ -2,7 +2,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	/*	outline: 2px solid red;*/
+/*		outline: 2px solid red;*/
 }
 
 :root {
@@ -135,12 +135,13 @@ section {
 	position: relative;
 	width: 100vw;
 	height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 .content {
 	width: 80vw;
 	max-width: 575px;
-	height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+	height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
 /*	height: 92vh;*/
 	display: flex;
@@ -684,10 +685,11 @@ input:focus {
 	.content {
 		transform: scale(.9);
 		width: 80vw;
+		justify-content: flex-start;
 	}
 
 	.logo {
-		margin: -70px 0 8px 0;
+		margin: -15px 0 15px 0;
 		transform: translate(-1vw, 30vh) scale(.8);
 	}
 
@@ -702,10 +704,6 @@ input:focus {
 
 	.xsm-text {
 		margin: -5px 0 10px 0;
-	}
-
-	.intro > p {
-		line-height: 135%;
 	}
 
 	input {
