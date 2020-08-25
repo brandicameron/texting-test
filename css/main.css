@@ -678,9 +678,13 @@ input:focus {
 	input {
 		margin: 8px 0;
 	}
+	
+	.user-input {
+		margin-top: -5px;
+	}
 
 	.hi {
-		margin-top: -30px;
+		margin-top: 50px;
 	}
 
 	.question-content {
