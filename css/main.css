@@ -2,6 +2,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	-webkit-overflow-scrolling: touch;
 }
 
 :root {
@@ -133,6 +134,7 @@ section {
 .content {
 	width: 80vw;
 	max-width: 575px;
+	max-width: 450px;
 	height: 100vh;
 	height: calc(var(--vh, 1vh) * 100);
 	/*	height: 92vh;*/
@@ -425,6 +427,7 @@ section {
 	animation: high-five 4.5s linear infinite;
 	animation-delay: .2s;
 	z-index: 1;
+	border: 1px solid red;
 }
 
 @keyframes high-five {
@@ -488,6 +491,7 @@ section {
 	opacity: 0;
 	transform: translateY(10px);
 	animation: fade-in 250ms linear 2.1s forwards;
+	max-width: 500px;
 }
 
 @keyframes fade-in {
@@ -499,7 +503,7 @@ section {
 
 input {
 	height: 60px;
-	width: 100%;
+	width: 100%;;
 	border-radius: 18px;
 	display: flex;
 	flex-direction: column;
@@ -510,11 +514,22 @@ input {
 	color: var(--dark-purple);
 	margin: 12px 0;
 	outline: none;
-	border: none;
 	border: 7px solid #000000;
 	-webkit-filter: drop-shadow(7px 7px 0 rgb(0 0 0 /20%));
 	filter: drop-shadow(7px 7px 0 rgb(0 0 0 /20%));
 	background: #ffffff;
+	transform: scaleX(0);
+	transform-origin: left;
+	opacity: 0;
+	animation: expand .2s ease-in-out 2.2s forwards;
+}
+
+@keyframes expand {
+	to {
+		transform: scaleX(1);
+		transform-origin: left;
+		opacity: 1;
+	}
 }
 
 input:focus {
@@ -552,7 +567,6 @@ input:focus {
 ::placeholder {
 	color: var(--light-grey);
 	font-size: .75rem;
-	line-height: 180%;
 }
 
 .lift-intro {
@@ -576,6 +590,10 @@ input:focus {
 #hi {
 	display: inline-block;
 	transform: rotate(10deg);
+}
+
+.hi {
+	margin-top: -25px;
 }
 
 .wave {
