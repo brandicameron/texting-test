@@ -1,4 +1,4 @@
-gsap.registerPlugin(CSSRulePlugin, ScrollToPlugin);
+gsap.registerPlugin(CSSRulePlugin, ScrollToPlugin, ScrollTrigger);
 
 
 //Applying user's information to questions and prize page, and lifting intro section when "Begin Test" is clicked
@@ -26,6 +26,8 @@ function captureUserInfo() {
 	window.location.href = '#player-instructions';
 };
 
+
+//TURN ME BACK ON!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 beginTestBtn.addEventListener('click', captureUserInfo);
 
 
@@ -44,6 +46,23 @@ userInputInfo.forEach(function (input, index) {
 
 
 
+//waving hand
+
+//gsap.set("#hi", {
+//	rotate: 0
+//});
+//
+//gsap.to("#hi", {
+//	scrollTrigger: "#hi",
+//	duration: .1,
+//	rotate: 30,
+//	ease: "linear",
+//	yoyo: true,
+//	repeat: 15
+//});
+
+
+
 //slides over instructions when "Begin Test" is clicked
 let playerBegin = document.getElementById('player-begin');
 
@@ -52,71 +71,37 @@ playerBegin.addEventListener('click', function () {
 });
 
 
-
 //Adds green checkmark when correct answer is selected
 let correctBtn = document.querySelectorAll('.correct');
 
 correctBtn.forEach(function (btn, index) {
 	btn.addEventListener('click', function () {
-		correctBtn[index].classList.add('correct-clicked');
 		correctBtn[index].classList.remove('hands');
+		correctBtn[index].classList.add('correct-clicked');
 	});
 });
 
 
 
-//this delay gives time for the checkmark animation to be seen before moving to the next question
-//function delayedJump(link) {
-//	setTimeout(function () {
-//		window.location.href = link;
-//	}, 700);
-//}
-
-
-//Celebrations
-
-
-
-
 //Mobile ViewHeight Calculator
-
 window.addEventListener('resize', () => {
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
 
 
-let question2 = document.getElementById('question2');
-const answer1 = document.getElementById('answer1');
 
-
-
-
+//Smooth Scroll on Anchor Links for Mobile
 function delayedJump(link) {
 	gsap.to(window, {
-	duration: .3,
+	duration: .2,
 	scrollTo: link,
-	ease: "power2",
-	delay: .5
+		delay: .5,
+	ease: "linear"
 });
-	
-}
+};
 
-
-//answer1.addEventListener('click', () => {
-//	gsap.to(window, {
-//	duration: .3,
-//	scrollTo: question2,
-//	ease: "power2",
-//	delay: .5
-//});
-//});
-
-
-
-	
-
-
+//Celebrations
 
 
 

@@ -36,6 +36,7 @@ body {
 	overflow: hidden;
 }
 
+/*
 #question1,
 #question2,
 #question3,
@@ -43,6 +44,7 @@ body {
 #question5 {
 	overflow: scroll;
 }
+*/
 
 /*  ******************* UNIVERSAL/GENERAL STYLES  *******************  */
 
@@ -386,7 +388,7 @@ section {
 .thumbs {
 	position: absolute;
 	font-size: 50px;
-	left: 345px;
+	left: 285px;
 	top: 10px;
 	animation: thumbs-up 4.5s linear infinite;
 	animation-delay: .2s;

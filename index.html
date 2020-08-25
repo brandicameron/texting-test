@@ -22,9 +22,15 @@
 	<meta property="og:image:type" content="image/jpg">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/CSSRulePlugin.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollToPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/Draggable.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/EaselPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/MotionPathPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/PixiPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/TextPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollToPlugin.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
@@ -72,9 +78,7 @@
 				<p>It is before 10am on a weekend. Is it okay to text <span class="user-name"></span>?</p>
 				<div class="answer-choices">
 					<button type="button" class="yes incorrect answer-button">yes</button>
-<!--					<button type="button" class="no correct answer-button hands" onclick="delayedJump('#question2')">no &nbsp;</button>-->
 					<button type="button" class="no correct answer-button hands" onclick="delayedJump('#question2')">no &nbsp;</button>
-<!--					<button type="button" class="no correct answer-button hands" id="answer1">no &nbsp;</button>-->
 				</div>
 			</div>
 			<div class="progress-bar">
