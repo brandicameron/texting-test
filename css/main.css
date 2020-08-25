@@ -145,7 +145,6 @@ section {
 	max-width: 450px;
 	height: 100vh;
 	height: calc(var(--vh, 1vh) * 100);
-	/*	height: 92vh;*/
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -435,7 +434,6 @@ section {
 	animation: high-five 4.5s linear infinite;
 	animation-delay: .2s;
 	z-index: 1;
-	border: 1px solid red;
 }
 
 @keyframes high-five {

@@ -1,3 +1,6 @@
+gsap.registerPlugin(CSSRulePlugin, ScrollToPlugin);
+
+
 //Applying user's information to questions and prize page, and lifting intro section when "Begin Test" is clicked
 const beginTestBtn = document.getElementById('begin-test-button');
 
@@ -63,11 +66,11 @@ correctBtn.forEach(function (btn, index) {
 
 
 //this delay gives time for the checkmark animation to be seen before moving to the next question
-function delayedJump(link) {
-	setTimeout(function () {
-		window.location.href = link;
-	}, 700);
-}
+//function delayedJump(link) {
+//	setTimeout(function () {
+//		window.location.href = link;
+//	}, 700);
+//}
 
 
 //Celebrations
@@ -82,4 +85,46 @@ window.addEventListener('resize', () => {
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
 
+
+let question2 = document.getElementById('question2');
+const answer1 = document.getElementById('answer1');
+
+
+
+
+function delayedJump(link) {
+	gsap.to(window, {
+	duration: .3,
+	scrollTo: link,
+	ease: "power2",
+	delay: .5
+});
 	
+}
+
+
+//answer1.addEventListener('click', () => {
+//	gsap.to(window, {
+//	duration: .3,
+//	scrollTo: question2,
+//	ease: "power2",
+//	delay: .5
+//});
+//});
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
