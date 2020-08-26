@@ -1,7 +1,8 @@
-gsap.registerPlugin(CSSRulePlugin, ScrollToPlugin, ScrollTrigger);
+gsap.registerPlugin(CSSRulePlugin, ScrambleTextPlugin, ScrollToPlugin);
 
 
 //Applying user's information to questions and prize page, and lifting intro section when "Begin Test" is clicked
+
 const beginTestBtn = document.getElementById('begin-test-button');
 
 function captureUserInfo() {
@@ -14,23 +15,50 @@ function captureUserInfo() {
 			findSpans[i].textContent = 'Uncle Luke';
 		} else {
 			findSpans[i].textContent = applyUserName;
-		}
-		let displayNumber = document.getElementById('prize');
-		displayNumber.textContent = applyUserNumber;
+		};
+
+		const finalAnswerButton = document.getElementById('winner');
+
+		finalAnswerButton.addEventListener('click', function () {
+			gsap.to(".prize", {
+				delay: 1,
+				duration: 3,
+				scrambleText: applyUserNumber
+			});
+		});
 	};
 
 	//lifts intro screen after user info is submitted
+
 	document.getElementById('intro-section').classList.add('lift-intro');
 
 	//if player is in the middle of answering questions and refreshes to go back to the beginning, this will reset to the instruction page after the intro page
 	window.location.href = '#player-instructions';
+
+
+	//begin waving hand
+	gsap.set("#hi", {
+		rotate: 0
+	});
+
+	gsap.to("#hi", {
+		duration: .1,
+		rotate: 30,
+		ease: "linear",
+		yoyo: true,
+		repeat: 16
+	});
 };
 
 beginTestBtn.addEventListener('click', captureUserInfo);
 
 
 
+
+
+
 //Make submit button work with enter key press also
+
 let userInputInfo = document.querySelectorAll(".user-input");
 
 userInputInfo.forEach(function (input, index) {
@@ -44,70 +72,103 @@ userInputInfo.forEach(function (input, index) {
 
 
 
+
+
 //typing event
-		const typing = document.getElementById('typing');
 
-		for (let element of document.querySelectorAll(".typing")) {
-			let length = element.textContent.length;
-			element.style.setProperty("--length", length);
-		}
+const typing = document.getElementById('typing');
 
-		function removeCursor() {
-			typing.classList.remove('typing-animation');
-		}
+for (let element of document.querySelectorAll(".typing")) {
+	let length = element.textContent.length;
+	element.style.setProperty("--length", length);
+}
 
-		typing.addEventListener("animationend", removeCursor);
-		
-		
-		//logo animation
-		let tl = gsap.timeline();
-		
-		function addLogo() {
-			document.getElementById('logo-container').classList.add('logo-background');
-		}
-		
-		function replaceText() {
-			document.getElementById('typing').classList.add('hide');
-			document.getElementById('logo-text').classList.add('make-visible');
-		}
+function removeCursor() {
+	typing.classList.remove('typing-animation');
+}
 
-		tl.to(".logo-container", {
-			duration: .02,
-			x: 15,
-			y: -15,
-			ease: "bounce",
-			delay: 1.75
-		});
-		
-		tl.to(".logo-container", {
-			duration: .03,
-			y: -150,
-			ease: "ease-out",
-			onStart: addLogo,
-			opacity: 1,
-			scale: 1
-		});
-		
-		tl.to(".typing", {
-			duration: 0.5,
-			onUpdate: replaceText
-		}, "-=0.02");
+typing.addEventListener("animationend", removeCursor);
 
 
-//waving hand
 
-//gsap.set("#hi", {
-//	rotate: 0
-//});
-//
-//gsap.to("#hi", {
-//	scrollTrigger: "#hi",
-//	duration: .1,
-//	rotate: 30,
-//	ease: "linear",
-//	yoyo: true,
-//	repeat: 15
-//});
+
+
+//logo animation
+
+let tl = gsap.timeline();
+
+function addLogo() {
+	document.getElementById('logo-container').classList.add('logo-background');
+}
+
+
+function removeText() {
+	document.getElementById('typing').classList.add('hide');
+}
+
+function replaceText() {
+	document.getElementById('logo-text').classList.add('make-visible');
+}
+
+tl.to(".logo-container", {
+	duration: .04,
+	x: 15,
+	y: -15,
+	ease: "bounce",
+	delay: 1.9
+});
+
+tl.to(".logo-container", {
+	duration: .09,
+	y: -225,
+	ease: "ease-out",
+	onStart: addLogo,
+	opacity: 1,
+	scale: 1
+});
+
+tl.to(".typing", {
+	duration: 0.01,
+	onStart: removeText
+}, "-=0.1");
+
+
+tl.to(".typing", {
+	duration: 0.01,
+	onStart: replaceText
+});
+
+
+//user input section fade in/up
+
+gsap.set(".intro", {
+	y: 0,
+	opacity: 0
+});
+
+gsap.to(".intro", {
+	duration: .25,
+	delay: 2.75,
+	y: -20,
+	opacity: 1
+});
+
+
+
+//expanding user inputs
+
+gsap.set("input", {
+	width: 0,
+	opacity: 0
+});
+
+gsap.to("input", {
+	duration: .2,
+	delay: 3.3,
+	width: "100%",
+	opacity: 1
+});
+
 
 
 
@@ -148,4 +209,18 @@ function delayedJump(link) {
 	});
 };
 
-//Celebrations
+//Winning Number
+
+
+
+
+//const finalAnswerButton = document.getElementById('winner');
+//
+//finalAnswerButton.addEventListener('click', function() {
+//	gsap.to(".prize", {
+//			delay: 1,
+//			duration: 3,
+//			chars: "XXXXOOOOXXXXOOOO",
+//			scrambleText: applyUserNumber
+//		});
+//});
