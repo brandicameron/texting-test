@@ -22,12 +22,10 @@
 	<meta property="og:image:type" content="image/jpg">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/CSSRulePlugin.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/Draggable.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/EaselPlugin.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/MotionPathPlugin.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/PixiPlugin.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/TextPlugin.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollToPlugin.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
@@ -39,7 +37,11 @@
 
 	<section id="intro-section" class="intro-section purple">
 		<div class="content">
-			<h1 class="logo">Texting<br>Test <span class="logo-emoji">😈</span></h1>
+			<div class="logo-container" id="logo-container">
+				<h1 class="typing typing-animation" id="typing">Texting&nbsp;Test&nbsp;<span class="logo-emoji">😈</span></h1>
+				<h1 class="logo-text" id="logo-text">Texting Test <span class="logo-emoji">😈</span></h1>
+			</div>
+
 			<div class="intro">
 				<div class="intro-text">
 					<p class="bold">Did a pre-teen in your life just get their first phone?</p>
@@ -199,7 +201,7 @@
 			<h1 id="prize" class="prize"></h1>
 		</div>
 	</section>
-	
+
 	<script src="js/main.js"></script>
 </body>
 

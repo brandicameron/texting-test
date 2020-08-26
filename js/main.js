@@ -14,11 +14,11 @@ function captureUserInfo() {
 			findSpans[i].textContent = 'Uncle Luke';
 		} else {
 			findSpans[i].textContent = applyUserName;
-		}	
+		}
 		let displayNumber = document.getElementById('prize');
 		displayNumber.textContent = applyUserNumber;
 	};
-	
+
 	//lifts intro screen after user info is submitted
 	document.getElementById('intro-section').classList.add('lift-intro');
 
@@ -26,8 +26,6 @@ function captureUserInfo() {
 	window.location.href = '#player-instructions';
 };
 
-
-//TURN ME BACK ON!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 beginTestBtn.addEventListener('click', captureUserInfo);
 
 
@@ -44,6 +42,56 @@ userInputInfo.forEach(function (input, index) {
 	});
 });
 
+
+
+//typing event
+		const typing = document.getElementById('typing');
+
+		for (let element of document.querySelectorAll(".typing")) {
+			let length = element.textContent.length;
+			element.style.setProperty("--length", length);
+		}
+
+		function removeCursor() {
+			typing.classList.remove('typing-animation');
+		}
+
+		typing.addEventListener("animationend", removeCursor);
+		
+		
+		//logo animation
+		let tl = gsap.timeline();
+		
+		function addLogo() {
+			document.getElementById('logo-container').classList.add('logo-background');
+		}
+		
+		function replaceText() {
+			document.getElementById('typing').classList.add('hide');
+			document.getElementById('logo-text').classList.add('make-visible');
+		}
+
+		tl.to(".logo-container", {
+			duration: .02,
+			x: 15,
+			y: -15,
+			ease: "bounce",
+			delay: 1.75
+		});
+		
+		tl.to(".logo-container", {
+			duration: .03,
+			y: -150,
+			ease: "ease-out",
+			onStart: addLogo,
+			opacity: 1,
+			scale: 1
+		});
+		
+		tl.to(".typing", {
+			duration: 0.5,
+			onUpdate: replaceText
+		}, "-=0.02");
 
 
 //waving hand
@@ -82,11 +130,10 @@ correctBtn.forEach(function (btn, index) {
 });
 
 
-
 //Mobile ViewHeight Calculator
 window.addEventListener('resize', () => {
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
+	let vh = window.innerHeight * 0.01;
+	document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
 
 
@@ -94,22 +141,11 @@ window.addEventListener('resize', () => {
 //Smooth Scroll on Anchor Links for Mobile
 function delayedJump(link) {
 	gsap.to(window, {
-	duration: .2,
-	scrollTo: link,
+		duration: .2,
+		scrollTo: link,
 		delay: .5,
-	ease: "linear"
-});
+		ease: "linear"
+	});
 };
 
 //Celebrations
-
-
-
-
-
-
-
-
-
-
-
