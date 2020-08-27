@@ -20,9 +20,17 @@ function captureUserInfo() {
 		const finalAnswerButton = document.getElementById('winner');
 
 		finalAnswerButton.addEventListener('click', function () {
+			
+			gsap.set (".prize", {
+				opacity: 0
+			})
+			
 			gsap.to(".prize", {
-				delay: 1,
+				opacity: 1,
+				delay: 1.5,
 				duration: 3,
+//				speed: 0.2,
+				oldClass: ".green",
 				scrambleText: applyUserNumber
 			});
 		});
@@ -97,46 +105,36 @@ typing.addEventListener("animationend", removeCursor);
 
 let tl = gsap.timeline();
 
-function addLogo() {
-	document.getElementById('logo-container').classList.add('logo-background');
-}
-
-
 function removeText() {
 	document.getElementById('typing').classList.add('hide');
+}
+
+function addLogo() {
+	document.getElementById('logo-container').classList.add('logo-background');
 }
 
 function replaceText() {
 	document.getElementById('logo-text').classList.add('make-visible');
 }
 
-tl.to(".logo-container", {
-	duration: .04,
-	x: 15,
-	y: -15,
-	ease: "bounce",
+tl.to(".typing", {
+	duration: 0.001,
+	onStart: removeText,
+	onUpdate: addLogo,
+	onComplete: replaceText,
 	delay: 1.9
 });
 
 tl.to(".logo-container", {
-	duration: .09,
+	duration: .25,
+	x: 35,
 	y: -225,
-	ease: "ease-out",
-	onStart: addLogo,
 	opacity: 1,
-	scale: 1
-});
-
-tl.to(".typing", {
-	duration: 0.01,
-	onStart: removeText
-}, "-=0.1");
+	scale: 1,
+	ease: "easeInOut"
+})
 
 
-tl.to(".typing", {
-	duration: 0.01,
-	onStart: replaceText
-});
 
 
 //user input section fade in/up
@@ -150,7 +148,8 @@ gsap.to(".intro", {
 	duration: .25,
 	delay: 2.75,
 	y: -20,
-	opacity: 1
+	opacity: 1,
+	ease: "back"
 });
 
 
@@ -164,7 +163,7 @@ gsap.set("input", {
 
 gsap.to("input", {
 	duration: .2,
-	delay: 3.3,
+	delay: 3.1,
 	width: "100%",
 	opacity: 1
 });
@@ -209,18 +208,5 @@ function delayedJump(link) {
 	});
 };
 
-//Winning Number
+//Congrats!
 
-
-
-
-//const finalAnswerButton = document.getElementById('winner');
-//
-//finalAnswerButton.addEventListener('click', function() {
-//	gsap.to(".prize", {
-//			delay: 1,
-//			duration: 3,
-//			chars: "XXXXOOOOXXXXOOOO",
-//			scrambleText: applyUserNumber
-//		});
-//});

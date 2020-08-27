@@ -637,6 +637,10 @@ input:focus {
 	align-items: center;
 }
 
+.green {
+	color: green;
+}
+
 .prize {
 	width: 100vw;
 	text-align: center;
@@ -657,9 +661,10 @@ input:focus {
 		line-height: 140%;
 	}
 
-	.logo {
-		margin: -15px 0 15px 0;
-		transform: translate(-1vw, 30vh) scale(.8);
+
+	.logo-container {
+/*		border: 1px solid red;*/
+		margin-left: -40px;
 	}
 
 	::placeholder {
@@ -713,7 +718,7 @@ input:focus {
 	}
 	
 	.prize {
-	font-size: 15vw;
+	font-size: 14vw;
 }
 }
 
