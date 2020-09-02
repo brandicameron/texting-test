@@ -697,8 +697,12 @@ input:focus {
 	}
 	
 	.logo-text {
-		margin-top: 10px;
+		margin-top: 0;
 }
+	
+	.intro-text {
+		margin-top: -10px;
+	}
 
 	::placeholder {
 		font-size: .65rem;
