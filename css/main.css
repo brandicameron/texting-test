@@ -693,7 +693,8 @@ input:focus {
 	.content {
 		transform: scale(.9);
 		width: 80vw;
-		justify-content: flex-start;
+		height: 80vh;
+/*		justify-content: flex-start;*/
 	}
 
 	p {
@@ -703,7 +704,7 @@ input:focus {
 	}
 	
 	.logo-text {
-		margin-top: 0;
+		margin-top: 20px;
 }
 	
 	.intro-text {
@@ -737,8 +738,8 @@ input:focus {
 
 	.question-content {
 		height: 60vh;
-		justify-content: flex-start;
-		padding-top: 50px;
+/*		justify-content: flex-start;*/
+/*		padding-top: 50px;*/
 	}
 
 	.progress-bar {
@@ -759,6 +760,11 @@ input:focus {
 		font-size: 1.8rem;
 	}
 
+	.congrats-content {
+		height: 60vh;
+		align-items: center;
+	}
+	
 	.congrats-text {
 		text-align: center;
 		line-height: 120%;
@@ -769,6 +775,10 @@ input:focus {
 
 	html {
 		font-size: 1.3rem;
+	}
+	
+	.congrats-content {
+		height: 80vh;
 	}
 
 	.content {
