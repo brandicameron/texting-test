@@ -204,7 +204,6 @@ function displayPrizeNumber() {
 			opacity: 1
 			})
 		.to(".prize", {
-//			delay: .01,
 			duration: 2.5,
 			scrambleText: {
 				text: applyUserNumber,
@@ -218,8 +217,6 @@ function displayPrizeNumber() {
 			scale: 1.2,
 			ease: "bounce"
 		});
-
-	document.getElementById('radial-grow').hidden = "true";
 };
 
 
