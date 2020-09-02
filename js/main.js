@@ -200,6 +200,7 @@ function displayPrizeNumber() {
 	};
 
 	let tl = gsap.timeline();
+	
 
 	tl.to(".congrats-text", {
 			duration: .25,
@@ -207,6 +208,12 @@ function displayPrizeNumber() {
 			opacity: 1,
 			ease: "back"
 		})
+	.to(".thumbsup", {
+		duration: .5,
+		fontSize: 60,
+		yoyo: true,
+		ease: "bounce"
+	},"-=.5")
 		.to(".prize", {
 			delay: 1,
 			opacity: 1
@@ -223,7 +230,7 @@ function displayPrizeNumber() {
 		.to(".prize", {
 			duration: .5,
 			scale: 1.2,
-			ease: "bounce"
+			ease: "elastic"
 		});
 };
 
