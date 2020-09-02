@@ -39,11 +39,7 @@
 
 	<section id="intro-section" class="intro-section purple">
 		<div class="content">
-			<div class="logo-container" id="logo-container">
-				<h1 class="typing typing-animation" id="typing">Texting&nbsp;Test&nbsp;<span class="logo-emoji">😈</span></h1>
-				<h1 class="logo-text" id="logo-text">Texting Test <span class="logo-emoji">😈</span></h1>
-			</div>
-
+			<h1 class="logo-text" id="logo-text"></h1>
 			<div class="intro">
 				<div class="intro-text">
 					<p class="bold">Did a pre-teen in your life just get their first phone?</p>
@@ -60,7 +56,7 @@
 		</div>
 	</section>
 
-	<!--	******************* PLAYER INSTRUCTIONS  *******************  -->
+	<!--	******************* PLAYER WELCOME SCREEN  *******************  -->
 
 	<section id="player-instructions" class="yellow player-instructions">
 		<div class="content">
@@ -170,7 +166,7 @@
 		</div>
 	</section>
 
-	<!--	******************* QUESTION 5  *******************  -->
+	<!--	******************* QUESTION 5 / WINNING BUTTON  *******************  -->
 
 	<section id="question5" class="turquoise">
 		<div class="number-header">
@@ -181,9 +177,11 @@
 				<p>You just made a 9 minute video of your friend playing Xbox. Do you send it to <span class="user-name"></span>?</p>
 				<div class="answer-choices">
 					<button type="button" class="yes incorrect answer-button">yes</button>
-					<button type="submit" id="winner" class="no correct answer-button" onclick="delayedJump('#congrats')">no &nbsp;</button>
+					<button type="submit" id="winner" class="no answer-button" onclick="winningClick()">no &nbsp;</button>
 					<div class="thumbs">👍</div>
 				</div>
+
+				<div id="radial-grow" class="circle-grow"></div>
 
 			</div>
 			<div class="progress-bar">
@@ -198,16 +196,22 @@
 
 	<!--	******************* CONGRATS  *******************  -->
 
-	<section id="congrats" class="green">
-		<div class="content question-content">
+
+
+
+	<section id="congrats" class="purple">
+		<p class="congrats-text">Congratulations!</p>
+		<p class="congrats-text">You are granted <span class="user-name"></span>'s number:</p>
+		<div class="content question-content prize-content">
 			<h1 id="prize" class="prize"></h1>
 		</div>
 	</section>
-	
-	
+
+
+
 	<script src="js/ScrambleTextPlugin.min.js"></script>
 	<script src="js/main.js"></script>
-	
+
 </body>
 
 </html>

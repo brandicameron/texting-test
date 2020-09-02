@@ -1,143 +1,61 @@
-gsap.registerPlugin(CSSRulePlugin, ScrambleTextPlugin, ScrollToPlugin);
+gsap.registerPlugin(CSSRulePlugin, ScrambleTextPlugin, ScrollToPlugin, TextPlugin);
 
 
-//Applying user's information to questions and prize page, and lifting intro section when "Begin Test" is clicked
+//Smooth Scroll on Anchor Links for Mobile
 
-const beginTestBtn = document.getElementById('begin-test-button');
-
-function captureUserInfo() {
-	let applyUserName = document.getElementById('userName').value;
-	let applyUserNumber = document.getElementById('userNumber').value;
-	let findSpans = document.getElementsByClassName('user-name');
-	let loopSpans = findSpans.length;
-	for (i = 0; i < loopSpans; i++) {
-		if (applyUserName === "") {
-			findSpans[i].textContent = 'Uncle Luke';
-		} else {
-			findSpans[i].textContent = applyUserName;
-		};
-
-		const finalAnswerButton = document.getElementById('winner');
-
-		finalAnswerButton.addEventListener('click', function () {
-			
-			gsap.set (".prize", {
-				opacity: 0
-			})
-			
-			gsap.to(".prize", {
-				opacity: 1,
-				delay: 1.5,
-				duration: 3,
-//				speed: 0.2,
-				oldClass: ".green",
-				scrambleText: applyUserNumber
-			});
-		});
-	};
-
-	//lifts intro screen after user info is submitted
-
-	document.getElementById('intro-section').classList.add('lift-intro');
-
-	//if player is in the middle of answering questions and refreshes to go back to the beginning, this will reset to the instruction page after the intro page
-	window.location.href = '#player-instructions';
-
-
-	//begin waving hand
-	gsap.set("#hi", {
-		rotate: 0
-	});
-
-	gsap.to("#hi", {
-		duration: .1,
-		rotate: 30,
-		ease: "linear",
-		yoyo: true,
-		repeat: 16
+function delayedJump(link) {
+	gsap.to(window, {
+		duration: .2,
+		scrollTo: link,
+		delay: .5,
+		ease: "linear"
 	});
 };
 
-beginTestBtn.addEventListener('click', captureUserInfo);
 
 
 
+//Logo animation
 
+let logoTimeline = gsap.timeline();
 
-
-//Make submit button work with enter key press also
-
-let userInputInfo = document.querySelectorAll(".user-input");
-
-userInputInfo.forEach(function (input, index) {
-	input.addEventListener("keyup", function (event) {
-		event.preventDefault();
-		if (event.keyCode === 13) {
-			beginTestBtn.click();
-		};
+logoTimeline.to('.logo-text', {
+		onStart: function () {
+			document.getElementById('logo-text').classList.add('cursor');
+		},
+		duration: 1.5,
+		text: {
+			value: 'Texting Test <span class="emoji">😈</span>'
+		},
+		ease: "none",
+		onComplete: function () {
+			document.getElementById('logo-text').classList.remove('cursor');
+		}
+	})
+	.to(".logo-text", {
+	delay: .5,
+		onComplete: function () {
+			document.getElementById('logo-text').classList.add('convert-to-logo');
+		}
+	})
+	.to(".logo-text", {
+		duration: .1,
+		opacity: 1,
+		x: 5,
+		y: -25,
+		scale: 1,
+		width: 275,
+	})
+	.to(".logo-text", {
+		duration: .5,
+		y: 0,
+		ease: "back"
 	});
-});
 
 
 
 
-
-//typing event
-
-const typing = document.getElementById('typing');
-
-for (let element of document.querySelectorAll(".typing")) {
-	let length = element.textContent.length;
-	element.style.setProperty("--length", length);
-}
-
-function removeCursor() {
-	typing.classList.remove('typing-animation');
-}
-
-typing.addEventListener("animationend", removeCursor);
-
-
-
-
-
-//logo animation
-
-let tl = gsap.timeline();
-
-function removeText() {
-	document.getElementById('typing').classList.add('hide');
-}
-
-function addLogo() {
-	document.getElementById('logo-container').classList.add('logo-background');
-}
-
-function replaceText() {
-	document.getElementById('logo-text').classList.add('make-visible');
-}
-
-tl.to(".typing", {
-	duration: 0.001,
-	onStart: removeText,
-	onUpdate: addLogo,
-	onComplete: replaceText,
-	delay: 1.9
-});
-
-tl.to(".logo-container", {
-	duration: .25,
-	x: 35,
-	y: -225,
-	opacity: 1,
-	scale: 1,
-	ease: "easeInOut"
-})
-
-
-
-
-//user input section fade in/up
+//User input area fade in/up
 
 gsap.set(".intro", {
 	y: 0,
@@ -154,7 +72,7 @@ gsap.to(".intro", {
 
 
 
-//expanding user inputs
+//Expanding user inputs
 
 gsap.set("input", {
 	width: 0,
@@ -170,16 +88,86 @@ gsap.to("input", {
 
 
 
+//Applies user name to questions throughout quiz
 
-//slides over instructions when "Begin Test" is clicked
-let playerBegin = document.getElementById('player-begin');
+function captureUserInfo() {
+	let applyUserName = document.getElementById('userName').value;
+	let findSpans = document.getElementsByClassName('user-name');
+	let loopSpans = findSpans.length;
+	for (i = 0; i < loopSpans; i++) {
+		if (applyUserName === "") {
+			findSpans[i].textContent = 'Uncle Luke';
+		} else {
+			findSpans[i].textContent = applyUserName;
+		};
+	};
+};
 
-playerBegin.addEventListener('click', function () {
+
+
+//Lifts the intro screen
+
+function liftIntroScreen() {
+	document.getElementById('intro-section').classList.add('lift-intro');
+}
+
+
+
+//Starts hand waving on player welcome screen
+
+function beginWavingHand() {
+	gsap.set("#hi", {
+		rotate: 0
+	});
+
+	gsap.to("#hi", {
+		duration: .1,
+		rotate: 30,
+		ease: "linear",
+		yoyo: true,
+		repeat: 16
+	});
+}
+
+
+
+//Sets all above into action when "Begin Test" is clicked
+
+const beginTestBtn = document.getElementById('begin-test-button');
+
+beginTestBtn.addEventListener('click', () => {
+	captureUserInfo();
+	liftIntroScreen();
+	beginWavingHand();
+});
+
+
+
+//Makes "begin test" button work with enter key press
+
+let userInputInfo = document.querySelectorAll(".user-input");
+
+userInputInfo.forEach(function (input, index) {
+	input.addEventListener("keyup", function (event) {
+		event.preventDefault();
+		if (event.keyCode === 13) {
+			beginTestBtn.click();
+		};
+	});
+});
+
+
+
+//slides over Player Welcome screen when "Begin Test" is clicked
+
+document.getElementById('player-begin').addEventListener('click', function () {
 	document.getElementById('player-instructions').classList.add('slide-left');
 });
 
 
+
 //Adds green checkmark when correct answer is selected
+
 let correctBtn = document.querySelectorAll('.correct');
 
 correctBtn.forEach(function (btn, index) {
@@ -190,23 +178,77 @@ correctBtn.forEach(function (btn, index) {
 });
 
 
+
+
 //Mobile ViewHeight Calculator
-window.addEventListener('resize', () => {
-	let vh = window.innerHeight * 0.01;
-	document.documentElement.style.setProperty('--vh', `${vh}px`);
-});
+
+//window.addEventListener('resize', () => {
+//	let vh = window.innerHeight * 0.01;
+//	document.documentElement.style.setProperty('--vh', `${vh}px`);
+//});
 
 
 
-//Smooth Scroll on Anchor Links for Mobile
-function delayedJump(link) {
+
+//Radial Zoom
+
+function radialBgGrow() {
+	document.getElementById('radial-grow').classList.add('radial-grow');
+
 	gsap.to(window, {
-		duration: .2,
-		scrollTo: link,
-		delay: .5,
+		duration: .1,
+		scrollTo: "#congrats",
 		ease: "linear"
 	});
+}
+
+
+//Adds winning number to scrambleText
+
+function displayPrizeNumber() {
+	let applyUserNumber = document.getElementById('userNumber').value;
+	let numtext = document.querySelector('.prize');
+
+	if (applyUserNumber === "") {
+		numtext.textContent = "555-555-5555";
+	} else {
+		numtext.textContent = applyUserNumber;
+	};
+
+	let tl = gsap.timeline();
+
+	tl.to(".congrats-text", {
+			duration: .25,
+			y: -20,
+			opacity: 1,
+			ease: "back"
+		})
+		.to(".prize", {
+			delay: .5,
+			opacity: 1,
+			duration: 2.5,
+			scrambleText: {
+				text: applyUserNumber,
+				chars: "1234567890",
+				oldClass: "old",
+				newClass: "cool"
+			}
+		})
+		.to(".prize", {
+			duration: .5,
+			scale: 1.2,
+			ease: "bounce"
+		});
+
+	document.getElementById('radial-grow').hidden = "true";
 };
 
-//Congrats!
+
+
+//Circle Zoom and Display Winning Number
+
+function winningClick() {
+	setTimeout(radialBgGrow, 800);
+	setTimeout(displayPrizeNumber, 1900);
+};
 
