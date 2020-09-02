@@ -766,6 +766,11 @@ input:focus {
 	.prize {
 		font-size: 1.8rem;
 	}
+	
+	.prize::before {
+	left: 16px;
+	top: 97px;
+}
 
 	.congrats-content {
 		height: 50vh;
