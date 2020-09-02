@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Brandi Cameron | hello@brandicameron.com">
 	<meta name="theme-color" content="#ffffff">
-	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@523&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;800&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -42,7 +42,7 @@
 			<h1 class="logo-text" id="logo-text"></h1>
 			<div class="intro">
 				<div class="intro-text">
-					<p class="bold">Did a pre-teen in your life just get their first phone?</p>
+					<p class="bold">Did a pre-teen in your family just get their first phone?</p>
 					<p>Have them answer a few text etiquette questions (customized with your name) before being awarded your phone number...</p>
 				</div>
 				<div class="user-input">
@@ -62,7 +62,7 @@
 		<div class="content">
 			<h1 class="hi"><span id="hi">👋 </span> Hi <br>there.</h1>
 			<p>Congratulations on getting a new phone!</p>
-			<p>Answer ALL questions correctly and you will be granted <span class="user-name"></span>'s number. 😜</p>
+			<p>Answer <span class="bold">ALL</span> questions correctly and you will be granted <span class="user-name"></span>'s number. 😜</p>
 			<a href="#question-1" role="button" id="player-begin" class="player-begin-button button">Begin Test</a>
 		</div>
 	</section>
@@ -78,8 +78,7 @@
 				<p>It is before 10am on a weekend. Is it okay to text <span class="user-name"></span>?</p>
 				<div class="answer-choices">
 					<button type="button" class="yes incorrect answer-button">yes</button>
-					<button type="button" class="no correct answer-button hands" onclick="delayedJump('#question5')">no &nbsp;</button>
-<!--					<button type="button" class="no correct answer-button hands" onclick="delayedJump('#question2')">no &nbsp;</button>-->
+					<button type="button" class="no correct answer-button hands" onclick="delayedJump('#question2')">no &nbsp;</button>
 				</div>
 			</div>
 			<div class="progress-bar">
@@ -170,8 +169,6 @@
 	<!--	******************* QUESTION 5 / WINNING BUTTON  *******************  -->
 
 	<section id="question5" class="turquoise">
-
-	<div class="last-question-content">
 		<div class="number-header">
 			<h1 class="question-number">N<span class="o">o</span><span class="lg-number">5</span></h1>
 		</div>
@@ -193,16 +190,15 @@
 				<div class="circle circle-filled"></div>
 			</div>
 		</div>
-		</div>
-		
+	
 	</section>
 
 	<!--	******************* CONGRATS  *******************  -->
 
 	<section id="congrats" class="purple">
 	<div class="content congrats-content">
-		<p class="congrats-text great">Great job! 👍 </p>
-		<p class="congrats-text">You have been granted <span class="user-name"></span>'s number:</p>
+		<p class="congrats-text great">Great job 👍 </p>
+		<p class="congrats-text">You have been granted <span class="user-name"></span>'s number!</p>
 		<div class="content question-content prize-content">
 			<h1 id="prize" class="prize"></h1>
 		</div>

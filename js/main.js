@@ -15,9 +15,19 @@ function delayedJump(link) {
 
 
 
-//Logo animation
+//Logo animation and user input area fade in + expand user inputs
 
 let logoTimeline = gsap.timeline();
+
+gsap.set(".intro", {
+	y: 0,
+	opacity: 0
+});
+
+gsap.set("input", {
+	width: 0,
+	opacity: 0
+});
 
 logoTimeline.to('.logo-text', {
 		onStart: function () {
@@ -33,7 +43,7 @@ logoTimeline.to('.logo-text', {
 		}
 	})
 	.to(".logo-text", {
-	delay: .5,
+		delay: .5,
 		onComplete: function () {
 			document.getElementById('logo-text').classList.add('convert-to-logo');
 		}
@@ -50,41 +60,21 @@ logoTimeline.to('.logo-text', {
 		duration: .5,
 		y: 0,
 		ease: "back"
+	})
+	.to(".intro", {
+		delay: .1,
+		duration: .25,
+		y: -20,
+		opacity: 1,
+		ease: "back"
+	})
+	.to("input", {
+		duration: .2,
+		delay: .1,
+		width: "100%",
+		opacity: 1
 	});
 
-
-
-
-//User input area fade in/up
-
-gsap.set(".intro", {
-	y: 0,
-	opacity: 0
-});
-
-gsap.to(".intro", {
-	duration: .25,
-	delay: 2.75,
-	y: -20,
-	opacity: 1,
-	ease: "back"
-});
-
-
-
-//Expanding user inputs
-
-gsap.set("input", {
-	width: 0,
-	opacity: 0
-});
-
-gsap.to("input", {
-	duration: .2,
-	delay: 3.1,
-	width: "100%",
-	opacity: 1
-});
 
 
 
@@ -143,7 +133,7 @@ beginTestBtn.addEventListener('click', () => {
 
 
 
-//Makes "begin test" button work with enter key press
+//Makes "Begin Test" button also work with enter key press
 
 let userInputInfo = document.querySelectorAll(".user-input");
 
@@ -158,7 +148,7 @@ userInputInfo.forEach(function (input, index) {
 
 
 
-//slides over Player Welcome screen when "Begin Test" is clicked
+//Slides over Player Welcome screen when "Begin Test" is clicked
 
 document.getElementById('player-begin').addEventListener('click', function () {
 	document.getElementById('player-instructions').classList.add('slide-left');
@@ -179,7 +169,7 @@ correctBtn.forEach(function (btn, index) {
 
 
 
-//Adds winning number to scrambleText
+//Apply user phone number to winning number display
 
 function displayPrizeNumber() {
 	let applyUserNumber = document.getElementById('userNumber').value;
@@ -199,10 +189,10 @@ function displayPrizeNumber() {
 			opacity: 1,
 			ease: "back"
 		})
-	.to(".prize", {
+		.to(".prize", {
 			delay: 1,
 			opacity: 1
-			})
+		})
 		.to(".prize", {
 			duration: 2.5,
 			scrambleText: {
@@ -221,7 +211,7 @@ function displayPrizeNumber() {
 
 
 
-//Circle Zoom and Display Winning Number
+//Jumps to and displays winning number
 
 function winningClick() {
 	gsap.to(window, {
@@ -229,7 +219,5 @@ function winningClick() {
 		scrollTo: "#congrats",
 		ease: "linear"
 	})
-	
 	setTimeout(displayPrizeNumber, 800);
 };
-
