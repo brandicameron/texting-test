@@ -24,7 +24,7 @@ gsap.set(".intro", {
 	opacity: 0
 });
 
-gsap.set("input", {
+gsap.set(".slide", {
 	width: 0,
 	opacity: 0
 });
@@ -68,7 +68,7 @@ logoTimeline.to('.logo-text', {
 		opacity: 1,
 		ease: "back"
 	})
-	.to("input", {
+	.to(".slide", {
 		duration: .2,
 		delay: .1,
 		width: "100%",
@@ -76,6 +76,24 @@ logoTimeline.to('.logo-text', {
 	});
 
 
+
+//Allows user to hide or show phone number
+
+function viewPassword()
+{
+  var numberInput = document.getElementById('userNumber');
+  var hideShowNumber = document.getElementById('hide-show-number');
+ 
+  if (numberInput.type == 'password'){
+    numberInput.type='text';
+    hideShowNumber.className='fa fa-eye-slash';
+    
+  }
+  else{
+    numberInput.type='password';
+    hideShowNumber.className='fa fa-eye';
+  }
+}
 
 
 //Applies user name to questions throughout quiz

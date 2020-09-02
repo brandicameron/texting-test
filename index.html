@@ -8,6 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Brandi Cameron | hello@brandicameron.com">
 	<meta name="theme-color" content="#ffffff">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;800&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/main.css">
@@ -46,8 +47,11 @@
 					<p>Have them answer a few text etiquette questions (customized with your name) before being awarded your phone number...</p>
 				</div>
 				<div class="user-input">
-					<input id="userName" type="text" name="name" placeholder="Your Name (ex. Uncle Luke)" autofocus autocomplete="name" aria-label="Enter Your Name">
-					<input id="userNumber" type="tel" name="number" class="value" placeholder="The Prize Phone Number" autocomplete="tel" aria-label="Enter the Prize Phone Number">
+					<input class="slide" id="userName" type="text" name="name" placeholder="Your Name (ex. Uncle Luke)" autofocus autocomplete="name" aria-label="Enter Your Name">
+					<div class="phone-input-container slide">
+					<input id="userNumber" type="password" name="number" placeholder="The Prize Phone Number" autocomplete="tel" aria-label="Enter the Prize Phone Number">
+					<i id="hide-show-number" class="fa fa-eye" aria-hidden="true" onClick="viewPassword()"></i>
+					</div>
 				</div>
 				<p class="xsm-text bold">* Your information is not saved in any way.</p>
 				<button type="button" class="button" id="begin-test-button">Begin Test</button>
