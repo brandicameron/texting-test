@@ -78,7 +78,8 @@
 				<p>It is before 10am on a weekend. Is it okay to text <span class="user-name"></span>?</p>
 				<div class="answer-choices">
 					<button type="button" class="yes incorrect answer-button">yes</button>
-					<button type="button" class="no correct answer-button hands" onclick="delayedJump('#question2')">no &nbsp;</button>
+					<button type="button" class="no correct answer-button hands" onclick="delayedJump('#question5')">no &nbsp;</button>
+<!--					<button type="button" class="no correct answer-button hands" onclick="delayedJump('#question2')">no &nbsp;</button>-->
 				</div>
 			</div>
 			<div class="progress-bar">
@@ -169,6 +170,8 @@
 	<!--	******************* QUESTION 5 / WINNING BUTTON  *******************  -->
 
 	<section id="question5" class="turquoise">
+
+	<div class="last-question-content">
 		<div class="number-header">
 			<h1 class="question-number">N<span class="o">o</span><span class="lg-number">5</span></h1>
 		</div>
@@ -181,8 +184,6 @@
 					<div class="thumbs">👍</div>
 				</div>
 
-				<div id="radial-grow" class="circle-grow"></div>
-
 			</div>
 			<div class="progress-bar">
 				<div class="circle circle-filled"></div>
@@ -192,16 +193,15 @@
 				<div class="circle circle-filled"></div>
 			</div>
 		</div>
+		</div>
+		
 	</section>
 
 	<!--	******************* CONGRATS  *******************  -->
 
-
-
-
 	<section id="congrats" class="purple">
 		<p class="congrats-text">Congratulations!</p>
-		<p class="congrats-text">You are granted <span class="user-name"></span>'s number:</p>
+		<p class="congrats-text">You have been granted <span class="user-name"></span>'s number:</p>
 		<div class="content question-content prize-content">
 			<h1 id="prize" class="prize"></h1>
 		</div>

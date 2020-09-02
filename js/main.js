@@ -179,30 +179,6 @@ correctBtn.forEach(function (btn, index) {
 
 
 
-
-//Mobile ViewHeight Calculator
-
-//window.addEventListener('resize', () => {
-//	let vh = window.innerHeight * 0.01;
-//	document.documentElement.style.setProperty('--vh', `${vh}px`);
-//});
-
-
-
-
-//Radial Zoom
-
-function radialBgGrow() {
-	document.getElementById('radial-grow').classList.add('radial-grow');
-
-	gsap.to(window, {
-		duration: .1,
-		scrollTo: "#congrats",
-		ease: "linear"
-	});
-}
-
-
 //Adds winning number to scrambleText
 
 function displayPrizeNumber() {
@@ -223,9 +199,12 @@ function displayPrizeNumber() {
 			opacity: 1,
 			ease: "back"
 		})
+	.to(".prize", {
+			delay: 1,
+			opacity: 1
+			})
 		.to(".prize", {
-			delay: .5,
-			opacity: 1,
+//			delay: .01,
 			duration: 2.5,
 			scrambleText: {
 				text: applyUserNumber,
@@ -233,7 +212,7 @@ function displayPrizeNumber() {
 				oldClass: "old",
 				newClass: "cool"
 			}
-		})
+		}, "-=.5")
 		.to(".prize", {
 			duration: .5,
 			scale: 1.2,
@@ -248,7 +227,12 @@ function displayPrizeNumber() {
 //Circle Zoom and Display Winning Number
 
 function winningClick() {
-	setTimeout(radialBgGrow, 800);
-	setTimeout(displayPrizeNumber, 1900);
+	gsap.to(window, {
+		duration: .01,
+		scrollTo: "#congrats",
+		ease: "linear"
+	})
+	
+	setTimeout(displayPrizeNumber, 800);
 };
 
