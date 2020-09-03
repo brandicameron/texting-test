@@ -3,7 +3,6 @@
 	padding: 0;
 	box-sizing: border-box;
 	-webkit-overflow-scrolling: touch;
-/*				outline: 1px solid red;*/
 }
 
 :root {
@@ -120,7 +119,6 @@ section {
 	height: 100vh;
 }
 
-
 /*  ******************* INTRO SECTION  *******************  */
 
 .intro-section {
@@ -217,7 +215,6 @@ input {
 	border: 7px solid #000000;
 	box-shadow: 7px 7px 0 rgb(0 0 0 /20%);
 	background: #ffffff;
-	
 }
 
 input:focus {
@@ -280,7 +277,6 @@ input:focus {
 	}
 }
 
-
 /*  ******************* PLAYER WELCOME SCREEN  *******************  */
 
 .player-instructions {
@@ -311,7 +307,6 @@ input:focus {
 		transform: translateX(-110vw);
 	}
 }
-
 
 /*  ******************* QUESTIONS  *******************  */
 
@@ -501,6 +496,8 @@ input:focus {
 	}
 }
 
+/* Green Checkmarks */
+
 .correct-clicked::before {
 	position: absolute;
 	margin-right: -50%;
@@ -533,6 +530,8 @@ input:focus {
 		transform: scale(1);
 	}
 }
+
+/* Correct Choice Indicators */
 
 .hands::before {
 	position: absolute;
@@ -619,9 +618,7 @@ input:focus {
 	}
 }
 
-
 /*  ******************* CONGRATS  *******************  */
-
 
 #congrats {
 	position: relative;
@@ -690,29 +687,28 @@ input:focus {
 	color: #000;
 }
 
-
-
 /*  ******************* TABLET / MOBILE  *******************  */
 
 @media screen and (max-width: 400px) {
 	.content {
-		transform: scale(.9);
+		transform: scale(.89);
 		width: 80vw;
 		height: 80vh;
 	}
 
 	p {
 		line-height: 140%;
-		font-size: .95rem;
-		width: 90vw;
+		font-size: .90rem;
+		width: 85vw;
 	}
-	
+
 	.logo-text {
 		margin-top: 40px;
-}
-	
+	}
+
 	.intro-text {
-		margin-top: -10px;
+		margin-top: -17px;
+		padding: 2px 0;
 	}
 
 	::placeholder {
@@ -720,8 +716,8 @@ input:focus {
 	}
 
 	.sm-text {
-		font-size: .63rem;
-		padding: 10px 0 0 0;
+		font-size: .60rem;
+		padding: 10px 0 0 8px;
 	}
 
 	.xsm-text {
@@ -735,11 +731,11 @@ input:focus {
 	.user-input {
 		margin-top: -5px;
 	}
-	
+
 	.fa {
-	top: 25px;
-	font-size: 1.2rem;
-}
+		top: 25px;
+		font-size: 1.2rem;
+	}
 
 	.hi {
 		margin-top: 50px;
@@ -766,18 +762,18 @@ input:focus {
 	.prize {
 		font-size: 1.8rem;
 	}
-	
+
 	.prize::before {
-	left: 16px;
-	top: 97px;
-}
+		left: 16px;
+		top: 97px;
+	}
 
 	.congrats-content {
 		height: 50vh;
 		align-items: center;
 		margin-top: -100px;
 	}
-	
+
 	.congrats-text {
 		text-align: center;
 		line-height: 120%;
@@ -789,7 +785,7 @@ input:focus {
 	html {
 		font-size: 1.3rem;
 	}
-	
+
 	.congrats-content {
 		height: 80vh;
 	}
@@ -799,9 +795,9 @@ input:focus {
 		width: 320px;
 	}
 
-		.logo-text {
+	.logo-text {
 		margin-top: -55px;
-}
+	}
 }
 
 @media screen and (prefers-reduced-motion: reduce) {

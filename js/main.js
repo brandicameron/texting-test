@@ -1,6 +1,5 @@
 gsap.registerPlugin(CSSRulePlugin, ScrambleTextPlugin, ScrollToPlugin, TextPlugin);
 
-
 //Smooth Scroll on Anchor Links for Mobile
 
 function delayedJump(link) {
@@ -13,11 +12,9 @@ function delayedJump(link) {
 };
 
 
-
-
 //Logo animation and user input area fade in + expand user inputs
 
-let logoTimeline = gsap.timeline();
+const logoTimeline = gsap.timeline();
 
 gsap.set(".intro", {
 	y: 0,
@@ -76,13 +73,9 @@ logoTimeline.to('.logo-text', {
 	});
 
 
-
-//Allows user to hide or show phone number
-
-function viewPassword()
-{
-  var numberInput = document.getElementById('userNumber');
-  var hideShowNumber = document.getElementById('hide-show-number');
+function viewHiddenPhone() {
+  let numberInput = document.getElementById('userNumber');
+  let hideShowNumber = document.getElementById('hide-show-number');
  
   if (numberInput.type == 'password'){
     numberInput.type='text';
@@ -93,12 +86,10 @@ function viewPassword()
     numberInput.type='password';
     hideShowNumber.className='fa fa-eye';
   }
-}
+};
 
 
-//Applies user name to questions throughout quiz
-
-function captureUserInfo() {
+function applyUserInfo() {
 	let applyUserName = document.getElementById('userName').value;
 	let findSpans = document.getElementsByClassName('user-name');
 	let loopSpans = findSpans.length;
@@ -112,16 +103,10 @@ function captureUserInfo() {
 };
 
 
-
-//Lifts the intro screen
-
 function liftIntroScreen() {
 	document.getElementById('intro-section').classList.add('lift-intro');
-}
+};
 
-
-
-//Starts hand waving on player welcome screen
 
 function beginWavingHand() {
 	gsap.set("#hi", {
@@ -135,25 +120,23 @@ function beginWavingHand() {
 		yoyo: true,
 		repeat: 16
 	});
-}
+};
 
 
-
-//Sets all above into action when "Begin Test" is clicked
+//Sets above into action when "Begin Test" is clicked
 
 const beginTestBtn = document.getElementById('begin-test-button');
 
 beginTestBtn.addEventListener('click', () => {
-	captureUserInfo();
+	applyUserInfo();
 	liftIntroScreen();
 	beginWavingHand();
 });
 
 
-
 //Makes "Begin Test" button also work with enter key press
 
-let userInputInfo = document.querySelectorAll(".user-input");
+const userInputInfo = document.querySelectorAll(".user-input");
 
 userInputInfo.forEach(function (input, index) {
 	input.addEventListener("keyup", function (event) {
@@ -165,10 +148,7 @@ userInputInfo.forEach(function (input, index) {
 });
 
 
-
-//Slides over Player Welcome screen when "Begin Test" is clicked
-
-document.getElementById('player-begin').addEventListener('click', function () {
+document.getElementById('player-begin-button').addEventListener('click', function () {
 	document.getElementById('player-instructions').classList.add('slide-left');
 });
 
@@ -176,7 +156,7 @@ document.getElementById('player-begin').addEventListener('click', function () {
 
 //Adds green checkmark when correct answer is selected
 
-let correctBtn = document.querySelectorAll('.correct');
+const correctBtn = document.querySelectorAll('.correct');
 
 correctBtn.forEach(function (btn, index) {
 	btn.addEventListener('click', function () {
@@ -185,9 +165,6 @@ correctBtn.forEach(function (btn, index) {
 	});
 });
 
-
-
-//Apply user phone number to winning number display
 
 function displayPrizeNumber() {
 	let applyUserNumber = document.getElementById('userNumber').value;
@@ -199,9 +176,8 @@ function displayPrizeNumber() {
 		numtext.textContent = applyUserNumber;
 	};
 
-	let tl = gsap.timeline();
+	const tl = gsap.timeline();
 	
-
 	tl.to(".congrats-text", {
 			duration: .25,
 			y: -20,
@@ -213,7 +189,7 @@ function displayPrizeNumber() {
 		fontSize: 60,
 		yoyo: true,
 		ease: "bounce"
-	},"-=.5")
+	},"-=.1")
 		.to(".prize", {
 			delay: 1,
 			opacity: 1
@@ -235,14 +211,18 @@ function displayPrizeNumber() {
 };
 
 
-
 //Jumps to and displays winning number
 
 function winningClick() {
+	
+document.querySelector('.correct').classList.add('correct-clicked');
+	
 	gsap.to(window, {
-		duration: .01,
+		duration: .2,
 		scrollTo: "#congrats",
+		delay: .5,
 		ease: "linear"
-	})
-	setTimeout(displayPrizeNumber, 800);
+	});
+	
+	setTimeout(displayPrizeNumber, 1500);
 };
