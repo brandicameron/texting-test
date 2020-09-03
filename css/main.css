@@ -119,6 +119,16 @@ section {
 	height: 100vh;
 }
 
+.flex-c {
+	width: 100vw;
+	height: 90vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+}
+
 /*  ******************* INTRO SECTION  *******************  */
 
 .intro-section {
