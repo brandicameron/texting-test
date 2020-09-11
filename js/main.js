@@ -74,18 +74,17 @@ logoTimeline.to('.logo-text', {
 
 
 function viewHiddenPhone() {
-  let numberInput = document.getElementById('userNumber');
-  let hideShowNumber = document.getElementById('hide-show-number');
- 
-  if (numberInput.type == 'password'){
-    numberInput.type='text';
-    hideShowNumber.className='fa fa-eye-slash';
-    
-  }
-  else{
-    numberInput.type='password';
-    hideShowNumber.className='fa fa-eye';
-  }
+	let numberInput = document.getElementById('userNumber');
+	let hideShowNumber = document.getElementById('hide-show-number');
+
+	if (numberInput.type == 'password') {
+		numberInput.type = 'text';
+		hideShowNumber.className = 'fa fa-eye-slash';
+
+	} else {
+		numberInput.type = 'password';
+		hideShowNumber.className = 'fa fa-eye';
+	}
 };
 
 
@@ -177,19 +176,19 @@ function displayPrizeNumber() {
 	};
 
 	const tl = gsap.timeline();
-	
+
 	tl.to(".congrats-text", {
 			duration: .25,
 			y: -20,
 			opacity: 1,
 			ease: "back"
 		})
-	.to(".thumbsup", {
-		duration: .5,
-		fontSize: 60,
-		yoyo: true,
-		ease: "bounce"
-	},"-=.1")
+		.to(".thumbsup", {
+			duration: .5,
+			fontSize: 60,
+			yoyo: true,
+			ease: "bounce"
+		}, "-=.1")
 		.to(".prize", {
 			delay: 1,
 			opacity: 1
@@ -214,15 +213,16 @@ function displayPrizeNumber() {
 //Jumps to and displays winning number
 
 function winningClick() {
-	
-document.querySelector('.correct').classList.add('correct-clicked');
-	
+
+	document.querySelector('.correct').classList.add('correct-clicked');
+
 	gsap.to(window, {
 		duration: .2,
 		scrollTo: "#congrats",
 		delay: .5,
 		ease: "linear"
 	});
-	
+
+	setTimeout(startConfetti, 700);
 	setTimeout(displayPrizeNumber, 1500);
 };
