@@ -284,6 +284,7 @@ input {
 	-webkit-box-shadow: 7px 7px 0 rgb(0 0 0 /20%);
 	box-shadow: 7px 7px 0 rgb(0 0 0 /20%);
 	background: #ffffff;
+	line-height: 100%;
 }
 
 input:focus {
