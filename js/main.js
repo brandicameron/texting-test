@@ -1,7 +1,6 @@
 gsap.registerPlugin(CSSRulePlugin, ScrambleTextPlugin, ScrollToPlugin, TextPlugin);
 
 //Smooth Scroll on Anchor Links for Mobile
-
 function delayedJump(link) {
 	gsap.to(window, {
 		duration: .2,
@@ -12,67 +11,65 @@ function delayedJump(link) {
 };
 
 
-//Logo animation and user input area fade in + expand user inputs
+//Logo animation + user input area fade in + expand user inputs
+function init() {
+	const logoTimeline = gsap.timeline();
 
-const logoTimeline = gsap.timeline();
-
-gsap.set(".intro", {
-	y: 0,
-	opacity: 0
-});
-
-gsap.set(".slide", {
-	width: 0,
-	opacity: 0
-});
-
-logoTimeline.to('.logo-text', {
-		onStart: function () {
-			document.getElementById('logo-text').classList.add('cursor');
-		},
-		duration: 1.5,
-		text: {
-			value: 'Texting Test <span class="emoji">😈</span>'
-		},
-		ease: "none",
-		onComplete: function () {
-			document.getElementById('logo-text').classList.remove('cursor');
-		}
-	})
-	.to(".logo-text", {
-		delay: .5,
-		onComplete: function () {
-			document.getElementById('logo-text').classList.add('convert-to-logo');
-		}
-	})
-	.to(".logo-text", {
-		duration: .1,
-		opacity: 1,
-		x: 5,
-		y: -25,
-		scale: 1,
-		width: 275,
-	})
-	.to(".logo-text", {
-		duration: .5,
-		y: 0,
-		ease: "back"
-	})
-	.to(".intro", {
-		delay: .1,
-		duration: .25,
-		y: -20,
-		opacity: 1,
-		ease: "back"
-	})
-	.to(".slide", {
-		duration: .2,
-		delay: .1,
-		width: "100%",
-		opacity: 1
+	logoTimeline.to('.logo-text', {
+			onStart: function () {
+				document.getElementById('logo-text').classList.add('cursor');
+			},
+			duration: 1.5,
+			text: {
+				value: 'Texting Test <span class="emoji">😈</span>'
+			},
+			ease: "none",
+			onComplete: function () {
+				document.getElementById('logo-text').classList.remove('cursor');
+			}
+		})
+		.to(".logo-text", {
+			delay: .5,
+			onComplete: function () {
+				document.getElementById('logo-text').classList.add('convert-to-logo');
+			}
+		})
+		.to(".logo-text", {
+			duration: .1,
+			opacity: 1,
+			x: 5,
+			y: -25,
+			scale: 1,
+			width: 275,
+		})
+		.to(".logo-text", {
+			duration: .5,
+			y: 0,
+			ease: "back"
+		})
+		.to(".intro", {
+			delay: .1,
+			duration: .25,
+			y: -20,
+			opacity: 1,
+			ease: "back"
+		})
+		.to(".slide", {
+			duration: .2,
+			delay: .1,
+			width: "100%",
+			opacity: 1
 	});
+};
 
 
+//prevents flash of unstyled content (FOUC) on page load 
+window.addEventListener("load", function (event) {
+	init();
+});
+
+
+//button to hide or show phone number in input
 function viewHiddenPhone() {
 	let numberInput = document.getElementById('userNumber');
 	let hideShowNumber = document.getElementById('hide-show-number');
@@ -88,6 +85,7 @@ function viewHiddenPhone() {
 };
 
 
+//apply user name to all the questions
 function applyUserInfo() {
 	let applyUserName = document.getElementById('userName').value;
 	let findSpans = document.getElementsByClassName('user-name');
@@ -123,7 +121,6 @@ function beginWavingHand() {
 
 
 //Sets above into action when "Begin Test" is clicked
-
 const beginTestBtn = document.getElementById('begin-test-button');
 
 beginTestBtn.addEventListener('click', () => {
@@ -134,7 +131,6 @@ beginTestBtn.addEventListener('click', () => {
 
 
 //Makes "Begin Test" button also work with enter key press
-
 const userInputInfo = document.querySelectorAll(".user-input");
 
 userInputInfo.forEach(function (input, index) {
@@ -154,7 +150,6 @@ document.getElementById('player-begin-button').addEventListener('click', functio
 
 
 //Adds green checkmark when correct answer is selected
-
 const correctBtn = document.querySelectorAll('.correct');
 
 correctBtn.forEach(function (btn, index) {
@@ -210,8 +205,7 @@ function displayPrizeNumber() {
 };
 
 
-//Jumps to and displays winning number
-
+//Jumps to and displays winning number + starts confetti
 function winningClick() {
 
 	document.querySelector('.correct').classList.add('correct-clicked');
