@@ -1,6 +1,6 @@
 gsap.registerPlugin(CSSRulePlugin, ScrambleTextPlugin, ScrollToPlugin, TextPlugin);
 
-//Smooth Scroll on Anchor Links for Mobile
+//Smooth scroll on anchor links for mobile
 function delayedJump(link) {
 	gsap.to(window, {
 		duration: .2,
@@ -10,12 +10,13 @@ function delayedJump(link) {
 	});
 };
 
+// ANIMATIONS
 
-//Logo animation + user input area fade in + expand user inputs
-function init() {
-	const logoTimeline = gsap.timeline();
+const introPageAnimations = gsap.timeline();
 
-	logoTimeline.to('.logo-text', {
+function logoText() {
+	let tl = gsap.timeline();
+	tl.to('.logo-text', {
 			onStart: function () {
 				document.getElementById('logo-text').classList.add('cursor');
 			},
@@ -46,30 +47,40 @@ function init() {
 			duration: .5,
 			y: 0,
 			ease: "back"
-		})
-		.to(".intro", {
+		});
+	return tl;
+}
+
+function introText() {
+	let tl = gsap.timeline();
+	tl.to(".intro", {
 			delay: .1,
 			duration: .25,
 			y: -20,
 			opacity: 1,
 			ease: "back"
-		})
-		.to(".slide", {
+		});
+	return tl;
+}
+
+function slideOverInputs() {
+	let tl = gsap.timeline();
+	tl.to(".slide", {
 			duration: .2,
 			delay: .1,
 			width: "100%",
 			opacity: 1
 	});
-};
+	return tl;
+}
+
+	introPageAnimations.add(logoText());
+	introPageAnimations.add(introText());
+	introPageAnimations.add(slideOverInputs());
 
 
-//prevents flash of unstyled content (FOUC) on page load 
-window.addEventListener("load", function (event) {
-	init();
-});
 
-
-//button to hide or show phone number in input
+//Button to hide or show phone number in input
 function viewHiddenPhone() {
 	let numberInput = document.getElementById('userNumber');
 	let hideShowNumber = document.getElementById('hide-show-number');
@@ -77,7 +88,6 @@ function viewHiddenPhone() {
 	if (numberInput.type == 'password') {
 		numberInput.type = 'text';
 		hideShowNumber.className = 'fa fa-eye-slash';
-
 	} else {
 		numberInput.type = 'password';
 		hideShowNumber.className = 'fa fa-eye';
@@ -85,8 +95,8 @@ function viewHiddenPhone() {
 };
 
 
-//apply user name to all the questions
-function applyUserInfo() {
+//Apply user name to all the questions
+function applyUsernameToQuestions() {
 	let applyUserName = document.getElementById('userName').value;
 	let findSpans = document.getElementsByClassName('user-name');
 	let loopSpans = findSpans.length;
@@ -99,11 +109,9 @@ function applyUserInfo() {
 	};
 };
 
-
 function liftIntroScreen() {
 	document.getElementById('intro-section').classList.add('lift-intro');
 };
-
 
 function beginWavingHand() {
 	gsap.set("#hi", {
@@ -119,12 +127,11 @@ function beginWavingHand() {
 	});
 };
 
-
 //Sets above into action when "Begin Test" is clicked
 const beginTestBtn = document.getElementById('begin-test-button');
 
 beginTestBtn.addEventListener('click', () => {
-	applyUserInfo();
+	applyUsernameToQuestions();
 	liftIntroScreen();
 	beginWavingHand();
 });
@@ -143,8 +150,12 @@ userInputInfo.forEach(function (input, index) {
 });
 
 
-document.getElementById('player-begin-button').addEventListener('click', function () {
-	document.getElementById('player-instructions').classList.add('slide-left');
+//Slide over player instruction page on button click
+const PlayerBeginBtn = document.getElementById('player-begin-button');
+const PlayerInstructionsPage = document.getElementById('player-instructions');
+
+PlayerBeginBtn.addEventListener('click', function () {
+	PlayerInstructionsPage.classList.add('slide-left');
 });
 
 
@@ -170,8 +181,7 @@ function displayPrizeNumber() {
 		numtext.textContent = applyUserNumber;
 	};
 
-	const tl = gsap.timeline();
-
+	let tl = gsap.timeline();
 	tl.to(".congrats-text", {
 			duration: .25,
 			y: -20,
@@ -207,16 +217,13 @@ function displayPrizeNumber() {
 
 //Jumps to and displays winning number + starts confetti
 function winningClick() {
-
 	document.querySelector('.correct').classList.add('correct-clicked');
-
 	gsap.to(window, {
 		duration: .2,
 		scrollTo: "#congrats",
 		delay: .5,
 		ease: "linear"
 	});
-
 	setTimeout(startConfetti, 700);
 	setTimeout(displayPrizeNumber, 1500);
 };
