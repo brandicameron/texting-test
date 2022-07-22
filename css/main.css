@@ -1124,7 +1124,7 @@ input:focus {
   }
 }
 
-@media screen and (max-width: 370px) {
+@media screen and (max-width: 350px) {
   html {
     font-size: 1.3rem;
   }
@@ -1134,14 +1134,15 @@ input:focus {
   }
 
   .content {
-    -webkit-transform: scale(0.75);
-    -ms-transform: scale(0.75);
-    transform: scale(0.75);
+    -webkit-transform: scale(0.65);
+    -ms-transform: scale(0.65);
+    transform: scale(0.65);
     width: 320px;
+    margin-top: 0.75rem;
   }
 
   .logo-text {
-    margin-top: -55px;
+    margin-top: 0;
   }
 }
 
@@ -1150,11 +1151,3 @@ input:focus {
     scroll-behavior: auto;
   }
 }
-
-/* Try this! */
-/*
-@supports(font-synthesis: inherit) {
-   input::placeholder {
-     line-height:3em
-  }
-}*/
